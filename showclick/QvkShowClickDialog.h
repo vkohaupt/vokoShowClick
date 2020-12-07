@@ -5,7 +5,7 @@
 #include "QvkCircleWidget.h"
 
 
-#include "QvkSettings.h"
+//#include "QvkSettings.h"
 
 #include <QDialog>
 
@@ -27,7 +27,7 @@ public slots:
 private:
     QDialog *newDialog;
     QvkCircleWidget *circleWidget;
-    QvkSettings vkSettings;
+//    QvkSettings vkSettings;
 
     
 private slots:

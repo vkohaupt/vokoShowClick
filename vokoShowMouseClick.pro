@@ -1,7 +1,6 @@
 
-QT += core gui widgets multimedia network
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+unix: QT += x11extras
+QT += core gui widgets multimedia network testlib
 
 CONFIG += c++11
 
@@ -26,6 +25,10 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
-TRANSLATIONS += \
-    vokoShowMouseClick_en_001.ts
+RESOURCES += showclick.qrc    
+    
+CONFIG += link_pkgconfig
 
+unix:LIBS += -L/usr/X11/lib -lX11
+
+include(showclick/showclick.pri)

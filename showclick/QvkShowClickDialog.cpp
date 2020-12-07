@@ -4,7 +4,7 @@
 
 QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opacity )
 {
-    vkSettings.readAll();
+//    vkSettings.readAll();
     
     newDialog = new QDialog;
     newDialog->setModal( true );
@@ -57,7 +57,7 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     circleWidget->setOpacity( opacity );
     
     connect( myUiDialog.horizontalSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( valueChangedSliderCircle( int ) ) );
-    myUiDialog.horizontalSliderCircle->setSliderPosition( vkSettings.getShowClickCircle() );
+//    myUiDialog.horizontalSliderCircle->setSliderPosition( vkSettings.getShowClickCircle() );
     
     connect( myUiDialog.checkBoxRadiant, SIGNAL( stateChanged( int ) ), this, SLOT( stateChangedRadiant( int ) ) );
     if ( radiant == true )
@@ -68,7 +68,7 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     connect( myUiDialog.horizontalSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( valueChangedOpacity( int ) ) );
     myUiDialog.horizontalSliderOpacity->setSliderPosition( opacity*100 );
     
-    myUiDialog.horizontalSliderShowtime->setValue( vkSettings.getShowClickTime() );
+//    myUiDialog.horizontalSliderShowtime->setValue( vkSettings.getShowClickTime() );
 }
 
 QvkShowClickDialog::~QvkShowClickDialog()

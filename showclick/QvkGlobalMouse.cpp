@@ -2,6 +2,7 @@
 
 #include <QTest>
 #include <QDebug>
+#include <QThread>
 
 #include<X11/Xlib.h>
 #include<stdio.h>
@@ -49,7 +50,7 @@ void QvkGlobalMouse::mousePressed()
       if ( pressed == 0 )
       {
         pressed = 1;
-	emit mousePressed( win_x, win_y );
+        emit mousePressed( win_x, win_y );
       }
     }
     else
