@@ -130,79 +130,95 @@ void QvkShowClickDialog::stateChangedRadiant( int value )
 void QvkShowClickDialog::white()
 {
   circleWidget->setColor( Qt::white );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::black()
 {
   circleWidget->setColor( Qt::black );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::red()
 {
   circleWidget->setColor( Qt::red );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkRed()
 {
   circleWidget->setColor( Qt::darkRed );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::green()
 {
   circleWidget->setColor( Qt::green );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkGreen()
 {
   circleWidget->setColor( Qt::darkGreen );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::blue()
 {
   circleWidget->setColor( Qt::blue );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkBlue()
 {
   circleWidget->setColor( Qt::darkBlue );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::cyan()
 {
   circleWidget->setColor( Qt::cyan );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkCyan()
 {
   circleWidget->setColor( Qt::darkCyan );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::magenta()
 {
   circleWidget->setColor( Qt::magenta );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkMagenta()
 {
   circleWidget->setColor( Qt::darkMagenta );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::yellow()
 {
   circleWidget->setColor( Qt::yellow );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkYellow()
 {
   circleWidget->setColor( Qt::darkYellow );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::gray()
 {
   circleWidget->setColor( Qt::gray );
+  myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkGray()
 {
   circleWidget->setColor( Qt::darkGray );
+  myUiDialog.graphicsView->setFocus();
 }

@@ -22,9 +22,6 @@ SOURCES += \
 HEADERS += \
     mainwindow.h
 
-FORMS += \
-    mainwindow.ui
-
 RESOURCES += showclick.qrc    
     
 CONFIG += link_pkgconfig

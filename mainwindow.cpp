@@ -1,10 +1,8 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include "QvkShowClickDialog.h"
 #include "QvkAnimateControl.h"
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
-                                       , ui(new Ui::MainWindow)
 {
     QColor color   = Qt::red; //vkSettings.getShowClickColor();
     int radiant    = 20; //vkSettings.getShowClickRadiant();
@@ -34,6 +32,6 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+//    delete ui;
 }
 

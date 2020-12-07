@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Show Click Settings</string>
+   <string>vokoShowMouseClick</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
