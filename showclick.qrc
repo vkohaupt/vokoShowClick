@@ -1,5 +1,12 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource>
-</qresource>
+<RCC>
+    <qresource prefix="/">
+        <file>pictures/showclick/farbeimer-gelb.png</file>
+        <file>pictures/showclick/farbeimer-gruen.png</file>
+        <file>pictures/showclick/cursor.png</file>
+        <file>pictures/showclick/cursor.xcf</file>
+        <file>pictures/showclick/farbeimer-rot.png</file>
+        <file>pictures/showclick/radiant.png</file>
+        <file>pictures/showclick/sandglass.png</file>
+        <file>pictures/showclick/transparenz.png</file>
+    </qresource>
 </RCC>
- 

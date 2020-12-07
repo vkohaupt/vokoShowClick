@@ -49,7 +49,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../screencast.qrc">:/pictures/farbeimer-gruen.png</pixmap>
+           <pixmap resource="../showclick.qrc">:/pictures/showclick/farbeimer-gruen.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -68,7 +68,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../screencast.qrc">:/pictures/farbeimer-gelb.png</pixmap>
+           <pixmap resource="../showclick.qrc">:/pictures/showclick/farbeimer-gelb.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -87,7 +87,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../screencast.qrc">:/pictures/farbeimer-rot.png</pixmap>
+           <pixmap resource="../showclick.qrc">:/pictures/showclick/farbeimer-rot.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -270,7 +270,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../screencast.qrc">:/pictures/cursor.png</pixmap>
+          <pixmap resource="../showclick.qrc">:/pictures/showclick/cursor.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -315,7 +315,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../screencast.qrc">:/pictures/transparenz.png</pixmap>
+          <pixmap resource="../showclick.qrc">:/pictures/showclick/transparenz.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -374,7 +374,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../screencast.qrc">:/pictures/sandglass.png</pixmap>
+            <pixmap resource="../showclick.qrc">:/pictures/showclick/sandglass.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -418,7 +418,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../screencast.qrc">:/pictures/radiant.png</pixmap>
+          <pixmap resource="../showclick.qrc">:/pictures/showclick/radiant.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -492,7 +492,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../screencast.qrc"/>
+  <include location="../showclick.qrc"/>
  </resources>
  <connections/>
 </ui>

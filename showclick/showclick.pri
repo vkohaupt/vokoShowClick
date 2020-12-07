@@ -12,4 +12,4 @@ SOURCES     += $$PWD/QvkGlobalMouse.cpp \
                $$PWD/QvkShowClickDialog.cpp \
                $$PWD/QvkCircleWidget.cpp
 
-FORMS       += $$PWD/showclickDialog.ui
+ FORMS       += $$PWD/showclickDialog.ui
