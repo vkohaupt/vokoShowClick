@@ -6,11 +6,8 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
 {
 //    vkSettings.readAll();
     
-    newDialog = new QDialog;
-    newDialog->setModal( true );
+    myUiDialog.setupUi( this );
 
-    myUiDialog.setupUi( newDialog );
-   
     myUiDialog.pushButton_white->setStyleSheet( "background-color: white;" );
     myUiDialog.pushButton_black->setStyleSheet( "background-color: black;" );
     myUiDialog.pushButton_red->setStyleSheet( "background-color: red;" );
@@ -78,16 +75,6 @@ QvkShowClickDialog::~QvkShowClickDialog()
 QColor QvkShowClickDialog::getColor()
 {
   return circleWidget->getColor();
-}
-
-void QvkShowClickDialog::show()
-{
-   newDialog->show();
-}
-
-void QvkShowClickDialog::cancel()
-{
-   newDialog->close();
 }
 
 void QvkShowClickDialog::Standard()
@@ -226,3 +213,4 @@ void QvkShowClickDialog::darkGray()
   circleWidget->setColor( Qt::darkGray );
   myUiDialog.graphicsView->setFocus();
 }
+

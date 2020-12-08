@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     bool radiant   = false; //vkSettings.getShowClickRadiant();
 
     QvkShowClickDialog *ShowClickDialog = new QvkShowClickDialog( color, radiant, opacity );
-    ShowClickDialog->show();
+    ShowClickDialog->setVisible( true );
 
 
 //    connect( myUi.pointerDialogPushButton, SIGNAL( clicked() ), ShowClickDialog, SLOT( show() ) );
@@ -43,4 +43,3 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 MainWindow::~MainWindow()
 {
 }
-

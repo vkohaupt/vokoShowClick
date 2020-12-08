@@ -4,7 +4,6 @@
 #include "ui_showclickDialog.h"
 #include "QvkCircleWidget.h"
 
-
 //#include "QvkSettings.h"
 
 #include <QDialog>
@@ -20,13 +19,11 @@ public:
 
 
 public slots:
-    void show();
     QColor getColor();
     void ok();
 
     
 private:
-    QDialog *newDialog;
     QvkCircleWidget *circleWidget;
 //    QvkSettings vkSettings;
 
@@ -36,8 +33,6 @@ private slots:
     void valueChangedOpacity( int value );
     void stateChangedRadiant( int );
     void Standard();
-    void cancel();
-//    void ok();
     void black();
     void white();
     void red();
@@ -64,7 +59,7 @@ signals:
 
     
 protected:
-   
+
 };
 
 #endif // QvkShowClickDialog_H
