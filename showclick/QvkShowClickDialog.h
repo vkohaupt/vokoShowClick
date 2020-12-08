@@ -22,6 +22,7 @@ public:
 public slots:
     void show();
     QColor getColor();
+    void ok();
 
     
 private:
@@ -36,7 +37,7 @@ private slots:
     void stateChangedRadiant( int );
     void Standard();
     void cancel();
-    void ok();
+//    void ok();
     void black();
     void white();
     void red();

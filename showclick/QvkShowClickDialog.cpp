@@ -47,7 +47,7 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     
     connect( myUiDialog.buttonBox, SIGNAL( accepted() ), this, SLOT( ok() ) );
     connect( myUiDialog.buttonBox, SIGNAL( rejected() ), this, SLOT( cancel() ) );
-    connect( myUiDialog.buttonBox->button( QDialogButtonBox::RestoreDefaults )   , SIGNAL( clicked() ), this, SLOT( Standard() ) );
+    connect( myUiDialog.buttonBox->button( QDialogButtonBox::RestoreDefaults ), SIGNAL( clicked() ), this, SLOT( Standard() ) );
     
     circleWidget = new QvkCircleWidget( myUiDialog.graphicsView );
     circleWidget->show();
@@ -105,7 +105,7 @@ void QvkShowClickDialog::ok()
    emit newShowtime( (double) myUiDialog.horizontalSliderShowtime->value()/10 );
    emit newOpacity( circleWidget->getOpacity() );
    emit newRadiant( circleWidget->getRadiant() );
-   newDialog->close();
+//   newDialog->close();
 }
 
 void QvkShowClickDialog::valueChangedSliderCircle( int value )
@@ -122,9 +122,13 @@ void QvkShowClickDialog::valueChangedOpacity( int value )
 void QvkShowClickDialog::stateChangedRadiant( int value )
 {
   if ( value == Qt::Unchecked )
+  {
     circleWidget->setRadiant( false );
+  }
   else
+  {
     circleWidget->setRadiant( true );
+  }
 }
 
 void QvkShowClickDialog::white()

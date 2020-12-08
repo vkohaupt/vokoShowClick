@@ -4,13 +4,21 @@
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 {
+/*  Standardard Werte
+    Circle=70
+    Color=@Variant(\0\0\0\x43\x1\xff\xff\xff\xff\0\0\0\0\0\0)
+    OnOff=0
+    Opacity=0.5
+    Radiant=false
+    Showtime=5
+*/
+
     QColor color   = Qt::red; //vkSettings.getShowClickColor();
-    int radiant    = 20; //vkSettings.getShowClickRadiant();
-    double opacity = 20; //vkSettings.getShowClickOpacity();
+    double opacity = 0.5; //vkSettings.getShowClickOpacity();
+    bool radiant   = false; //vkSettings.getShowClickRadiant();
 
     QvkShowClickDialog *ShowClickDialog = new QvkShowClickDialog( color, radiant, opacity );
     ShowClickDialog->show();
-    
 
 
 //    connect( myUi.pointerDialogPushButton, SIGNAL( clicked() ), ShowClickDialog, SLOT( show() ) );
@@ -22,11 +30,13 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 					    color );
     
 //    connect( myUi.pointerCheckBox, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
-     
+
     connect( ShowClickDialog, SIGNAL( newCircleWidgetValue( int, QColor ) ), animateControl, SLOT( setDiameterColor( int, QColor ) ) );
     connect( ShowClickDialog, SIGNAL( newShowtime( double ) ), animateControl, SLOT( setShowTime( double ) ) );
     connect( ShowClickDialog, SIGNAL( newOpacity( double ) ), animateControl, SLOT( setOpacity( double ) ) );
     connect( ShowClickDialog, SIGNAL( newRadiant( bool ) ), animateControl, SLOT( setRadiant( bool ) ) );
+
+    connect( ShowClickDialog->myUiDialog.checkBoxOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
 
 }
 
