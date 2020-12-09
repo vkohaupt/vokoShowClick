@@ -1,6 +1,4 @@
 #include "mainwindow.h"
-#include "QvkShowClickDialog.h"
-#include "QvkAnimateControl.h"
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 {
@@ -17,13 +15,13 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     double opacity = 0.5; //vkSettings.getShowClickOpacity();
     bool radiant   = false; //vkSettings.getShowClickRadiant();
 
-    QvkShowClickDialog *ShowClickDialog = new QvkShowClickDialog( color, radiant, opacity );
+    ShowClickDialog = new QvkShowClickDialog( color, radiant, opacity );
     ShowClickDialog->setVisible( true );
 
 
 //    connect( myUi.pointerDialogPushButton, SIGNAL( clicked() ), ShowClickDialog, SLOT( show() ) );
   
-    QvkAnimateControl *animateControl = new QvkAnimateControl( (double) ShowClickDialog->myUiDialog.horizontalSliderShowtime->value()/10,
+    animateControl = new QvkAnimateControl( (double) ShowClickDialog->myUiDialog.horizontalSliderShowtime->value()/10,
 					    ShowClickDialog->myUiDialog.horizontalSliderCircle->value(),
 					    ShowClickDialog->myUiDialog.checkBoxRadiant->checkState(),
 					    (double) ShowClickDialog->myUiDialog.horizontalSliderOpacity->value()/100,
@@ -35,11 +33,15 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     connect( ShowClickDialog, SIGNAL( newShowtime( double ) ), animateControl, SLOT( setShowTime( double ) ) );
     connect( ShowClickDialog, SIGNAL( newOpacity( double ) ), animateControl, SLOT( setOpacity( double ) ) );
     connect( ShowClickDialog, SIGNAL( newRadiant( bool ) ), animateControl, SLOT( setRadiant( bool ) ) );
-
     connect( ShowClickDialog->myUiDialog.checkBoxOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
-
+    connect( ShowClickDialog, SIGNAL( signal_close() ), this, SLOT( slot_ponterOnOff() ) );
 }
 
 MainWindow::~MainWindow()
 {
+}
+
+void MainWindow::slot_ponterOnOff()
+{
+    animateControl->pointerOnOff( false );
 }

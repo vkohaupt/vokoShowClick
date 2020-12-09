@@ -57,8 +57,10 @@ signals:
     void newOpacity( double value );
     void newRadiant( bool value);
 
+    void signal_close();
     
 protected:
+    void closeEvent( QCloseEvent *event );
 
 };
 

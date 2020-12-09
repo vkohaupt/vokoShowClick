@@ -72,6 +72,14 @@ QvkShowClickDialog::~QvkShowClickDialog()
 {
 }
 
+void QvkShowClickDialog::closeEvent( QCloseEvent *event )
+{
+    Q_UNUSED(event);
+    emit signal_close();
+}
+
+
+
 QColor QvkShowClickDialog::getColor()
 {
   return circleWidget->getColor();

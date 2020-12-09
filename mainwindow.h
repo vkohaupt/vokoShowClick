@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include "QvkShowClickDialog.h"
+#include "QvkAnimateControl.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,9 +20,12 @@ public:
 
 
 private slots:
+    void slot_ponterOnOff();
 
 
 private:
     Ui::MainWindow *ui;
+    QvkAnimateControl *animateControl;
+    QvkShowClickDialog *ShowClickDialog;
 };
 #endif // MAINWINDOW_H
