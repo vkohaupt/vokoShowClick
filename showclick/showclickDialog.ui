@@ -450,7 +450,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="QCheckBox" name="checkBoxOnOff">
+        <widget class="QCheckBox" name="checkBoxPointerOnOff">
          <property name="text">
           <string>ON/OFF</string>
          </property>

@@ -5,7 +5,7 @@
 
 class QvkGlobalMouse: public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:    
     QvkGlobalMouse();
     virtual ~QvkGlobalMouse();
@@ -15,24 +15,24 @@ public:
 
 
 public slots:
-  void setCursorOn();
-  void setCursorOff();
-  void mousePressed();
+    void setCursorOn();
+    void setCursorOff();
+    void mousePressed();
 
-  
+
 private:
-  bool onOff;
-  
-  
+    bool onOff;
+
+
 private slots:
-  
-  
+
+
 protected:
 
-  
+
 signals:
-  void mousePressed( int win_x, int win_y );
-  
+    void mousePressed( int win_x, int win_y );
+
 };
 
 #endif // QvkGlobalMouse_H

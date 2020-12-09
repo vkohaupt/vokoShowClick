@@ -20,7 +20,7 @@ public:
 
 
 private slots:
-    void slot_ponterOnOff();
+    void slot_pointerOnOff();
 
 
 private:

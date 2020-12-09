@@ -4,7 +4,7 @@
 
 QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opacity )
 {
-//    vkSettings.readAll();
+    //    vkSettings.readAll();
     
     myUiDialog.setupUi( this );
 
@@ -54,18 +54,18 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     circleWidget->setOpacity( opacity );
     
     connect( myUiDialog.horizontalSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( valueChangedSliderCircle( int ) ) );
-//    myUiDialog.horizontalSliderCircle->setSliderPosition( vkSettings.getShowClickCircle() );
+    //    myUiDialog.horizontalSliderCircle->setSliderPosition( vkSettings.getShowClickCircle() );
     
     connect( myUiDialog.checkBoxRadiant, SIGNAL( stateChanged( int ) ), this, SLOT( stateChangedRadiant( int ) ) );
     if ( radiant == true )
-      myUiDialog.checkBoxRadiant->setCheckState( Qt::Checked );
+        myUiDialog.checkBoxRadiant->setCheckState( Qt::Checked );
     else
-      myUiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
+        myUiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
 
     connect( myUiDialog.horizontalSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( valueChangedOpacity( int ) ) );
     myUiDialog.horizontalSliderOpacity->setSliderPosition( opacity*100 );
     
-//    myUiDialog.horizontalSliderShowtime->setValue( vkSettings.getShowClickTime() );
+    //    myUiDialog.horizontalSliderShowtime->setValue( vkSettings.getShowClickTime() );
 }
 
 QvkShowClickDialog::~QvkShowClickDialog()
@@ -82,143 +82,143 @@ void QvkShowClickDialog::closeEvent( QCloseEvent *event )
 
 QColor QvkShowClickDialog::getColor()
 {
-  return circleWidget->getColor();
+    return circleWidget->getColor();
 }
 
 void QvkShowClickDialog::Standard()
 {
-  myUiDialog.horizontalSliderShowtime->setValue( 5 );
-  myUiDialog.pushButton_red->click();
-  myUiDialog.horizontalSliderCircle->setValue( 70 );
-  myUiDialog.horizontalSliderOpacity->setValue( 50 );
-  myUiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
+    myUiDialog.horizontalSliderShowtime->setValue( 5 );
+    myUiDialog.pushButton_red->click();
+    myUiDialog.horizontalSliderCircle->setValue( 70 );
+    myUiDialog.horizontalSliderOpacity->setValue( 50 );
+    myUiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
 }
 
 void QvkShowClickDialog::ok()
 {
-   emit newCircleWidgetValue( circleWidget->getDiameter(), circleWidget->getColor() );
-   emit newShowtime( (double) myUiDialog.horizontalSliderShowtime->value()/10 );
-   emit newOpacity( circleWidget->getOpacity() );
-   emit newRadiant( circleWidget->getRadiant() );
-//   newDialog->close();
+    emit newCircleWidgetValue( circleWidget->getDiameter(), circleWidget->getColor() );
+    emit newShowtime( (double) myUiDialog.horizontalSliderShowtime->value()/10 );
+    emit newOpacity( circleWidget->getOpacity() );
+    emit newRadiant( circleWidget->getRadiant() );
+    //   newDialog->close();
 }
 
 void QvkShowClickDialog::valueChangedSliderCircle( int value )
 {
-  circleWidget->setDiameter( value );
+    circleWidget->setDiameter( value );
 }
 
 void QvkShowClickDialog::valueChangedOpacity( int value )
 {
-  double value_1 = value;
-  circleWidget->setOpacity( value_1 / 100 );
+    double value_1 = value;
+    circleWidget->setOpacity( value_1 / 100 );
 }
 
 void QvkShowClickDialog::stateChangedRadiant( int value )
 {
-  if ( value == Qt::Unchecked )
-  {
-    circleWidget->setRadiant( false );
-  }
-  else
-  {
-    circleWidget->setRadiant( true );
-  }
+    if ( value == Qt::Unchecked )
+    {
+        circleWidget->setRadiant( false );
+    }
+    else
+    {
+        circleWidget->setRadiant( true );
+    }
 }
 
 void QvkShowClickDialog::white()
 {
-  circleWidget->setColor( Qt::white );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::white );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::black()
 {
-  circleWidget->setColor( Qt::black );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::black );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::red()
 {
-  circleWidget->setColor( Qt::red );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::red );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkRed()
 {
-  circleWidget->setColor( Qt::darkRed );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::darkRed );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::green()
 {
-  circleWidget->setColor( Qt::green );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::green );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkGreen()
 {
-  circleWidget->setColor( Qt::darkGreen );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::darkGreen );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::blue()
 {
-  circleWidget->setColor( Qt::blue );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::blue );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkBlue()
 {
-  circleWidget->setColor( Qt::darkBlue );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::darkBlue );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::cyan()
 {
-  circleWidget->setColor( Qt::cyan );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::cyan );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkCyan()
 {
-  circleWidget->setColor( Qt::darkCyan );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::darkCyan );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::magenta()
 {
-  circleWidget->setColor( Qt::magenta );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::magenta );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkMagenta()
 {
-  circleWidget->setColor( Qt::darkMagenta );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::darkMagenta );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::yellow()
 {
-  circleWidget->setColor( Qt::yellow );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::yellow );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkYellow()
 {
-  circleWidget->setColor( Qt::darkYellow );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::darkYellow );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::gray()
 {
-  circleWidget->setColor( Qt::gray );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::gray );
+    myUiDialog.graphicsView->setFocus();
 }
 
 void QvkShowClickDialog::darkGray()
 {
-  circleWidget->setColor( Qt::darkGray );
-  myUiDialog.graphicsView->setFocus();
+    circleWidget->setColor( Qt::darkGray );
+    myUiDialog.graphicsView->setFocus();
 }
 

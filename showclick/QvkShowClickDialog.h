@@ -11,7 +11,7 @@
 class QvkShowClickDialog: public QDialog
 
 {
-Q_OBJECT
+    Q_OBJECT
 public:    
     QvkShowClickDialog( QColor color, bool radiant, double opacity );
     virtual ~QvkShowClickDialog();
@@ -25,7 +25,7 @@ public slots:
     
 private:
     QvkCircleWidget *circleWidget;
-//    QvkSettings vkSettings;
+    //    QvkSettings vkSettings;
 
     
 private slots:
