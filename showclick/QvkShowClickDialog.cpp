@@ -54,7 +54,6 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     circleWidget->setOpacity( opacity );
     
     connect( myUiDialog.horizontalSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( valueChangedSliderCircle( int ) ) );
-    //    myUiDialog.horizontalSliderCircle->setSliderPosition( vkSettings.getShowClickCircle() );
     
     connect( myUiDialog.checkBoxRadiant, SIGNAL( stateChanged( int ) ), this, SLOT( stateChangedRadiant( int ) ) );
     if ( radiant == true )
