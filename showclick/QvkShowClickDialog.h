@@ -19,8 +19,6 @@ public:
 
 
 public slots:
-    QColor getColor();
-    void ok();
 
     
 private:
@@ -29,6 +27,8 @@ private:
 
     
 private slots:
+    QColor getColor();
+    void ok();
     void valueChangedSliderCircle( int value );
     void valueChangedOpacity( int value );
     void stateChangedRadiant( int );

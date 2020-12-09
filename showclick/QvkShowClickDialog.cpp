@@ -65,7 +65,7 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     connect( myUiDialog.horizontalSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( valueChangedOpacity( int ) ) );
     myUiDialog.horizontalSliderOpacity->setSliderPosition( opacity*100 );
     
-    //    myUiDialog.horizontalSliderShowtime->setValue( vkSettings.getShowClickTime() );
+    connect( myUiDialog.horizontalSliderShowtime, SIGNAL( valueChanged( int ) ), this, SLOT( ok() ) );
 }
 
 QvkShowClickDialog::~QvkShowClickDialog()
