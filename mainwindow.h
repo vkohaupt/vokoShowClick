@@ -27,5 +27,11 @@ private:
     Ui::MainWindow *ui;
     QvkAnimateControl *animateControl;
     QvkShowClickDialog *ShowClickDialog;
+
+
+protected:
+
+
+
 };
 #endif // MAINWINDOW_H

@@ -49,6 +49,7 @@ private slots:
     void darkYellow();
     void gray();
     void darkGray();
+    void slot_afterWindowShown();
 
 
 signals:
@@ -61,6 +62,7 @@ signals:
     
 protected:
     void closeEvent( QCloseEvent *event );
+    void showEvent( QShowEvent *event );
 
 };
 

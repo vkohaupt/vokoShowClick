@@ -240,3 +240,19 @@ void QvkShowClickDialog::darkGray()
     ok();
 }
 
+
+
+// This is need, so that we can
+void QvkShowClickDialog::showEvent( QShowEvent *event )
+{
+    Q_UNUSED(event);
+    // Call slot "afterWindowShown" after the window has been shown
+    QMetaObject::invokeMethod( this, "slot_afterWindowShown", Qt::ConnectionType::QueuedConnection );
+}
+
+void QvkShowClickDialog::slot_afterWindowShown()
+{
+    // In the program vokoShowClick, the checkBox is hide and showclick started from the beginning.
+    myUiDialog.checkBoxPointerOnOff->click();
+}
+

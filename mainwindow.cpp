@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
                                             ShowClickDialog->myUiDialog.checkBoxRadiant->checkState(),
                                             (double) ShowClickDialog->myUiDialog.horizontalSliderOpacity->value()/100,
                                             color );
-    
+
     connect( ShowClickDialog, SIGNAL( newCircleWidgetValue( int, QColor ) ), animateControl, SLOT( setDiameterColor( int, QColor ) ) );
     connect( ShowClickDialog, SIGNAL( newShowtime( double ) ), animateControl, SLOT( setShowTime( double ) ) );
     connect( ShowClickDialog, SIGNAL( newOpacity( double ) ), animateControl, SLOT( setOpacity( double ) ) );
@@ -31,12 +31,18 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 
     connect( ShowClickDialog->myUiDialog.checkBoxPointerOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
     connect( ShowClickDialog, SIGNAL( signal_close() ), this, SLOT( slot_pointerOnOff() ) );
+
+    // In the programm vokoShowClick we want set the checkBox to hide.
+    // And we start showclick from start.
+    // See in class ShowClickDialog::showEvent and QvkShowClickDialog::slot_afterWindowShown()
+    ShowClickDialog->myUiDialog.checkBoxPointerOnOff->hide();
 }
 
 MainWindow::~MainWindow()
 {
 }
 
+// Before vokoShowClick is closed, showclick must be switched off.
 void MainWindow::slot_pointerOnOff()
 {
     animateControl->pointerOnOff( false );
