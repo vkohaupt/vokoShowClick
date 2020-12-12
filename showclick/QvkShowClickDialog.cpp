@@ -1,4 +1,5 @@
 #include "QvkShowClickDialog.h"
+#include "global.h"
 
 #include <QDebug>
 
@@ -7,6 +8,8 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     //    vkSettings.readAll();
     
     myUiDialog.setupUi( this );
+
+    setWindowTitle( global::name + " " + global::version );
 
     myUiDialog.frame_3->setStyleSheet("background-color:white;");
     myUiDialog.frame_3->resize(100, 100);
