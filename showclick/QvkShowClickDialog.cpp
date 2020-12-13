@@ -52,7 +52,7 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     connect( myUiDialog.buttonBox, SIGNAL( rejected() ), this, SLOT( cancel() ) );
     connect( myUiDialog.buttonBox->button( QDialogButtonBox::RestoreDefaults ), SIGNAL( clicked() ), this, SLOT( Standard() ) );
     
-    circleWidget = new QvkCircleWidget( myUiDialog.frame_3   ); //myUiDialog.graphicsView );
+    circleWidget = new QvkCircleWidget( myUiDialog.frame_3   );
     circleWidget->show();
     valueChangedSliderCircle( myUiDialog.horizontalSliderCircle->value() );
     circleWidget->setColor( color );
