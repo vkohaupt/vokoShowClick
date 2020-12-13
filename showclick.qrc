@@ -1,9 +1,15 @@
 <RCC>
     <qresource prefix="/">
+        <file>pictures/showclick/applications-graphics.png</file>
+        <file>pictures/showclick/help-about.png</file>
+        <file>pictures/showclick/windows.png</file>
+        <file>pictures/showclick/linux.png</file>
+        <file>pictures/showclick/undo.png</file>
         <file>pictures/showclick/cursor.png</file>
         <file>pictures/showclick/cursor.xcf</file>
         <file>pictures/showclick/radiant.png</file>
         <file>pictures/showclick/sandglass.png</file>
         <file>pictures/showclick/transparenz.png</file>
+        <file>pictures/showclick/author.png</file>
     </qresource>
 </RCC>

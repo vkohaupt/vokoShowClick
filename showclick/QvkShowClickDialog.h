@@ -7,6 +7,7 @@
 //#include "QvkSettings.h"
 
 #include <QDialog>
+#include <QTabWidget>
 
 class QvkShowClickDialog: public QDialog
 
@@ -24,6 +25,7 @@ public slots:
 private:
     QvkCircleWidget *circleWidget;
     //    QvkSettings vkSettings;
+    void vk_setCornerWidget( QTabWidget *tabWidget );
 
     
 private slots:

@@ -10,6 +10,7 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     myUiDialog.setupUi( this );
 
     setWindowTitle( global::name + " " + global::version );
+    vk_setCornerWidget( myUiDialog.tabWidget);
 
     myUiDialog.frame_3->setStyleSheet("background-color:white;");
     myUiDialog.frame_3->resize(100, 100);
@@ -262,3 +263,17 @@ void QvkShowClickDialog::slot_afterWindowShown()
     myUiDialog.checkBoxPointerOnOff->click();
 }
 
+void QvkShowClickDialog::vk_setCornerWidget( QTabWidget *tabWidget )
+{
+#ifdef Q_OS_LINUX
+    QPixmap pixmap( ":/pictures/showclick/linux.png" );
+#endif
+#ifdef Q_OS_WIN
+    QPixmap pixmap( ":/pictures/showclick/windows.png" );
+#endif
+    pixmap = pixmap.scaled( QSize( 48, 48 ), Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
+    QLabel *label = new QLabel();
+    label->setPixmap( pixmap );
+    label->setEnabled( false );
+    tabWidget->setCornerWidget( label, Qt::TopRightCorner);
+}
