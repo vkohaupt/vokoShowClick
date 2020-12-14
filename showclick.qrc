@@ -11,5 +11,8 @@
         <file>pictures/showclick/sandglass.png</file>
         <file>pictures/showclick/transparenz.png</file>
         <file>pictures/showclick/author.png</file>
+        <file>pictures/showclick/go-home.png</file>
+        <file>pictures/showclick/donate.png</file>
+        <file>pictures/showclick/sourcecode.png</file>
     </qresource>
 </RCC>
