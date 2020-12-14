@@ -14,5 +14,7 @@
         <file>pictures/showclick/go-home.png</file>
         <file>pictures/showclick/donate.png</file>
         <file>pictures/showclick/sourcecode.png</file>
+        <file>pictures/showclick/github.png</file>
+        <file>pictures/showclick/copyright.png</file>
     </qresource>
 </RCC>

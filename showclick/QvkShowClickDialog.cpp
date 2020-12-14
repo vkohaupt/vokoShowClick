@@ -18,9 +18,9 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     // Tab About
     QPixmap pixmap( ":/pictures/showclick/author.png" );
     myUiDialog.labelAutorPicture->setPixmap( pixmap );
-    myUiDialog.labelSourcecodeUrl->setText( "<a href='https://github.com/vkohaupt/vokoShowClick'>" + tr( "Sourcecode" ) + "</a>" );
-    myUiDialog.labelWebSiteUrl->setText( "<a href='https://linuxecke.volkoh.de/vokoscreen/vokoscreen.html'>" + tr( "Homepage" ) + "</a>" );
-    myUiDialog.labelDonateUrl->setText( "<a href='https://linuxecke.volkoh.de/vokoscreen/vokoscreen-donate.html'>" + tr( "Donate" ) + "</a>" );
+//    myUiDialog.labelSourcecodeUrl->setText( "<a href='https://github.com/vkohaupt/vokoShowClick'>" + tr( "Sourcecode" ) + "</a>" );
+//    myUiDialog.labelWebSiteUrl->setText( "<a href='https://linuxecke.volkoh.de/vokoscreen/vokoscreen.html'>" + tr( "Homepage" ) + "</a>" );
+//    myUiDialog.labelDonateUrl->setText( "<a href='https://linuxecke.volkoh.de/vokoscreen/vokoscreen-donate.html'>" + tr( "Donate" ) + "</a>" );
 
     myUiDialog.pushButton_white->setStyleSheet( "background-color: white;" );
     myUiDialog.pushButton_black->setStyleSheet( "background-color: black;" );
