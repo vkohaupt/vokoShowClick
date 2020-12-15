@@ -2,6 +2,8 @@
 #include "global.h"
 
 #include <QDebug>
+#include <QDesktopServices>
+#include <QUrl>
 
 QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opacity )
 {
@@ -11,6 +13,8 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
 
     setWindowTitle( global::name + " " + global::version );
     vk_setCornerWidget( myUiDialog.tabWidget);
+
+    connect( myUiDialog.toolButtonAuthor, SIGNAL( clicked() ), this, SLOT( slot_toolButtonAuthor() ) );
 
     myUiDialog.frame_3->setStyleSheet("background-color:white;");
     myUiDialog.frame_3->resize(100, 100);
@@ -84,7 +88,10 @@ void QvkShowClickDialog::closeEvent( QCloseEvent *event )
     emit signal_close();
 }
 
-
+void QvkShowClickDialog::slot_toolButtonAuthor()
+{
+    QDesktopServices::openUrl( QUrl( "https://linuxecke.volkoh.de/vokoscreen/vokoscreen-contact.html") );
+}
 
 QColor QvkShowClickDialog::getColor()
 {

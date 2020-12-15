@@ -53,6 +53,8 @@ private slots:
     void darkGray();
     void slot_afterWindowShown();
 
+    void slot_toolButtonAuthor();
+
 
 signals:
     void newCircleWidgetValue( int, QColor );

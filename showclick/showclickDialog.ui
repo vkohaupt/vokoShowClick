@@ -473,28 +473,6 @@
            </property>
           </spacer>
          </item>
-         <item row="2" column="2" colspan="2" alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="labelAutorPicture">
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>100</height>
-            </size>
-           </property>
-           <property name="text">
-            <string notr="true"/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../showclick.qrc">:/pictures/showclick/author.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="3">
           <widget class="QToolButton" name="toolButton_2">
            <property name="text">
@@ -548,7 +526,7 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
+         <item row="0" column="1" alignment="Qt::AlignHCenter">
           <widget class="QToolButton" name="toolButton_3">
            <property name="text">
             <string notr="true"/>
@@ -598,6 +576,26 @@
            </property>
            <property name="shortcut">
             <string notr="true"/>
+           </property>
+           <property name="autoRaise">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" colspan="2" alignment="Qt::AlignHCenter">
+          <widget class="QToolButton" name="toolButtonAuthor">
+           <property name="text">
+            <string notr="true"/>
+           </property>
+           <property name="icon">
+            <iconset resource="../showclick.qrc">
+             <normaloff>:/pictures/showclick/author.png</normaloff>:/pictures/showclick/author.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>128</width>
+             <height>128</height>
+            </size>
            </property>
            <property name="autoRaise">
             <bool>true</bool>
