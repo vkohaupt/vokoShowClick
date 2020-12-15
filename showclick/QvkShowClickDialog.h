@@ -54,6 +54,10 @@ private slots:
     void slot_afterWindowShown();
 
     void slot_toolButtonAuthor();
+    void slot_toolButtonSource();
+    void slot_toolButtonHomepage();
+    void slot_toolButtonDonate();
+
 
 
 signals:

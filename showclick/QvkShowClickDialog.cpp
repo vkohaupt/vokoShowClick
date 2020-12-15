@@ -14,7 +14,10 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     setWindowTitle( global::name + " " + global::version );
     vk_setCornerWidget( myUiDialog.tabWidget);
 
-    connect( myUiDialog.toolButtonAuthor, SIGNAL( clicked() ), this, SLOT( slot_toolButtonAuthor() ) );
+    connect( myUiDialog.toolButtonDonate,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonDonate() ) );
+    connect( myUiDialog.toolButtonHomepage, SIGNAL( clicked() ), this, SLOT( slot_toolButtonHomepage() ) );
+    connect( myUiDialog.toolButtonSource,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonSource() ) );
+    connect( myUiDialog.toolButtonAuthor,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonAuthor() ) );
 
     myUiDialog.frame_3->setStyleSheet("background-color:white;");
     myUiDialog.frame_3->resize(100, 100);
@@ -88,9 +91,24 @@ void QvkShowClickDialog::closeEvent( QCloseEvent *event )
     emit signal_close();
 }
 
+void QvkShowClickDialog::slot_toolButtonDonate()
+{
+    QDesktopServices::openUrl( QUrl( "https://linuxecke.volkoh.de/vokoscreen/vokoscreen-donate.html" ) );
+}
+
+void QvkShowClickDialog::slot_toolButtonHomepage()
+{
+    QDesktopServices::openUrl( QUrl( "https://linuxecke.volkoh.de/vokoscreen/vokoscreen.html" ) );
+}
+
+void QvkShowClickDialog::slot_toolButtonSource()
+{
+    QDesktopServices::openUrl( QUrl( "https://github.com/vkohaupt/vokoShowClick" ) );
+}
+
 void QvkShowClickDialog::slot_toolButtonAuthor()
 {
-    QDesktopServices::openUrl( QUrl( "https://linuxecke.volkoh.de/vokoscreen/vokoscreen-contact.html") );
+    QDesktopServices::openUrl( QUrl( "https://linuxecke.volkoh.de/vokoscreen/vokoscreen-contact.html" ) );
 }
 
 QColor QvkShowClickDialog::getColor()
