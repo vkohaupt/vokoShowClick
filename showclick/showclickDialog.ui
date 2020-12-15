@@ -560,7 +560,7 @@
           </spacer>
          </item>
          <item row="0" column="4">
-          <widget class="QToolButton" name="toolButton_4">
+          <widget class="QToolButton" name="toolButtonCopyright">
            <property name="text">
             <string notr="true"/>
            </property>

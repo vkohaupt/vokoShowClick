@@ -16,5 +16,6 @@
         <file>pictures/showclick/sourcecode.png</file>
         <file>pictures/showclick/github.png</file>
         <file>pictures/showclick/copyright.png</file>
+        <file>pictures/showclick/cursorAbout.png</file>
     </qresource>
 </RCC>

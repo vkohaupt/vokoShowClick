@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QCursor>
 
 QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opacity )
 {
@@ -13,6 +14,14 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
 
     setWindowTitle( global::name + " " + global::version );
     vk_setCornerWidget( myUiDialog.tabWidget);
+
+    QPixmap pixmap( ":/pictures/showclick/cursorAbout.png" );
+    QCursor cursor( pixmap );
+    myUiDialog.toolButtonDonate->setCursor( cursor );
+    myUiDialog.toolButtonHomepage->setCursor( cursor );
+    myUiDialog.toolButtonSource->setCursor( cursor );
+    myUiDialog.toolButtonCopyright->setCursor( cursor );
+    myUiDialog.toolButtonAuthor->setCursor( cursor );
 
     connect( myUiDialog.toolButtonDonate,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonDonate() ) );
     connect( myUiDialog.toolButtonHomepage, SIGNAL( clicked() ), this, SLOT( slot_toolButtonHomepage() ) );
