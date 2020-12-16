@@ -12,6 +12,8 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     
     myUiDialog.setupUi( this );
 
+    setIconForSideBar();
+
     setWindowTitle( global::name + " " + global::version );
     vk_setCornerWidget( myUiDialog.tabWidget);
 
@@ -98,6 +100,24 @@ void QvkShowClickDialog::closeEvent( QCloseEvent *event )
 {
     Q_UNUSED(event);
     emit signal_close();
+}
+
+void QvkShowClickDialog::setIconForSideBar()
+{
+    QStringList stringListIcon;
+    stringListIcon.append( ":/pictures/showclick/applications-graphics.png" );
+    stringListIcon.append( ":/pictures/showclick/help-about.png" );
+
+    for( int x = 0; x < stringListIcon.count(); x++ )
+    {
+        QPixmap workPixmap( stringListIcon.at( x ) );
+
+        QTransform transform;
+        transform.rotate( 90 );
+        workPixmap = workPixmap.transformed( transform, Qt::SmoothTransformation );
+
+        myUiDialog.tabWidget->setTabIcon( x, workPixmap );
+    }
 }
 
 void QvkShowClickDialog::slot_toolButtonDonate()

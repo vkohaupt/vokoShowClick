@@ -26,6 +26,7 @@ private:
     QvkCircleWidget *circleWidget;
     //    QvkSettings vkSettings;
     void vk_setCornerWidget( QTabWidget *tabWidget );
+    void setIconForSideBar();
 
     
 private slots:
