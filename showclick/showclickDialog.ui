@@ -168,27 +168,42 @@
           </layout>
          </item>
          <item>
-          <widget class="QFrame" name="frame_3">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>100</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_9"/>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QFrame" name="frame_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_9"/>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton_5">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -233,6 +248,17 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QToolButton" name="toolButton">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
+             </property>
+            </widget>
+           </item>
           </layout>
          </item>
          <item>
@@ -272,6 +298,17 @@
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton_2">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
              </property>
             </widget>
            </item>
@@ -337,6 +374,17 @@
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_3">
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../showclick.qrc">
+                 <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
+               </property>
+              </widget>
+             </item>
             </layout>
            </item>
           </layout>
@@ -381,6 +429,17 @@
               </size>
              </property>
             </spacer>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton_4">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
