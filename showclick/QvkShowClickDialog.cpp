@@ -67,9 +67,9 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     connect( myUiDialog.pushButton_gray, SIGNAL( clicked() ), this, SLOT( gray() ) );
     connect( myUiDialog.pushButton_darkGray, SIGNAL( clicked() ), this, SLOT( darkGray() ) );
     
-    connect( myUiDialog.buttonBox, SIGNAL( accepted() ), this, SLOT( ok() ) );
-    connect( myUiDialog.buttonBox, SIGNAL( rejected() ), this, SLOT( cancel() ) );
-    connect( myUiDialog.buttonBox->button( QDialogButtonBox::RestoreDefaults ), SIGNAL( clicked() ), this, SLOT( Standard() ) );
+//    connect( myUiDialog.buttonBox, SIGNAL( accepted() ), this, SLOT( ok() ) );
+//    connect( myUiDialog.buttonBox, SIGNAL( rejected() ), this, SLOT( cancel() ) );
+//    connect( myUiDialog.buttonBox->button( QDialogButtonBox::RestoreDefaults ), SIGNAL( clicked() ), this, SLOT( Standard() ) );
     
     circleWidget = new QvkCircleWidget( myUiDialog.frame_3   );
     circleWidget->show();
@@ -329,5 +329,6 @@ void QvkShowClickDialog::vk_setCornerWidget( QTabWidget *tabWidget )
     QLabel *label = new QLabel();
     label->setPixmap( pixmap );
     label->setEnabled( false );
-    tabWidget->setCornerWidget( label, Qt::TopRightCorner);
+//    tabWidget->setCornerWidget( label, Qt::TopRightCorner );
+    tabWidget->setCornerWidget( label, Qt::BottomRightCorner );
 }
