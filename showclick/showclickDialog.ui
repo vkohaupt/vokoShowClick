@@ -26,7 +26,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <property name="iconSize">
       <size>
@@ -648,7 +648,7 @@
           </spacer>
          </item>
          <item row="0" column="4">
-          <widget class="QToolButton" name="toolButtonCopyright">
+          <widget class="QToolButton" name="pushButtonLicense">
            <property name="text">
             <string notr="true"/>
            </property>

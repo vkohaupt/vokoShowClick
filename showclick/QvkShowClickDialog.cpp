@@ -1,5 +1,6 @@
 #include "QvkShowClickDialog.h"
 #include "global.h"
+#include "QvkLicenses.h"
 
 #include <QDebug>
 #include <QDesktopServices>
@@ -22,13 +23,16 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     myUiDialog.toolButtonDonate->setCursor( cursor );
     myUiDialog.toolButtonHomepage->setCursor( cursor );
     myUiDialog.toolButtonSource->setCursor( cursor );
-    myUiDialog.toolButtonCopyright->setCursor( cursor );
+    myUiDialog.pushButtonLicense->setCursor( cursor );
     myUiDialog.toolButtonAuthor->setCursor( cursor );
+
+    QvkLicenses *licenses = new QvkLicenses();
 
     connect( myUiDialog.toolButtonDonate,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonDonate() ) );
     connect( myUiDialog.toolButtonHomepage, SIGNAL( clicked() ), this, SLOT( slot_toolButtonHomepage() ) );
     connect( myUiDialog.toolButtonSource,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonSource() ) );
     connect( myUiDialog.toolButtonAuthor,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonAuthor() ) );
+    connect( myUiDialog.pushButtonLicense,  SIGNAL( clicked() ), licenses, SLOT( show() ) );
 
     myUiDialog.frame_3->setStyleSheet("background-color:white;");
     myUiDialog.frame_3->resize(100, 100);
