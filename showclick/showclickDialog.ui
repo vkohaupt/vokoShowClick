@@ -548,32 +548,19 @@
        </item>
        <item>
         <layout class="QGridLayout" name="gridLayout_7">
-         <item row="0" column="5">
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="3">
-          <widget class="QToolButton" name="toolButtonSource">
+         <item row="0" column="2" colspan="2">
+          <widget class="QToolButton" name="toolButtonAuthor">
            <property name="text">
-            <string>...</string>
+            <string notr="true"/>
            </property>
            <property name="icon">
             <iconset resource="../showclick.qrc">
-             <normaloff>:/pictures/showclick/github.png</normaloff>:/pictures/showclick/github.png</iconset>
+             <normaloff>:/pictures/showclick/author.png</normaloff>:/pictures/showclick/author.png</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>64</width>
-             <height>64</height>
+             <width>128</width>
+             <height>128</height>
             </size>
            </property>
            <property name="autoRaise">
@@ -581,7 +568,7 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="0">
+         <item row="2" column="0">
           <spacer name="horizontalSpacer_2">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -594,27 +581,7 @@
            </property>
           </spacer>
          </item>
-         <item row="0" column="2" alignment="Qt::AlignHCenter">
-          <widget class="QToolButton" name="toolButtonHomepage">
-           <property name="text">
-            <string notr="true"/>
-           </property>
-           <property name="icon">
-            <iconset resource="../showclick.qrc">
-             <normaloff>:/pictures/showclick/go-home.png</normaloff>:/pictures/showclick/go-home.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>64</width>
-             <height>64</height>
-            </size>
-           </property>
-           <property name="autoRaise">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1" alignment="Qt::AlignHCenter">
+         <item row="2" column="1" alignment="Qt::AlignHCenter">
           <widget class="QToolButton" name="toolButtonDonate">
            <property name="text">
             <string notr="true"/>
@@ -634,20 +601,7 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="2">
-          <spacer name="verticalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="4">
+         <item row="2" column="4">
           <widget class="QToolButton" name="toolButtonLicense">
            <property name="text">
             <string notr="true"/>
@@ -670,19 +624,65 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="2" colspan="2" alignment="Qt::AlignHCenter">
-          <widget class="QToolButton" name="toolButtonAuthor">
+         <item row="2" column="5">
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="3">
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="3">
+          <widget class="QToolButton" name="toolButtonSource">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../showclick.qrc">
+             <normaloff>:/pictures/showclick/github.png</normaloff>:/pictures/showclick/github.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>64</width>
+             <height>64</height>
+            </size>
+           </property>
+           <property name="autoRaise">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" alignment="Qt::AlignHCenter">
+          <widget class="QToolButton" name="toolButtonHomepage">
            <property name="text">
             <string notr="true"/>
            </property>
            <property name="icon">
             <iconset resource="../showclick.qrc">
-             <normaloff>:/pictures/showclick/author.png</normaloff>:/pictures/showclick/author.png</iconset>
+             <normaloff>:/pictures/showclick/go-home.png</normaloff>:/pictures/showclick/go-home.png</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>128</width>
-             <height>128</height>
+             <width>64</width>
+             <height>64</height>
             </size>
            </property>
            <property name="autoRaise">
