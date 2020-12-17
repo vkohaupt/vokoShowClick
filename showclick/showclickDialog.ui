@@ -648,7 +648,7 @@
           </spacer>
          </item>
          <item row="0" column="4">
-          <widget class="QToolButton" name="pushButtonLicense">
+          <widget class="QToolButton" name="toolButtonLicense">
            <property name="text">
             <string notr="true"/>
            </property>
