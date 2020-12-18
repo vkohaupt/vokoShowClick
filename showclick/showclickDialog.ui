@@ -26,7 +26,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <property name="iconSize">
       <size>
@@ -145,9 +145,9 @@
             </widget>
            </item>
            <item row="0" column="5" rowspan="4" alignment="Qt::AlignTop">
-            <widget class="QToolButton" name="toolButton_6">
+            <widget class="QToolButton" name="toolButtonBS">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="sizePolicy">
               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -160,14 +160,6 @@
                <width>0</width>
                <height>100</height>
               </size>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../showclick.qrc">
-               <normaloff>:/pictures/showclick/linux.png</normaloff>
-               <disabledoff>:/pictures/showclick/linux.png</disabledoff>:/pictures/showclick/linux.png</iconset>
              </property>
              <property name="iconSize">
               <size>

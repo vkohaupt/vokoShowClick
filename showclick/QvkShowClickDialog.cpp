@@ -16,7 +16,18 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     setIconForSideBar();
 
     setWindowTitle( global::name + " " + global::version );
-    vk_setCornerWidget( myUiDialog.tabWidget);
+
+#ifdef Q_OS_WIN
+    QIcon icon( ":/pictures/showclick/windows.png" );
+    icon = icon.pixmap( QSize( 80, 80 ) );
+    myUiDialog.toolButtonBS->setIcon( icon );
+#endif
+
+#ifdef Q_OS_LINUX
+    QIcon icon( ":/pictures/showclick/linux.png" );
+    icon = icon.pixmap( QSize( 80, 80 ) );
+    myUiDialog.toolButtonBS->setIcon( icon );
+#endif
 
     QPixmap pixmap( ":/pictures/showclick/cursorAbout.png" );
     QCursor cursor( pixmap );
@@ -319,20 +330,4 @@ void QvkShowClickDialog::slot_afterWindowShown()
 {
     // In the program vokoShowClick, the checkBox is hide and showclick started from the beginning.
     myUiDialog.checkBoxPointerOnOff->click();
-}
-
-void QvkShowClickDialog::vk_setCornerWidget( QTabWidget *tabWidget )
-{
-#ifdef Q_OS_LINUX
-    QPixmap pixmap( ":/pictures/showclick/linux.png" );
-#endif
-#ifdef Q_OS_WIN
-    QPixmap pixmap( ":/pictures/showclick/windows.png" );
-#endif
-    pixmap = pixmap.scaled( QSize( 48, 48 ), Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
-    QLabel *label = new QLabel();
-    label->setPixmap( pixmap );
-    label->setEnabled( false );
-//    tabWidget->setCornerWidget( label, Qt::TopRightCorner );
-    tabWidget->setCornerWidget( label, Qt::BottomRightCorner );
 }
