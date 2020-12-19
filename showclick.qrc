@@ -17,6 +17,8 @@
         <file>pictures/showclick/copyright.png</file>
         <file>pictures/showclick/cursorAbout.png</file>
         <file>pictures/showclick/information.png</file>
+        <file>pictures/showclick/person-green.png</file>
+        <file>pictures/showclick/farbeimer-gruen.png</file>
         
         <file>pictures/showclick/applications-graphics.license</file>
         <file>pictures/showclick/help-about.license</file>
@@ -34,6 +36,10 @@
         <file>pictures/showclick/github.license</file>
         <file>pictures/showclick/copyright.license</file>
         <file>pictures/showclick/cursorAbout.license</file>
+        <file>pictures/showclick/information.license</file>
+        <file>pictures/showclick/person-green.license</file>
+        <file>pictures/showclick/farbeimer-gruen.license</file>
+
         
     </qresource>
 </RCC>

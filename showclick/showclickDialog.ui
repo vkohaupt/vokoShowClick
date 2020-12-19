@@ -26,7 +26,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <property name="iconSize">
       <size>
@@ -37,7 +37,7 @@
      <widget class="QWidget" name="tab">
       <attribute name="icon">
        <iconset resource="../showclick.qrc">
-        <normaloff>:/pictures/showclick/applications-graphics.png</normaloff>:/pictures/showclick/applications-graphics.png</iconset>
+        <normaloff>:/pictures/showclick/farbeimer-rot.png</normaloff>:/pictures/showclick/farbeimer-rot.png</iconset>
       </attribute>
       <attribute name="title">
        <string notr="true"/>
@@ -527,7 +527,7 @@
      <widget class="QWidget" name="tab_2">
       <attribute name="icon">
        <iconset resource="../showclick.qrc">
-        <normaloff>:/pictures/showclick/help-about.png</normaloff>:/pictures/showclick/help-about.png</iconset>
+        <normaloff>:/pictures/showclick/person-green.png</normaloff>:/pictures/showclick/person-green.png</iconset>
       </attribute>
       <attribute name="title">
        <string notr="true"/>

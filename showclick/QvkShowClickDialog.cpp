@@ -120,8 +120,11 @@ void QvkShowClickDialog::closeEvent( QCloseEvent *event )
 void QvkShowClickDialog::setIconForSideBar()
 {
     QStringList stringListIcon;
-    stringListIcon.append( ":/pictures/showclick/applications-graphics.png" );
-    stringListIcon.append( ":/pictures/showclick/help-about.png" );
+    stringListIcon.append( ":/pictures/showclick/farbeimer-gruen.png" );
+    stringListIcon.append( ":/pictures/showclick/person-green.png" );
+
+//    QIcon icon = uiDialog.tabWidget->tabIcon( 0 );
+
 
     for( int x = 0; x < stringListIcon.count(); x++ )
     {
