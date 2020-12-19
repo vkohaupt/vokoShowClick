@@ -11,7 +11,7 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
 {
     //    vkSettings.readAll();
     
-    myUiDialog.setupUi( this );
+    uiDialog.setupUi( this );
 
     setIconForSideBar();
 
@@ -20,91 +20,93 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
 #ifdef Q_OS_WIN
     QIcon icon( ":/pictures/showclick/windows.png" );
     icon = icon.pixmap( QSize( 80, 80 ) );
-    myUiDialog.toolButtonBS->setIcon( icon );
+    uiDialog.toolButtonBS->setIcon( icon );
 #endif
 
 #ifdef Q_OS_LINUX
     QIcon icon( ":/pictures/showclick/linux.png" );
     icon = icon.pixmap( QSize( 80, 80 ) );
-    myUiDialog.toolButtonBS->setIcon( icon );
+    uiDialog.toolButtonBS->setIcon( icon );
 #endif
 
     QPixmap pixmap( ":/pictures/showclick/cursorAbout.png" );
     QCursor cursor( pixmap );
-    myUiDialog.toolButtonDonate->setCursor( cursor );
-    myUiDialog.toolButtonHomepage->setCursor( cursor );
-    myUiDialog.toolButtonSource->setCursor( cursor );
-    myUiDialog.toolButtonLicense->setCursor( cursor );
-    myUiDialog.toolButtonAuthor->setCursor( cursor );
+    uiDialog.toolButtonDonate->setCursor( cursor );
+    uiDialog.toolButtonHomepage->setCursor( cursor );
+    uiDialog.toolButtonSource->setCursor( cursor );
+    uiDialog.toolButtonLicense->setCursor( cursor );
+    uiDialog.toolButtonAuthor->setCursor( cursor );
 
     QvkLicenses *licenses = new QvkLicenses();
 
-    connect( myUiDialog.toolButtonDonate,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonDonate() ) );
-    connect( myUiDialog.toolButtonHomepage, SIGNAL( clicked() ), this, SLOT( slot_toolButtonHomepage() ) );
-    connect( myUiDialog.toolButtonSource,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonSource() ) );
-    connect( myUiDialog.toolButtonAuthor,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonAuthor() ) );
-    connect( myUiDialog.toolButtonLicense,  SIGNAL( clicked() ), licenses, SLOT( show() ) );
+    connect( uiDialog.toolButtonDonate,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonDonate() ) );
+    connect( uiDialog.toolButtonHomepage, SIGNAL( clicked() ), this, SLOT( slot_toolButtonHomepage() ) );
+    connect( uiDialog.toolButtonSource,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonSource() ) );
+    connect( uiDialog.toolButtonAuthor,   SIGNAL( clicked() ), this, SLOT( slot_toolButtonAuthor() ) );
+    connect( uiDialog.toolButtonLicense,  SIGNAL( clicked() ), licenses, SLOT( show() ) );
 
-    myUiDialog.frame_3->setStyleSheet("background-color:white;");
-    myUiDialog.frame_3->resize(100, 100);
+    uiDialog.frame_3->setStyleSheet("background-color:white;");
+    uiDialog.frame_3->resize(100, 100);
 
-    myUiDialog.pushButton_white->setStyleSheet( "background-color: white;" );
-    myUiDialog.pushButton_black->setStyleSheet( "background-color: black;" );
-    myUiDialog.pushButton_red->setStyleSheet( "background-color: red;" );
-    myUiDialog.pushButton_darkRed->setStyleSheet( "background-color: darkRed;" );
-    myUiDialog.pushButton_green->setStyleSheet( "background-color: green;" );
-    myUiDialog.pushButton_darkGreen->setStyleSheet( "background-color: darkGreen;" );
-    myUiDialog.pushButton_blue->setStyleSheet( "background-color: blue;" );
-    myUiDialog.pushButton_darkBlue->setStyleSheet( "background-color: darkBlue;" );
-    myUiDialog.pushButton_cyan->setStyleSheet( "background-color: cyan;" );
-    myUiDialog.pushButton_darkCyan->setStyleSheet( "background-color: darkCyan;" );
-    myUiDialog.pushButton_magenta->setStyleSheet( "background-color: magenta;" );
-    myUiDialog.pushButton_darkMagenta->setStyleSheet( "background-color: darkMagenta;" );
-    myUiDialog.pushButton_yellow->setStyleSheet( "background-color: yellow;" );
-    myUiDialog.pushButton_darkYellow->setStyleSheet( "background-color: darkkhaki;" );
-    myUiDialog.pushButton_gray->setStyleSheet( "background-color: gray;" );
-    myUiDialog.pushButton_darkGray->setStyleSheet( "background-color: darkGray;" );
+    uiDialog.pushButton_white->setStyleSheet( "background-color: white;" );
+    uiDialog.pushButton_black->setStyleSheet( "background-color: black;" );
+    uiDialog.pushButton_red->setStyleSheet( "background-color: red;" );
+    uiDialog.pushButton_darkRed->setStyleSheet( "background-color: darkRed;" );
+    uiDialog.pushButton_green->setStyleSheet( "background-color: green;" );
+    uiDialog.pushButton_darkGreen->setStyleSheet( "background-color: darkGreen;" );
+    uiDialog.pushButton_blue->setStyleSheet( "background-color: blue;" );
+    uiDialog.pushButton_darkBlue->setStyleSheet( "background-color: darkBlue;" );
+    uiDialog.pushButton_cyan->setStyleSheet( "background-color: cyan;" );
+    uiDialog.pushButton_darkCyan->setStyleSheet( "background-color: darkCyan;" );
+    uiDialog.pushButton_magenta->setStyleSheet( "background-color: magenta;" );
+    uiDialog.pushButton_darkMagenta->setStyleSheet( "background-color: darkMagenta;" );
+    uiDialog.pushButton_yellow->setStyleSheet( "background-color: yellow;" );
+    uiDialog.pushButton_darkYellow->setStyleSheet( "background-color: darkkhaki;" );
+    uiDialog.pushButton_gray->setStyleSheet( "background-color: gray;" );
+    uiDialog.pushButton_darkGray->setStyleSheet( "background-color: darkGray;" );
     
-    connect( myUiDialog.pushButton_white, SIGNAL( clicked() ), this, SLOT( white() ) );
-    connect( myUiDialog.pushButton_black, SIGNAL( clicked() ), this, SLOT( black() ) );
-    connect( myUiDialog.pushButton_red, SIGNAL( clicked() ), this, SLOT( red() ) );
-    connect( myUiDialog.pushButton_darkRed, SIGNAL( clicked() ), this, SLOT( darkRed() ) );
-    connect( myUiDialog.pushButton_green, SIGNAL( clicked() ), this, SLOT( green() ) );
-    connect( myUiDialog.pushButton_darkGreen, SIGNAL( clicked() ), this, SLOT( darkGreen() ) );
-    connect( myUiDialog.pushButton_blue, SIGNAL( clicked() ), this, SLOT( blue() ) );
-    connect( myUiDialog.pushButton_darkBlue, SIGNAL( clicked() ), this, SLOT( darkBlue() ) );
-    connect( myUiDialog.pushButton_cyan, SIGNAL( clicked() ), this, SLOT( cyan() ) );
-    connect( myUiDialog.pushButton_darkCyan, SIGNAL( clicked() ), this, SLOT( darkCyan() ) );
-    connect( myUiDialog.pushButton_magenta, SIGNAL( clicked() ), this, SLOT( magenta() ) );
-    connect( myUiDialog.pushButton_darkMagenta, SIGNAL( clicked() ), this, SLOT( darkMagenta() ) );
-    connect( myUiDialog.pushButton_yellow, SIGNAL( clicked() ), this, SLOT( yellow() ) );
-    connect( myUiDialog.pushButton_darkYellow, SIGNAL( clicked() ), this, SLOT( darkYellow() ) );
-    connect( myUiDialog.pushButton_gray, SIGNAL( clicked() ), this, SLOT( gray() ) );
-    connect( myUiDialog.pushButton_darkGray, SIGNAL( clicked() ), this, SLOT( darkGray() ) );
+    connect( uiDialog.pushButton_white, SIGNAL( clicked() ), this, SLOT( slot_white() ) );
+    connect( uiDialog.pushButton_black, SIGNAL( clicked() ), this, SLOT( slot_black() ) );
+    connect( uiDialog.pushButton_red, SIGNAL( clicked() ), this, SLOT( slot_red() ) );
+    connect( uiDialog.pushButton_darkRed, SIGNAL( clicked() ), this, SLOT( slot_darkRed() ) );
+    connect( uiDialog.pushButton_green, SIGNAL( clicked() ), this, SLOT( slot_green() ) );
+    connect( uiDialog.pushButton_darkGreen, SIGNAL( clicked() ), this, SLOT( slot_darkGreen() ) );
+    connect( uiDialog.pushButton_blue, SIGNAL( clicked() ), this, SLOT( slot_blue() ) );
+    connect( uiDialog.pushButton_darkBlue, SIGNAL( clicked() ), this, SLOT( slot_darkBlue() ) );
+    connect( uiDialog.pushButton_cyan, SIGNAL( clicked() ), this, SLOT( slot_cyan() ) );
+    connect( uiDialog.pushButton_darkCyan, SIGNAL( clicked() ), this, SLOT( slot_darkCyan() ) );
+    connect( uiDialog.pushButton_magenta, SIGNAL( clicked() ), this, SLOT( slot_magenta() ) );
+    connect( uiDialog.pushButton_darkMagenta, SIGNAL( clicked() ), this, SLOT( slot_darkMagenta() ) );
+    connect( uiDialog.pushButton_yellow, SIGNAL( clicked() ), this, SLOT( slot_yellow() ) );
+    connect( uiDialog.pushButton_darkYellow, SIGNAL( clicked() ), this, SLOT( slot_darkYellow() ) );
+    connect( uiDialog.pushButton_gray, SIGNAL( clicked() ), this, SLOT( slot_gray() ) );
+    connect( uiDialog.pushButton_darkGray, SIGNAL( clicked() ), this, SLOT( slot_darkGray() ) );
+
+    connect( uiDialog.toolButtonColorDefault, SIGNAL( clicked() ), this, SLOT( slot_toolButtonColorDefault() ) );
+    connect( uiDialog.toolButtonSliderCircleDefault, SIGNAL( clicked() ), this, SLOT( slot_SliderCircleDefault() ) );
+    connect( uiDialog.toolButtonSliderOpacityDefault, SIGNAL( clicked() ), this, SLOT(slot_SliderOpacityDefault() ) );
+    connect( uiDialog.toolButtonShowTimeDefault, SIGNAL( clicked() ), this, SLOT(slot_SlidershowTimeDefault() ) );
+    connect( uiDialog.toolButtonRadiantDefault, SIGNAL( clicked() ), this, SLOT( slot_checkBoxRadiantDefault() ) );
     
-//    connect( myUiDialog.buttonBox, SIGNAL( accepted() ), this, SLOT( ok() ) );
-//    connect( myUiDialog.buttonBox, SIGNAL( rejected() ), this, SLOT( cancel() ) );
-//    connect( myUiDialog.buttonBox->button( QDialogButtonBox::RestoreDefaults ), SIGNAL( clicked() ), this, SLOT( Standard() ) );
-    
-    circleWidget = new QvkCircleWidget( myUiDialog.frame_3   );
+    circleWidget = new QvkCircleWidget( uiDialog.frame_3   );
     circleWidget->show();
-    valueChangedSliderCircle( myUiDialog.horizontalSliderCircle->value() );
+    slot_valueChangedSliderCircle( uiDialog.horizontalSliderCircle->value() );
     circleWidget->setColor( color );
     circleWidget->setRadiant( radiant );
     circleWidget->setOpacity( opacity );
     
-    connect( myUiDialog.horizontalSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( valueChangedSliderCircle( int ) ) );
+    connect( uiDialog.horizontalSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedSliderCircle( int ) ) );
     
-    connect( myUiDialog.checkBoxRadiant, SIGNAL( stateChanged( int ) ), this, SLOT( stateChangedRadiant( int ) ) );
+    connect( uiDialog.checkBoxRadiant, SIGNAL( stateChanged( int ) ), this, SLOT( slot_stateChangedRadiant( int ) ) );
     if ( radiant == true )
-        myUiDialog.checkBoxRadiant->setCheckState( Qt::Checked );
+        uiDialog.checkBoxRadiant->setCheckState( Qt::Checked );
     else
-        myUiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
+        uiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
 
-    connect( myUiDialog.horizontalSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( valueChangedOpacity( int ) ) );
-    myUiDialog.horizontalSliderOpacity->setSliderPosition( opacity*100 );
+    connect( uiDialog.horizontalSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedOpacity( int ) ) );
+    uiDialog.horizontalSliderOpacity->setSliderPosition( opacity*100 );
     
-    connect( myUiDialog.horizontalSliderShowtime, SIGNAL( valueChanged( int ) ), this, SLOT( ok() ) );
+    connect( uiDialog.horizontalSliderShowtime, SIGNAL( valueChanged( int ) ), this, SLOT( ok() ) );
 }
 
 QvkShowClickDialog::~QvkShowClickDialog()
@@ -131,7 +133,7 @@ void QvkShowClickDialog::setIconForSideBar()
         transform.rotate( 90 );
         workPixmap = workPixmap.transformed( transform, Qt::SmoothTransformation );
 
-        myUiDialog.tabWidget->setTabIcon( x, workPixmap );
+        uiDialog.tabWidget->setTabIcon( x, workPixmap );
     }
 }
 
@@ -160,37 +162,54 @@ QColor QvkShowClickDialog::getColor()
     return circleWidget->getColor();
 }
 
-void QvkShowClickDialog::Standard()
+void QvkShowClickDialog::slot_toolButtonColorDefault()
 {
-    myUiDialog.horizontalSliderShowtime->setValue( 5 );
-    myUiDialog.pushButton_red->click();
-    myUiDialog.horizontalSliderCircle->setValue( 50 );
-    myUiDialog.horizontalSliderOpacity->setValue( 50 );
-    myUiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
+    uiDialog.pushButton_red->click();
 }
+
+void QvkShowClickDialog::slot_SliderCircleDefault()
+{
+    uiDialog.horizontalSliderCircle->setValue( 50 );
+}
+
+void QvkShowClickDialog::slot_SliderOpacityDefault()
+{
+    uiDialog.horizontalSliderOpacity->setValue( 50 );
+}
+
+void QvkShowClickDialog::slot_SlidershowTimeDefault()
+{
+    uiDialog.horizontalSliderShowtime->setValue( 5 );
+}
+
+void QvkShowClickDialog::slot_checkBoxRadiantDefault()
+{
+    uiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
+}
+
 
 void QvkShowClickDialog::ok()
 {
     emit newCircleWidgetValue( circleWidget->getDiameter(), circleWidget->getColor() );
-    emit newShowtime( (double) myUiDialog.horizontalSliderShowtime->value()/10 );
+    emit newShowtime( (double) uiDialog.horizontalSliderShowtime->value()/10 );
     emit newOpacity( circleWidget->getOpacity() );
     emit newRadiant( circleWidget->getRadiant() );
 }
 
-void QvkShowClickDialog::valueChangedSliderCircle( int value )
+void QvkShowClickDialog::slot_valueChangedSliderCircle( int value )
 {
     circleWidget->setDiameter( value );
     ok();
 }
 
-void QvkShowClickDialog::valueChangedOpacity( int value )
+void QvkShowClickDialog::slot_valueChangedOpacity( int value )
 {
     double value_1 = value;
     circleWidget->setOpacity( value_1 / 100 );
     ok();
 }
 
-void QvkShowClickDialog::stateChangedRadiant( int value )
+void QvkShowClickDialog::slot_stateChangedRadiant( int value )
 {
     if ( value == Qt::Unchecked )
     {
@@ -204,116 +223,115 @@ void QvkShowClickDialog::stateChangedRadiant( int value )
     }
 }
 
-void QvkShowClickDialog::white()
+void QvkShowClickDialog::slot_white()
 {
     circleWidget->setColor( Qt::white );
-    myUiDialog.frame_3->setFocus();
-
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::black()
+void QvkShowClickDialog::slot_black()
 {
     circleWidget->setColor( Qt::black );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::red()
+void QvkShowClickDialog::slot_red()
 {
     circleWidget->setColor( Qt::red );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::darkRed()
+void QvkShowClickDialog::slot_darkRed()
 {
     circleWidget->setColor( Qt::darkRed );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::green()
+void QvkShowClickDialog::slot_green()
 {
     circleWidget->setColor( Qt::green );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::darkGreen()
+void QvkShowClickDialog::slot_darkGreen()
 {
     circleWidget->setColor( Qt::darkGreen );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::blue()
+void QvkShowClickDialog::slot_blue()
 {
     circleWidget->setColor( Qt::blue );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::darkBlue()
+void QvkShowClickDialog::slot_darkBlue()
 {
     circleWidget->setColor( Qt::darkBlue );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::cyan()
+void QvkShowClickDialog::slot_cyan()
 {
     circleWidget->setColor( Qt::cyan );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::darkCyan()
+void QvkShowClickDialog::slot_darkCyan()
 {
     circleWidget->setColor( Qt::darkCyan );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::magenta()
+void QvkShowClickDialog::slot_magenta()
 {
     circleWidget->setColor( Qt::magenta );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::darkMagenta()
+void QvkShowClickDialog::slot_darkMagenta()
 {
     circleWidget->setColor( Qt::darkMagenta );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::yellow()
+void QvkShowClickDialog::slot_yellow()
 {
     circleWidget->setColor( Qt::yellow );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::darkYellow()
+void QvkShowClickDialog::slot_darkYellow()
 {
     circleWidget->setColor( Qt::darkYellow );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::gray()
+void QvkShowClickDialog::slot_gray()
 {
     circleWidget->setColor( Qt::gray );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
-void QvkShowClickDialog::darkGray()
+void QvkShowClickDialog::slot_darkGray()
 {
     circleWidget->setColor( Qt::darkGray );
-    myUiDialog.frame_3->setFocus();
+    uiDialog.frame_3->setFocus();
     ok();
 }
 
@@ -329,5 +347,5 @@ void QvkShowClickDialog::showEvent( QShowEvent *event )
 void QvkShowClickDialog::slot_afterWindowShown()
 {
     // In the program vokoShowClick, the checkBox is hide and showclick started from the beginning.
-    myUiDialog.checkBoxPointerOnOff->click();
+    uiDialog.checkBoxPointerOnOff->click();
 }

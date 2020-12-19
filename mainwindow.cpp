@@ -2,7 +2,7 @@
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 {
-    /*  Standardard Werte
+/*  Standardard Werte
     Circle=70
     Color=@Variant(\0\0\0\x43\x1\xff\xff\xff\xff\0\0\0\0\0\0)
     OnOff=0
@@ -18,10 +18,10 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     ShowClickDialog = new QvkShowClickDialog( color, radiant, opacity );
     ShowClickDialog->setVisible( true );
 
-    animateControl = new QvkAnimateControl( (double) ShowClickDialog->myUiDialog.horizontalSliderShowtime->value()/10,
-                                            ShowClickDialog->myUiDialog.horizontalSliderCircle->value(),
-                                            ShowClickDialog->myUiDialog.checkBoxRadiant->checkState(),
-                                            (double) ShowClickDialog->myUiDialog.horizontalSliderOpacity->value()/100,
+    animateControl = new QvkAnimateControl( (double) ShowClickDialog->uiDialog.horizontalSliderShowtime->value()/10,
+                                            ShowClickDialog->uiDialog.horizontalSliderCircle->value(),
+                                            ShowClickDialog->uiDialog.checkBoxRadiant->checkState(),
+                                            (double) ShowClickDialog->uiDialog.horizontalSliderOpacity->value()/100,
                                             color );
 
     connect( ShowClickDialog, SIGNAL( newCircleWidgetValue( int, QColor ) ), animateControl, SLOT( setDiameterColor( int, QColor ) ) );
@@ -29,13 +29,13 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     connect( ShowClickDialog, SIGNAL( newOpacity( double ) ), animateControl, SLOT( setOpacity( double ) ) );
     connect( ShowClickDialog, SIGNAL( newRadiant( bool ) ), animateControl, SLOT( setRadiant( bool ) ) );
 
-    connect( ShowClickDialog->myUiDialog.checkBoxPointerOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
+    connect( ShowClickDialog->uiDialog.checkBoxPointerOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
     connect( ShowClickDialog, SIGNAL( signal_close() ), this, SLOT( slot_pointerOnOff() ) );
 
     // In the programm vokoShowClick we want set the checkBox to hide.
     // And we start showclick from start.
     // See in class ShowClickDialog::showEvent and QvkShowClickDialog::slot_afterWindowShown()
-    ShowClickDialog->myUiDialog.checkBoxPointerOnOff->hide();
+    ShowClickDialog->uiDialog.checkBoxPointerOnOff->hide();
 }
 
 MainWindow::~MainWindow()

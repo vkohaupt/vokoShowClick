@@ -16,7 +16,7 @@ class QvkShowClickDialog: public QDialog
 public:    
     QvkShowClickDialog( QColor color, bool radiant, double opacity );
     virtual ~QvkShowClickDialog();
-    Ui_Dialog myUiDialog;
+    Ui_Dialog uiDialog;
 
 
 public slots:
@@ -26,31 +26,30 @@ private:
     QvkCircleWidget *circleWidget;
     //    QvkSettings vkSettings;
     void setIconForSideBar();
+    QColor getColor();
+    void ok();
 
     
 private slots:
-    QColor getColor();
-    void ok();
-    void valueChangedSliderCircle( int value );
-    void valueChangedOpacity( int value );
-    void stateChangedRadiant( int );
-    void Standard();
-    void black();
-    void white();
-    void red();
-    void darkRed();
-    void green();
-    void darkGreen();
-    void blue();
-    void darkBlue();
-    void cyan();
-    void darkCyan();
-    void magenta();
-    void darkMagenta();
-    void yellow();
-    void darkYellow();
-    void gray();
-    void darkGray();
+    void slot_valueChangedSliderCircle( int value );
+    void slot_valueChangedOpacity( int value );
+    void slot_stateChangedRadiant( int );
+    void slot_black();
+    void slot_white();
+    void slot_red();
+    void slot_darkRed();
+    void slot_green();
+    void slot_darkGreen();
+    void slot_blue();
+    void slot_darkBlue();
+    void slot_cyan();
+    void slot_darkCyan();
+    void slot_magenta();
+    void slot_darkMagenta();
+    void slot_yellow();
+    void slot_darkYellow();
+    void slot_gray();
+    void slot_darkGray();
     void slot_afterWindowShown();
 
     void slot_toolButtonAuthor();
@@ -58,6 +57,11 @@ private slots:
     void slot_toolButtonHomepage();
     void slot_toolButtonDonate();
 
+    void slot_toolButtonColorDefault();
+    void slot_SliderCircleDefault();
+    void slot_SliderOpacityDefault();
+    void slot_SlidershowTimeDefault();
+    void slot_checkBoxRadiantDefault();
 
 
 signals:
@@ -65,7 +69,6 @@ signals:
     void newShowtime( double value );
     void newOpacity( double value );
     void newRadiant( bool value);
-
     void signal_close();
     
 protected:
