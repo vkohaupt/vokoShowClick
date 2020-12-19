@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
+    <width>606</width>
     <height>520</height>
    </rect>
   </property>
@@ -50,18 +50,8 @@
          </property>
          <item>
           <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="1">
-            <widget class="QPushButton" name="pushButton_black">
-             <property name="autoFillBackground">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QPushButton" name="pushButton_red">
+           <item row="3" column="2">
+            <widget class="QPushButton" name="pushButton_gray">
              <property name="text">
               <string/>
              </property>
@@ -74,17 +64,14 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="5" rowspan="4">
-            <widget class="Line" name="line_2">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="2">
-            <widget class="QPushButton" name="pushButton_gray">
+           <item row="3" column="6">
+            <widget class="QToolButton" name="help_showclick_color">
              <property name="text">
-              <string/>
+              <string notr="true">Help</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/information.png</normaloff>:/pictures/showclick/information.png</iconset>
              </property>
             </widget>
            </item>
@@ -95,112 +82,7 @@
              </property>
             </widget>
            </item>
-           <item row="2" column="3">
-            <widget class="QPushButton" name="pushButton_darkYellow">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QPushButton" name="pushButton_darkRed">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3">
-            <widget class="QPushButton" name="pushButton_darkMagenta">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QPushButton" name="pushButton_green">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QPushButton" name="pushButton_magenta">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="6" rowspan="3">
-            <widget class="QToolButton" name="toolButtonBS">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>80</height>
-              </size>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>80</width>
-               <height>80</height>
-              </size>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QPushButton" name="pushButton_darkGreen">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QPushButton" name="pushButton_blue">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QPushButton" name="pushButton_darkBlue">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QPushButton" name="pushButton_darkCyan">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="3">
-            <widget class="QPushButton" name="pushButton_darkGray">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QPushButton" name="pushButton_cyan">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="6" alignment="Qt::AlignRight">
+           <item row="3" column="5">
             <widget class="QToolButton" name="toolButtonColorDefault">
              <property name="text">
               <string>...</string>
@@ -218,45 +100,126 @@
              </property>
             </widget>
            </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="gridLayout_3">
            <item row="3" column="1">
-            <widget class="QSlider" name="horizontalSliderShowtime">
-             <property name="minimum">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <number>20</number>
-             </property>
-             <property name="value">
-              <number>5</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+            <widget class="QPushButton" name="pushButton_darkBlue">
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
-           <item row="2" column="0" alignment="Qt::AlignHCenter">
-            <widget class="QLabel" name="label_7">
-             <property name="maximumSize">
-              <size>
-               <width>34</width>
-               <height>13</height>
-              </size>
+           <item row="3" column="3">
+            <widget class="QPushButton" name="pushButton_darkGray">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="pushButton_black">
+             <property name="autoFillBackground">
+              <bool>false</bool>
              </property>
              <property name="text">
               <string/>
              </property>
-             <property name="pixmap">
-              <pixmap resource="../showclick.qrc">:/pictures/showclick/transparenz.png</pixmap>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QPushButton" name="pushButton_darkCyan">
+             <property name="text">
+              <string/>
              </property>
-             <property name="scaledContents">
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QPushButton" name="pushButton_darkYellow">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="pushButton_red">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="pushButton_magenta">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5" rowspan="3" colspan="2" alignment="Qt::AlignRight|Qt::AlignTop">
+            <widget class="QToolButton" name="toolButtonBS">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>56</width>
+               <height>56</height>
+              </size>
+             </property>
+             <property name="autoRaise">
               <bool>true</bool>
              </property>
             </widget>
            </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="pushButton_darkMagenta">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="pushButton_green">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="pushButton_darkGreen">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="pushButton_darkRed">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="pushButton_blue">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="pushButton_cyan">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_3">
            <item row="3" column="0" alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_4">
              <property name="minimumSize">
@@ -291,6 +254,103 @@
              </property>
             </widget>
            </item>
+           <item row="2" column="3">
+            <widget class="QToolButton" name="help_showclick_opacity">
+             <property name="text">
+              <string notr="true">Help</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/information.png</normaloff>:/pictures/showclick/information.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_6">
+             <property name="maximumSize">
+              <size>
+               <width>34</width>
+               <height>13</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../showclick.qrc">:/pictures/showclick/cursor.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QToolButton" name="toolButtonRadiantDefault">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QToolButton" name="help_showclick_time">
+             <property name="text">
+              <string notr="true">Help</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/information.png</normaloff>:/pictures/showclick/information.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QToolButton" name="help_showclick_circle">
+             <property name="text">
+              <string notr="true">Help</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/information.png</normaloff>:/pictures/showclick/information.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QCheckBox" name="checkBoxRadiant">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QToolButton" name="toolButtonShowTimeDefault">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSlider" name="horizontalSliderShowtime">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>20</number>
+             </property>
+             <property name="value">
+              <number>5</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
            <item row="2" column="2">
             <widget class="QToolButton" name="toolButtonSliderOpacityDefault">
              <property name="text">
@@ -302,15 +362,27 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="2">
-            <widget class="QToolButton" name="toolButtonSliderCircleDefault">
-             <property name="text">
-              <string>...</string>
+           <item row="0" column="0" colspan="2">
+            <widget class="QFrame" name="frame_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
-             <property name="icon">
-              <iconset resource="../showclick.qrc">
-               <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
              </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_9"/>
             </widget>
            </item>
            <item row="4" column="0" alignment="Qt::AlignHCenter">
@@ -332,8 +404,27 @@
              </property>
             </widget>
            </item>
-           <item row="3" column="2">
-            <widget class="QToolButton" name="toolButtonShowTimeDefault">
+           <item row="2" column="0" alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_7">
+             <property name="maximumSize">
+              <size>
+               <width>34</width>
+               <height>13</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../showclick.qrc">:/pictures/showclick/transparenz.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QToolButton" name="toolButtonSliderCircleDefault">
              <property name="text">
               <string>...</string>
              </property>
@@ -362,21 +453,14 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="1">
-            <widget class="QCheckBox" name="checkBoxRadiant">
+           <item row="4" column="3">
+            <widget class="QToolButton" name="help_showclick_radiant">
              <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="2">
-            <widget class="QToolButton" name="toolButtonRadiantDefault">
-             <property name="text">
-              <string>...</string>
+              <string notr="true">Help</string>
              </property>
              <property name="icon">
               <iconset resource="../showclick.qrc">
-               <normaloff>:/pictures/showclick/undo.png</normaloff>:/pictures/showclick/undo.png</iconset>
+               <normaloff>:/pictures/showclick/information.png</normaloff>:/pictures/showclick/information.png</iconset>
              </property>
             </widget>
            </item>
@@ -396,46 +480,15 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="0" alignment="Qt::AlignHCenter">
-            <widget class="QLabel" name="label_6">
-             <property name="maximumSize">
-              <size>
-               <width>34</width>
-               <height>13</height>
-              </size>
-             </property>
+           <item row="0" column="3" alignment="Qt::AlignVCenter">
+            <widget class="QToolButton" name="help_showclick_preview">
              <property name="text">
-              <string/>
+              <string notr="true">Help</string>
              </property>
-             <property name="pixmap">
-              <pixmap resource="../showclick.qrc">:/pictures/showclick/cursor.png</pixmap>
+             <property name="icon">
+              <iconset resource="../showclick.qrc">
+               <normaloff>:/pictures/showclick/information.png</normaloff>:/pictures/showclick/information.png</iconset>
              </property>
-             <property name="scaledContents">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0" colspan="2">
-            <widget class="QFrame" name="frame_3">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>100</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_9"/>
             </widget>
            </item>
           </layout>
@@ -651,6 +704,9 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxOnlineHelp"/>
        </item>
        <item>
         <spacer name="verticalSpacer_6">

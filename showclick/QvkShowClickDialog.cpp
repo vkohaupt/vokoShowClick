@@ -19,13 +19,11 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
 
 #ifdef Q_OS_WIN
     QIcon icon( ":/pictures/showclick/windows.png" );
-    icon = icon.pixmap( QSize( 80, 80 ) );
     uiDialog.toolButtonBS->setIcon( icon );
 #endif
 
 #ifdef Q_OS_LINUX
     QIcon icon( ":/pictures/showclick/linux.png" );
-    icon = icon.pixmap( QSize( 80, 80 ) );
     uiDialog.toolButtonBS->setIcon( icon );
 #endif
 
