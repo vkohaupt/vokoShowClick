@@ -119,21 +119,13 @@ void QvkShowClickDialog::closeEvent( QCloseEvent *event )
 
 void QvkShowClickDialog::setIconForSideBar()
 {
-    QStringList stringListIcon;
-    stringListIcon.append( ":/pictures/showclick/farbeimer-gruen.png" );
-    stringListIcon.append( ":/pictures/showclick/person-green.png" );
-
-//    QIcon icon = uiDialog.tabWidget->tabIcon( 0 );
-
-
-    for( int x = 0; x < stringListIcon.count(); x++ )
+    for ( int x = 0; x < uiDialog.tabWidget->count(); x++ )
     {
-        QPixmap workPixmap( stringListIcon.at( x ) );
-
+        QIcon icon = uiDialog.tabWidget->tabIcon( x );
+        QPixmap workPixmap = icon.pixmap( uiDialog.tabWidget->iconSize() );
         QTransform transform;
         transform.rotate( 90 );
         workPixmap = workPixmap.transformed( transform, Qt::SmoothTransformation );
-
         uiDialog.tabWidget->setTabIcon( x, workPixmap );
     }
 }
