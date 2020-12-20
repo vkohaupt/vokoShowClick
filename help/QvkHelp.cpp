@@ -1,6 +1,6 @@
-/* vokoscreenNG - A desktop recorder
- * Copyright (C) 2017-2019 Volker Kohaupt
- * 
+/* vokoShowClick
+ * Copyright (C) 2017-2021 Volker Kohaupt
+ *
  * Author:
  *      Volker Kohaupt <vkohaupt@freenet.de>
  *

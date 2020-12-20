@@ -1,6 +1,6 @@
-/* vokoShowClick - A desktop recorder
+/* vokoShowClick
  * Copyright (C) 2017-2021 Volker Kohaupt
- * 
+ *
  * Author:
  *      Volker Kohaupt <vkohaupt@freenet.de>
  *
