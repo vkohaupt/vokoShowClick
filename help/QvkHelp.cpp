@@ -76,13 +76,11 @@ QvkHelp::QvkHelp(QMainWindow *mainWindow, Ui_Dialog *ui_mainwindow ) : uiHelp(ne
     vkDownloadHTML = new QvkDownloader( temporaryDirLocal.path() );
     vkDownloadFiles = new QvkDownloader( temporaryDirLocal.path() );
 
-    QIcon iconHelp( ":/pictures/help/information.png" );
     QList<QToolButton *> listToolButton = ui->tabWidget->findChildren<QToolButton *>();
     for ( int i = 0; i < listToolButton.count(); i++ )
     {
         if ( listToolButton.at(i)->objectName().contains( QRegExp( "^help_") ) )
         {
-            listToolButton.at(i)->setIcon( iconHelp );
             listToolButton.at(i)->installEventFilter( this );
         }
     }
