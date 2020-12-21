@@ -44,10 +44,8 @@
  * See also QvkHelp::eventFilter(QObject *object, QEvent *event)
  */
 
-QvkHelp::QvkHelp(QMainWindow *mainWindow, Ui_Dialog *ui_mainwindow ) : uiHelp(new(Ui::help))
+QvkHelp::QvkHelp( Ui_Dialog ui_mainwindow ) : uiHelp(new(Ui::help))
 {
-    connect( mainWindow, SIGNAL( destroyed( QObject*) ), this, SLOT( slot_cleanUp() ) );
-
     ui = ui_mainwindow;
     uiHelp->setupUi( this );
 
@@ -64,7 +62,7 @@ QvkHelp::QvkHelp(QMainWindow *mainWindow, Ui_Dialog *ui_mainwindow ) : uiHelp(ne
 
     QStringList helpStringList;
     helpStringList << "https:/"
-                   << "vokoscreen.volkoh.de"
+                   << "vokoshowclick.volkoh.de"
                    << "3.0"
                    << "help";
 
@@ -76,7 +74,7 @@ QvkHelp::QvkHelp(QMainWindow *mainWindow, Ui_Dialog *ui_mainwindow ) : uiHelp(ne
     vkDownloadHTML = new QvkDownloader( temporaryDirLocal.path() );
     vkDownloadFiles = new QvkDownloader( temporaryDirLocal.path() );
 
-    QList<QToolButton *> listToolButton = ui->tabWidget->findChildren<QToolButton *>();
+    QList<QToolButton *> listToolButton = ui.tabWidget->findChildren<QToolButton *>();
     for ( int i = 0; i < listToolButton.count(); i++ )
     {
         if ( listToolButton.at(i)->objectName().contains( QRegExp( "^help_") ) )
@@ -97,22 +95,22 @@ void QvkHelp::slot_parse_locale( QStringList list )
     for ( int i = 0; i < list.count(); i++  )
     {
        QLocale locale( list.at( i ) );
-       ui->comboBoxOnlineHelp->addItem( locale.nativeLanguageName() + " " + "(" + list.at(i) + ")", list.at( i ) );
+       ui.comboBoxOnlineHelp->addItem( locale.nativeLanguageName() + " " + "(" + list.at(i) + ")", list.at( i ) );
     }
 
     QSettings settings( QSettings::IniFormat, QSettings::UserScope, global::name, global::name, Q_NULLPTR );
-    QString valueText = settings.value( ui->comboBoxOnlineHelp->objectName(), "" ).toString();
-    int valueInt = ui->comboBoxOnlineHelp->findText( valueText );
+    QString valueText = settings.value( ui.comboBoxOnlineHelp->objectName(), "" ).toString();
+    int valueInt = ui.comboBoxOnlineHelp->findText( valueText );
     if ( valueInt > -1 )
     {
-        ui->comboBoxOnlineHelp->setCurrentIndex( valueInt );
+        ui.comboBoxOnlineHelp->setCurrentIndex( valueInt );
     }
 }
 
 
 void QvkHelp::slot_NetworkAccessibility( QNetworkAccessManager::NetworkAccessibility accessible )
 {
-    QList<QToolButton *> listToolButton = ui->tabWidget->findChildren<QToolButton *>();
+    QList<QToolButton *> listToolButton = ui.tabWidget->findChildren<QToolButton *>();
     for ( int i = 0; i < listToolButton.count(); i++ )
     {
         if ( listToolButton.at(i)->objectName().contains( QRegExp( "^help_") ) )
@@ -138,11 +136,11 @@ bool QvkHelp::eventFilter(QObject *object, QEvent *event)
     // Automatic language detection is set in combobox for the online help.
     if ( ( event->type() == QEvent::MouseButtonRelease ) and
          ( toolButton->isEnabled() == true ) and
-         ( ui->comboBoxOnlineHelp->currentIndex() == 0 ) )
+         ( ui.comboBoxOnlineHelp->currentIndex() == 0 ) )
     {
 
         QString language;
-        if ( ui->comboBoxOnlineHelp->findText( "(" + QLocale::system().name() + ")", Qt::MatchEndsWith ) > -1 )
+        if ( ui.comboBoxOnlineHelp->findText( "(" + QLocale::system().name() + ")", Qt::MatchEndsWith ) > -1 )
         {
             language = QLocale::system().name();
         }
@@ -162,9 +160,9 @@ bool QvkHelp::eventFilter(QObject *object, QEvent *event)
     // Selected Language is set in combobox
     if ( ( event->type() == QEvent::MouseButtonRelease ) and
          ( toolButton->isEnabled() == true ) and
-         ( ui->comboBoxOnlineHelp->currentIndex() > 0 ) )
+         ( ui.comboBoxOnlineHelp->currentIndex() > 0 ) )
     {
-        QString language = ui->comboBoxOnlineHelp->currentText().section( "(", 1 ).replace( ")", "" );
+        QString language = ui.comboBoxOnlineHelp->currentText().section( "(", 1 ).replace( ")", "" );
         QString vk_helpPath_locale = vk_helpPath + language + "/";
         loadHTML( vk_helpPath_locale + object->objectName().section( "_", 1, 1 ) + "/" + object->objectName() + ".html" );
         uiHelp->labelURL->setText( vk_helpPath_locale + object->objectName().section( "_", 1, 1 ) + "/" + object->objectName() + ".html" );
@@ -174,12 +172,6 @@ bool QvkHelp::eventFilter(QObject *object, QEvent *event)
     {
         return QObject::eventFilter( object, event );
     }
-}
-
-
-void QvkHelp::slot_cleanUp()
-{
-    temporaryDirLocal.remove();
 }
 
 

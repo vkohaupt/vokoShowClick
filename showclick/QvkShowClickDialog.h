@@ -25,6 +25,7 @@
 
 #include "ui_showclickDialog.h"
 #include "QvkCircleWidget.h"
+#include "QvkHelp.h"
 
 //#include "QvkSettings.h"
 
@@ -51,6 +52,7 @@ private:
     QColor getColor();
     void ok();
 
+    QvkHelp *vkhelp;
     
 private slots:
     void slot_valueChangedSliderCircle( int value );

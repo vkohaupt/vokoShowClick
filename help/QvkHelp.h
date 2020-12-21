@@ -29,26 +29,24 @@
 
 #include <QObject>
 #include <QTemporaryDir>
-
 #include <QMouseEvent>
 #include <QEvent>
-
-#include <QMainWindow>
 
 class QvkHelp: public QWidget
 {
     Q_OBJECT
     
 public:
-    QvkHelp(QMainWindow *mainWindow, Ui_Dialog *ui_mainwindow);
+    QvkHelp( Ui_Dialog ui_mainwindow );
     virtual ~QvkHelp() override;
-    
+    QTemporaryDir temporaryDirLocal;
+
 
 public slots:
 
   
 private:
-    Ui_Dialog *ui;
+    Ui_Dialog ui;
     Ui_help *uiHelp;
 
     QStringList toDownloadFiles = { ".png", ".svg", ".css", ".jpg" };
@@ -65,17 +63,13 @@ private:
     QString tempPath;
     QString vk_helpPath;
 
-    QTemporaryDir temporaryDirLocal;
     QNetworkAccessManager networkAccessManager;
 
 
 private slots:
     void slot_parseHTML( QString tempPathFileName );
     void slot_showHelp( QString tempPathFileName );
-
-    void slot_cleanUp();
     void slot_NetworkAccessibility( QNetworkAccessManager::NetworkAccessibility accessible );
-
     void slot_parse_locale( QStringList list );
 
 

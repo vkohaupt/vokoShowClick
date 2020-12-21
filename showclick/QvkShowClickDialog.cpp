@@ -39,6 +39,8 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
 
     setWindowTitle( global::name + " " + global::version );
 
+    vkhelp = new QvkHelp( uiDialog );
+
 #ifdef Q_OS_WIN
     QIcon icon( ":/pictures/showclick/windows.png" );
     uiDialog.toolButtonBS->setIcon( icon );
@@ -136,6 +138,8 @@ QvkShowClickDialog::~QvkShowClickDialog()
 void QvkShowClickDialog::closeEvent( QCloseEvent *event )
 {
     Q_UNUSED(event);
+    vkhelp->close();
+    vkhelp->temporaryDirLocal.remove();
     emit signal_close();
 }
 
