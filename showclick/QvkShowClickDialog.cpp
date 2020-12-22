@@ -42,14 +42,14 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     vkhelp = new QvkHelp( uiDialog );
 
 #ifdef Q_OS_WIN
-    QIcon icon( ":/pictures/showclick/windows.png" );
-    uiDialog.toolButtonBS->setIcon( icon );
+    QPixmap pixmap_1( ":/pictures/showclick/windows.png" );
 #endif
-
 #ifdef Q_OS_LINUX
-    QIcon icon( ":/pictures/showclick/linux.png" );
-    uiDialog.toolButtonBS->setIcon( icon );
+    QPixmap pixmapOS( ":/pictures/showclick/linux.png" );
 #endif
+    pixmapOS = pixmapOS.scaled( 70, 70, Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
+    uiDialog.labelOS->setPixmap( pixmapOS );
+    uiDialog.labelOS->setMinimumSize( 70, 70);
 
     QPixmap pixmap( ":/pictures/showclick/cursorAbout.png" );
     QCursor cursor( pixmap );
@@ -355,7 +355,6 @@ void QvkShowClickDialog::slot_darkGray()
 }
 
 
-// This is need, so that we can
 void QvkShowClickDialog::showEvent( QShowEvent *event )
 {
     Q_UNUSED(event);

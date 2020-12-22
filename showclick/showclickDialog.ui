@@ -152,28 +152,6 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="5" rowspan="3" colspan="2" alignment="Qt::AlignRight|Qt::AlignTop">
-            <widget class="QToolButton" name="toolButtonBS">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>56</width>
-               <height>56</height>
-              </size>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="3">
             <widget class="QPushButton" name="pushButton_darkMagenta">
              <property name="text">
@@ -213,6 +191,13 @@
             <widget class="QPushButton" name="pushButton_cyan">
              <property name="text">
               <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5" rowspan="2" colspan="2">
+            <widget class="QLabel" name="labelOS">
+             <property name="text">
+              <string>TextLabel</string>
              </property>
             </widget>
            </item>
