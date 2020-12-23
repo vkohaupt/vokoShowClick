@@ -43,18 +43,17 @@ public slots:
     void setColor( QColor color );
     void setDiameter( int value );
     void setOpacity( double value );
-    void setRadiant( bool value );
 
     QColor getColor();
     int getDiameter();
     double getOpacity();
-    bool getRadiant();
+
 
 private:
     QColor pointerColor;
     int diameter;
     double pointerOpacity;
-    bool radiant;
+
 
 private slots:
 

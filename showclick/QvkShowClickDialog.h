@@ -37,7 +37,7 @@ class QvkShowClickDialog: public QDialog
 {
     Q_OBJECT
 public:    
-    QvkShowClickDialog( QColor color, bool radiant, double opacity );
+    QvkShowClickDialog( QColor color, double opacity );
     virtual ~QvkShowClickDialog();
     Ui_Dialog uiDialog;
 
@@ -50,14 +50,12 @@ private:
     //    QvkSettings vkSettings;
     void setIconForSideBar();
     QColor getColor();
-    void ok();
-
     QvkHelp *vkhelp;
     
 private slots:
+    void ok();
     void slot_valueChangedSliderCircle( int value );
     void slot_valueChangedOpacity( int value );
-    void slot_stateChangedRadiant( int );
     void slot_black();
     void slot_white();
     void slot_red();
@@ -85,14 +83,12 @@ private slots:
     void slot_SliderCircleDefault();
     void slot_SliderOpacityDefault();
     void slot_SlidershowTimeDefault();
-    void slot_checkBoxRadiantDefault();
 
 
 signals:
     void newCircleWidgetValue( int, QColor );
     void newShowtime( double value );
     void newOpacity( double value );
-    void newRadiant( bool value);
     void signal_close();
     
 protected:

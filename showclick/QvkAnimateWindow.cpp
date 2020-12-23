@@ -59,26 +59,15 @@ void QvkAnimateWindow::paintEvent( QPaintEvent *event )
     QPainter painter( this );
     painter.setRenderHints( QPainter::Antialiasing, true );
 
-    QBrush brush;
-    if ( radiant == false )
-    {
-        brush.setStyle( Qt::SolidPattern );
-        brush.setColor( color );
-    }
-    else
-    {
-        QRadialGradient radialGradient( width()/2, height()/2, diameter/2 );
-        radialGradient.setColorAt( 0, color );
-        radialGradient.setColorAt( 1, Qt::transparent );
-        QBrush brushRadial( radialGradient );
-        brush.swap( brushRadial );
-    }
-
-    painter.setPen( Qt::NoPen );
-    painter.setBrush( brush );
-    painter.setOpacity ( opacity );
-    painter.drawEllipse ( QPoint( width()/2, height()/2 ), diameter/2, diameter/2 );
-
+    qreal penWith = 8;
+    QPen pen;
+    pen.setWidthF( penWith );
+    pen.setColor( color );
+    pen.setStyle( Qt::SolidLine );
+    painter.setPen( pen );
+    painter.setBrush( Qt::NoBrush );
+    painter.setOpacity( opacity );
+    painter.drawEllipse( width()/2-diameter/2, height()/2-diameter/2, diameter, diameter );
 }
 
 void QvkAnimateWindow::setRadiusColor( int valueDiameter, QColor valueColor )
@@ -91,9 +80,4 @@ void QvkAnimateWindow::setRadiusColor( int valueDiameter, QColor valueColor )
 void QvkAnimateWindow::setOpacity( double value )
 {
     opacity = value;
-}
-
-void QvkAnimateWindow::setRadiant( bool value )
-{
-    radiant = value;
 }

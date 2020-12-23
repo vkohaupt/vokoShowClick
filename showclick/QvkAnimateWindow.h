@@ -40,14 +40,12 @@ public:
 public slots:
     void setRadiusColor( int valueRadius, QColor valueColor );
     void setOpacity( double value );
-    void setRadiant( bool value );
 
 
 private:
     int diameter;
     QColor color;
     double opacity;
-    bool radiant;
 
 private slots:
 

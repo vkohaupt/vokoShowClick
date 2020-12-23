@@ -26,7 +26,7 @@
 #include <QTimer>
 #include <QDebug>
 
-QvkAnimateControl::QvkAnimateControl( double time, int diameter, Qt::CheckState radiant, double opacity, QColor color )
+QvkAnimateControl::QvkAnimateControl( double time, int diameter,  double opacity, QColor color )
 {
     showTime = time * 1000;
 
@@ -35,16 +35,6 @@ QvkAnimateControl::QvkAnimateControl( double time, int diameter, Qt::CheckState 
 
     animateWindow = new QvkAnimateWindow();
     setDiameterColor( diameter, color );
-
-    if ( radiant == Qt::Unchecked )
-    {
-        setRadiant( false );
-    }
-    else
-    {
-        setRadiant( true );
-    }
-
     setOpacity( opacity );
 }
 
@@ -102,9 +92,4 @@ void QvkAnimateControl::setShowTime( double value )
 void QvkAnimateControl::setOpacity( double value )
 {
     animateWindow->setOpacity( value );
-}
-
-void QvkAnimateControl::setRadiant( bool value )
-{
-    animateWindow->setRadiant( value );
 }

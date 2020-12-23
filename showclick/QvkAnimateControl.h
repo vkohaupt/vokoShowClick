@@ -32,7 +32,7 @@ class QvkAnimateControl: public QObject
 {
     Q_OBJECT
 public:    
-    QvkAnimateControl( double time, int diameter, Qt::CheckState radiant, double opacity, QColor color );
+    QvkAnimateControl( double time, int diameter, double opacity, QColor color );
     virtual ~QvkAnimateControl();
     
 
@@ -42,7 +42,6 @@ public slots:
     void setDiameterColor( int diameter, QColor color );
     void setShowTime( double value );
     void setOpacity( double value );
-    void setRadiant( bool value );
     void pointerOnOff( bool value );
 
 

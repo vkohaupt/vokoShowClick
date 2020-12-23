@@ -35,21 +35,18 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 
     QColor color   = Qt::red; //vkSettings.getShowClickColor();
     double opacity = 0.5; //vkSettings.getShowClickOpacity();
-    bool radiant   = false; //vkSettings.getShowClickRadiant();
 
-    ShowClickDialog = new QvkShowClickDialog( color, radiant, opacity );
+    ShowClickDialog = new QvkShowClickDialog( color, opacity );
     ShowClickDialog->setVisible( true );
 
     animateControl = new QvkAnimateControl( (double) ShowClickDialog->uiDialog.horizontalSliderShowtime->value()/10,
                                             ShowClickDialog->uiDialog.horizontalSliderCircle->value(),
-                                            ShowClickDialog->uiDialog.checkBoxRadiant->checkState(),
                                             (double) ShowClickDialog->uiDialog.horizontalSliderOpacity->value()/100,
                                             color );
 
     connect( ShowClickDialog, SIGNAL( newCircleWidgetValue( int, QColor ) ), animateControl, SLOT( setDiameterColor( int, QColor ) ) );
     connect( ShowClickDialog, SIGNAL( newShowtime( double ) ), animateControl, SLOT( setShowTime( double ) ) );
     connect( ShowClickDialog, SIGNAL( newOpacity( double ) ), animateControl, SLOT( setOpacity( double ) ) );
-    connect( ShowClickDialog, SIGNAL( newRadiant( bool ) ), animateControl, SLOT( setRadiant( bool ) ) );
 
     connect( ShowClickDialog->uiDialog.checkBoxPointerOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
     connect( ShowClickDialog, SIGNAL( signal_close() ), this, SLOT( slot_pointerOnOff() ) );

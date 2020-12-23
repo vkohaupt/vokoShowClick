@@ -35,32 +35,23 @@ QvkCircleWidget::~QvkCircleWidget()
 
 void QvkCircleWidget::paintEvent( QPaintEvent *event )
 {
-    (void)event;
+    Q_UNUSED(event);
 
-    QPainter painter;;
+    QPainter painter;
     painter.begin( this );
     painter.setRenderHints( QPainter::Antialiasing, true );
 
-    QBrush brush;
-    if ( radiant == false )
-    {
-        brush.setStyle( Qt::SolidPattern );
-        brush.setColor( pointerColor );
-    }
-    else
-    {
-        QRadialGradient radialGradient( parentWidget->width()/2, parentWidget->height()/2, getDiameter()/2 );
-        radialGradient.setColorAt( 0, getColor() );
-        radialGradient.setColorAt( 1, Qt::transparent );
-        QBrush brushRadial( radialGradient );
-        brush.swap( brushRadial );
-    }
-    
-    painter.setBrush( brush );
-    painter.setPen( Qt::NoPen );
+    qreal penWith = 8;
+    QPen pen;
+    pen.setWidthF( penWith );
+    pen.setColor( pointerColor );
+    pen.setStyle( Qt::SolidLine );
+    painter.setPen( pen );
+    painter.setBrush( Qt::NoBrush );
     painter.setOpacity( pointerOpacity );
     resize( parentWidget->width(), parentWidget->height());
     painter.drawEllipse( parentWidget->width()/2-diameter/2, parentWidget->height()/2-diameter/2, diameter, diameter );
+
     painter.end();
 }
 
@@ -96,16 +87,3 @@ double QvkCircleWidget::getOpacity()
 {
     return pointerOpacity;
 }
-
-void QvkCircleWidget::setRadiant( bool value )
-{
-    radiant = value;
-    repaint();
-}
-
-bool QvkCircleWidget::getRadiant()
-{
-    return radiant;
-}
-
-

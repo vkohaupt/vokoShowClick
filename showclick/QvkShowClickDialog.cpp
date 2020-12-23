@@ -29,7 +29,7 @@
 #include <QUrl>
 #include <QCursor>
 
-QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opacity )
+QvkShowClickDialog::QvkShowClickDialog( QColor color, double opacity )
 {
     //    vkSettings.readAll();
     
@@ -108,27 +108,19 @@ QvkShowClickDialog::QvkShowClickDialog( QColor color, bool radiant, double opaci
     connect( uiDialog.toolButtonSliderCircleDefault, SIGNAL( clicked() ), this, SLOT( slot_SliderCircleDefault() ) );
     connect( uiDialog.toolButtonSliderOpacityDefault, SIGNAL( clicked() ), this, SLOT(slot_SliderOpacityDefault() ) );
     connect( uiDialog.toolButtonShowTimeDefault, SIGNAL( clicked() ), this, SLOT(slot_SlidershowTimeDefault() ) );
-    connect( uiDialog.toolButtonRadiantDefault, SIGNAL( clicked() ), this, SLOT( slot_checkBoxRadiantDefault() ) );
     
     circleWidget = new QvkCircleWidget( uiDialog.frame_3   );
     circleWidget->show();
     slot_valueChangedSliderCircle( uiDialog.horizontalSliderCircle->value() );
     circleWidget->setColor( color );
-    circleWidget->setRadiant( radiant );
     circleWidget->setOpacity( opacity );
     
     connect( uiDialog.horizontalSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedSliderCircle( int ) ) );
     
-    connect( uiDialog.checkBoxRadiant, SIGNAL( stateChanged( int ) ), this, SLOT( slot_stateChangedRadiant( int ) ) );
-    if ( radiant == true )
-        uiDialog.checkBoxRadiant->setCheckState( Qt::Checked );
-    else
-        uiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
-
     connect( uiDialog.horizontalSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedOpacity( int ) ) );
     uiDialog.horizontalSliderOpacity->setSliderPosition( opacity*100 );
     
-    connect( uiDialog.horizontalSliderShowtime, SIGNAL( valueChanged( int ) ), this, SLOT( ok() ) );
+    connect( uiDialog.horizontalSliderShowtime, SIGNAL( valueChanged( int ) ), this, SLOT( ok() ) ); //******************************************************************+
 }
 
 QvkShowClickDialog::~QvkShowClickDialog()
@@ -201,18 +193,11 @@ void QvkShowClickDialog::slot_SlidershowTimeDefault()
     uiDialog.horizontalSliderShowtime->setValue( 5 );
 }
 
-void QvkShowClickDialog::slot_checkBoxRadiantDefault()
-{
-    uiDialog.checkBoxRadiant->setCheckState( Qt::Unchecked );
-}
-
-
 void QvkShowClickDialog::ok()
 {
     emit newCircleWidgetValue( circleWidget->getDiameter(), circleWidget->getColor() );
     emit newShowtime( (double) uiDialog.horizontalSliderShowtime->value()/10 );
     emit newOpacity( circleWidget->getOpacity() );
-    emit newRadiant( circleWidget->getRadiant() );
 }
 
 void QvkShowClickDialog::slot_valueChangedSliderCircle( int value )
@@ -226,20 +211,6 @@ void QvkShowClickDialog::slot_valueChangedOpacity( int value )
     double value_1 = value;
     circleWidget->setOpacity( value_1 / 100 );
     ok();
-}
-
-void QvkShowClickDialog::slot_stateChangedRadiant( int value )
-{
-    if ( value == Qt::Unchecked )
-    {
-        circleWidget->setRadiant( false );
-        ok();
-    }
-    else
-    {
-        circleWidget->setRadiant( true );
-        ok();
-    }
 }
 
 void QvkShowClickDialog::slot_white()
