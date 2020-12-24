@@ -190,7 +190,7 @@ void QvkShowClickDialog::slot_SliderOpacityDefault()
 
 void QvkShowClickDialog::slot_SlidershowTimeDefault()
 {
-    uiDialog.horizontalSliderShowtime->setValue( 5 );
+    uiDialog.horizontalSliderShowtime->setValue( 10 );
 }
 
 void QvkShowClickDialog::ok()
