@@ -71,8 +71,18 @@ void QvkGlobalMouse::mousePressed()
         {
             if ( pressed == 0 )
             {
+                QString mouseButton;
+                if (  mask & Button1Mask  )
+                {
+                    mouseButton = "LeftButton";
+                }
+
+                if ( mask & Button3Mask )
+                {
+                    mouseButton = "RightButton";
+                }
                 pressed = 1;
-                emit mousePressed( win_x, win_y );
+                emit mousePressed( win_x, win_y, mouseButton );
             }
         }
         else

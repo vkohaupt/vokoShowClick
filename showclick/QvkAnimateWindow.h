@@ -35,6 +35,7 @@ public:
     virtual ~QvkAnimateWindow();
     
 public:
+    void setMouseButton( QString mouseButton );
 
 
 public slots:
@@ -46,6 +47,9 @@ private:
     int diameter;
     QColor color;
     double opacity;
+    QString mouseButton;
+    QString getMouseButton();
+
 
 private slots:
 

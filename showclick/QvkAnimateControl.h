@@ -52,7 +52,7 @@ private:
 
 
 private slots:
-    void mousePressed( int x, int y );
+    void mousePressed( int x, int y, QString mouseButton );
     void closeWindow();
 
 

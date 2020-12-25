@@ -31,7 +31,7 @@ QvkAnimateControl::QvkAnimateControl( double time, int diameter,  double opacity
     showTime = time * 1000;
 
     globalMouse = new QvkGlobalMouse();
-    connect( globalMouse, SIGNAL( mousePressed( int, int ) ), this, SLOT( mousePressed( int, int ) ) );
+    connect( globalMouse, SIGNAL( mousePressed( int, int, QString ) ), this, SLOT( mousePressed( int, int, QString ) ) );
 
     animateWindow = new QvkAnimateWindow();
     setDiameterColor( diameter, color );
@@ -66,11 +66,12 @@ void QvkAnimateControl::animateWindowOff()
     globalMouse->setCursorOff();
 }
 
-void QvkAnimateControl::mousePressed( int x, int y )
+void QvkAnimateControl::mousePressed( int x, int y, QString mouseButton )
 {
     animateWindow->setWindowFlags( Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::ToolTip );
     animateWindow->move( x - animateWindow->width() / 2, y - animateWindow->height() / 2 );
     animateWindow->show();
+    animateWindow->setMouseButton( mouseButton );
     QTimer::singleShot( showTime, this, SLOT( closeWindow() ) );
 }
 

@@ -25,11 +25,24 @@
 
 #include <QApplication>
 #include <QMessageBox>
+#include <QDBusConnection>
 
 int main(int argc, char *argv[])
 {
-
     QApplication a(argc, argv);
+
+    // ********************************* Application started only once
+    if( not QDBusConnection::sessionBus().registerService( "org.vokoShowClick.ShowClick" ) )
+    {
+        QMessageBox::StandardButton ret = QMessageBox::information( NULL,
+                                                                    QObject::tr( "Info" ),
+                                                                    QObject::tr( "vokoShowClick can be started only once" ),
+                                                                    QMessageBox::Close );
+        (void)ret;
+        return 0;
+    }
+    // ******************************************************************
+
 
 #ifdef Q_OS_LINUX
     if ( qgetenv( "XDG_SESSION_TYPE" ).toLower() == "x11" )

@@ -68,6 +68,24 @@ void QvkAnimateWindow::paintEvent( QPaintEvent *event )
     painter.setBrush( Qt::NoBrush );
     painter.setOpacity( opacity );
     painter.drawEllipse( width()/2-diameter/2, height()/2-diameter/2, diameter, diameter );
+
+
+    // Paint Button
+    pen.setStyle( Qt::NoPen );
+    painter.setPen( pen );
+    QBrush brush( color );
+    painter.setBrush( brush );
+    painter.setOpacity( opacity );
+    qreal buttonDiameter = 10.0;
+    if ( getMouseButton() == "LeftButton" )
+    {
+        painter.drawEllipse( QPointF( width()/2-diameter/2 + buttonDiameter + penWith/2, height()/2), buttonDiameter, buttonDiameter );
+    }
+
+    if ( getMouseButton() == "RightButton" )
+    {
+        painter.drawEllipse( QPointF( width()/2+diameter/2 - buttonDiameter - penWith/2, height()/2), buttonDiameter, buttonDiameter );
+    }
 }
 
 void QvkAnimateWindow::setRadiusColor( int valueDiameter, QColor valueColor )
@@ -80,4 +98,14 @@ void QvkAnimateWindow::setRadiusColor( int valueDiameter, QColor valueColor )
 void QvkAnimateWindow::setOpacity( double value )
 {
     opacity = value;
+}
+
+void QvkAnimateWindow::setMouseButton( QString mouseButton )
+{
+    this->mouseButton = mouseButton;
+}
+
+QString QvkAnimateWindow::getMouseButton()
+{
+    return mouseButton;
 }

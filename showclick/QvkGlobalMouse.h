@@ -53,7 +53,7 @@ protected:
 
 
 signals:
-    void mousePressed( int win_x, int win_y );
+    void mousePressed( int win_x, int win_y, QString mouseButton );
 
 };
 

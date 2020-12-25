@@ -1,6 +1,6 @@
 
 unix: QT += x11extras
-QT += core gui widgets multimedia network testlib
+QT += core gui widgets multimedia network testlib dbus
 
 CONFIG += c++11
 
