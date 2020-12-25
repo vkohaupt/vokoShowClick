@@ -4,7 +4,8 @@
 ## Linux
 
 ### Note:
-For Linux(X11) and Windows
+Since every distribution has its own characteristics, a make install is not supported. The integration into the distribution must be carried out by each distribution itself. The same applies to metadata.
+
 
 ### Build requirements
 * pkgconfig
