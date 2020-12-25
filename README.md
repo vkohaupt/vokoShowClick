@@ -13,6 +13,7 @@ Since every distribution has its own characteristics, a make install is not supp
 * libX11-devel
 
 ### Compile:  
+```
   - get sources  
     - extract vokoShowClick-<version>.tar.gz  
      or  
@@ -21,4 +22,4 @@ Since every distribution has its own characteristics, a make install is not supp
   - cd src  
   - qmake  
   - make  
-    
+``` 
