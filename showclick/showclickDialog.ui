@@ -348,10 +348,10 @@
            <item row="1" column="1">
             <widget class="QSlider" name="horizontalSliderCircle">
              <property name="minimum">
-              <number>20</number>
+              <number>40</number>
              </property>
              <property name="maximum">
-              <number>70</number>
+              <number>80</number>
              </property>
              <property name="value">
               <number>50</number>

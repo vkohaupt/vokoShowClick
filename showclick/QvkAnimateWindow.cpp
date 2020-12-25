@@ -71,21 +71,33 @@ void QvkAnimateWindow::paintEvent( QPaintEvent *event )
 
 
     // Paint Button
-    pen.setStyle( Qt::NoPen );
+    pen.setStyle( Qt::SolidLine );
+    pen.setWidthF( 3 );
     painter.setPen( pen );
-    QBrush brush( color );
-    painter.setBrush( brush );
+    painter.setBrush( Qt::NoBrush );
     painter.setOpacity( opacity );
-    qreal buttonDiameter = 10.0;
     if ( getMouseButton() == "LeftButton" )
     {
-        painter.drawEllipse( QPointF( width()/2-diameter/2 + buttonDiameter + penWith/2, height()/2), buttonDiameter, buttonDiameter );
+        QRectF rectF( width()/2 - diameter/2 + penWith, height()/2 - diameter/2 + penWith, diameter-2*penWith, diameter-2*penWith );
+        int startAngle = 90 * 16;
+        int spanAngle = 180 * 16;
+        painter.drawArc( rectF, startAngle, spanAngle );
     }
 
     if ( getMouseButton() == "RightButton" )
     {
-        painter.drawEllipse( QPointF( width()/2+diameter/2 - buttonDiameter - penWith/2, height()/2), buttonDiameter, buttonDiameter );
+        QRectF rectF( width()/2 - diameter/2 + penWith, height()/2 - diameter/2 + penWith, diameter-2*penWith, diameter-2*penWith );
+        int startAngle = -90 * 16;
+        int spanAngle = 180 * 16;
+        painter.drawArc( rectF, startAngle, spanAngle );
     }
+
+    if ( getMouseButton() == "MiddleButton" )
+    {
+        QLineF line( width()/2, height()/2 - diameter/2 + penWith , width()/2, height()/2 + diameter/2 - penWith );
+        painter.drawLine( line );
+    }
+
 }
 
 void QvkAnimateWindow::setRadiusColor( int valueDiameter, QColor valueColor )

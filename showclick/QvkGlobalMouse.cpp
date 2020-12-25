@@ -77,6 +77,11 @@ void QvkGlobalMouse::mousePressed()
                     mouseButton = "LeftButton";
                 }
 
+                if (  mask & Button2Mask  )
+                {
+                    mouseButton = "MiddleButton";
+                }
+
                 if ( mask & Button3Mask )
                 {
                     mouseButton = "RightButton";
