@@ -24,10 +24,11 @@
 
 #include <QTest>
 #include <QDebug>
-#include <QThread>
 
+#ifdef Q_OS_LINUX
 #include<X11/Xlib.h>
 #include<stdio.h>
+#endif
 
 QvkGlobalMouse::QvkGlobalMouse()
 {
@@ -48,7 +49,7 @@ void QvkGlobalMouse::setCursorOff()
     onOff = false;
 }
 
-
+#ifdef Q_OS_LINUX
 void QvkGlobalMouse::mousePressed()
 {
     Display* display;
@@ -86,14 +87,18 @@ void QvkGlobalMouse::mousePressed()
                 {
                     mouseButton = "RightButton";
                 }
+
                 pressed = 1;
                 emit mousePressed( win_x, win_y, mouseButton );
             }
         }
         else
+        {
             pressed = 0;
+        }
 
         fflush(stdout);
     }
     XCloseDisplay( display );
 }
+#endif

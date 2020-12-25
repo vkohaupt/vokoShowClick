@@ -59,7 +59,7 @@ void QvkAnimateWindow::paintEvent( QPaintEvent *event )
     QPainter painter( this );
     painter.setRenderHints( QPainter::Antialiasing, true );
 
-    qreal penWith = 8;
+    qreal penWith = 8.0;
     QPen pen;
     pen.setWidthF( penWith );
     pen.setColor( color );
@@ -69,12 +69,10 @@ void QvkAnimateWindow::paintEvent( QPaintEvent *event )
     painter.setOpacity( opacity );
     painter.drawEllipse( width()/2-diameter/2, height()/2-diameter/2, diameter, diameter );
 
-
     // Paint Button
     pen.setStyle( Qt::SolidLine );
-    pen.setWidthF( 3 );
+    pen.setWidthF( 3.0 );
     painter.setPen( pen );
-    painter.setBrush( Qt::NoBrush );
     painter.setOpacity( opacity );
     if ( getMouseButton() == "LeftButton" )
     {
