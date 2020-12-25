@@ -14,10 +14,10 @@ Since every distribution has its own characteristics, a make install is not supp
 
 ### Compile:  
   - get sources  
-    - extract vokoscren-<version>.tar.gz  
+    - extract vokoShowClick-<version>.tar.gz  
      or  
-    - clone git repository: "git clone https://github.com/vkohaupt/vokoscreenNG.git"  
-  - change into the vokoscreenNG-<version> directory  
+    - clone git repository: "git clone https://github.com/vkohaupt/vokoShowClick.git"  
+  - change into the vokoShowClick-<version> directory  
   - cd src  
   - qmake  
   - make  
