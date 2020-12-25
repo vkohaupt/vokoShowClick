@@ -1,0 +1,7 @@
+Quellcode in Unterverzeichnis src verschieben
+
+Windowsport erstellen
+
+Logo entwickeln
+
+Mausbutton als Vorschau erstellen
