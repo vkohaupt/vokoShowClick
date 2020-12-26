@@ -4,8 +4,8 @@ Windowsport erstellen
 
 Logo entwickeln
 
-Mausbutton als Vorschau erstellen
-
 Seiten für Onlinehilfe erstellen
 
 Settings
+
+Onlinehilfe "Automatisch" einbauen
