@@ -36,7 +36,8 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     QColor color   = Qt::red; //vkSettings.getShowClickColor();
     double opacity = 0.5; //vkSettings.getShowClickOpacity();
 
-    ShowClickDialog = new QvkShowClickDialog( color, opacity );
+    ShowClickDialog = new QvkShowClickDialog();
+    ShowClickDialog->vk_init( color, opacity );
     ShowClickDialog->setVisible( true );
 
     animateControl = new QvkAnimateControl( (double) ShowClickDialog->uiDialog.horizontalSliderShowtime->value()/10,

@@ -37,7 +37,8 @@ class QvkShowClickDialog: public QDialog
 {
     Q_OBJECT
 public:    
-    QvkShowClickDialog( QColor color, double opacity );
+    QvkShowClickDialog();
+    void vk_init( QColor color, double opacity );
     virtual ~QvkShowClickDialog();
     Ui_Dialog uiDialog;
 

@@ -29,11 +29,14 @@
 #include <QUrl>
 #include <QCursor>
 
-QvkShowClickDialog::QvkShowClickDialog( QColor color, double opacity )
+QvkShowClickDialog::QvkShowClickDialog()
+{
+    uiDialog.setupUi( this );
+}
+
+void QvkShowClickDialog::vk_init( QColor color, double opacity )
 {
     //    vkSettings.readAll();
-    
-    uiDialog.setupUi( this );
 
     setIconForSideBar();
 
