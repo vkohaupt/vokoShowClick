@@ -4,12 +4,14 @@ HEADERS     += $$PWD/QvkGlobalMouse.h \
                $$PWD/QvkAnimateWindow.h \
                $$PWD/QvkAnimateControl.h \
                $$PWD/QvkShowClickDialog.h \
-               $$PWD/QvkCircleWidget.h
+               $$PWD/QvkCircleWidget.h \
+               $$PWD/QvkShowClickController.h
                    
 SOURCES     += $$PWD/QvkGlobalMouse.cpp \
                $$PWD/QvkAnimateWindow.cpp \
                $$PWD/QvkAnimateControl.cpp \
                $$PWD/QvkShowClickDialog.cpp \
-               $$PWD/QvkCircleWidget.cpp
+               $$PWD/QvkCircleWidget.cpp \
+               $$PWD/QvkShowClickController.cpp
 
  FORMS       += $$PWD/showclickDialog.ui

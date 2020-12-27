@@ -20,7 +20,7 @@
  * --End_License--
  */
 
-#include "mainwindow.h"
+#include "QvkShowClickController.h"
 #include "global.h"
 
 #include <QApplication>
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_LINUX
     if ( qgetenv( "XDG_SESSION_TYPE" ).toLower() == "x11" )
     {
-        MainWindow w;
+        QvkShowClickController w;
         return a.exec();
     }
 
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef Q_OS_WIN
-    MainWindow w;
+    QvkShowClickController w;
     return a.exec();
 #endif
 }

@@ -17,11 +17,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
     global.cpp
 
 HEADERS += \
-    mainwindow.h \
     global.h
 
 RESOURCES += showclick.qrc    

@@ -20,9 +20,9 @@
  * --End_License--
  */
 
-#include "mainwindow.h"
+#include "QvkShowClickController.h"
 
-MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
+QvkShowClickController::QvkShowClickController(QWidget *parent): QMainWindow(parent)
 {
 /*  Standardard Werte
     Circle=70
@@ -58,12 +58,12 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     ShowClickDialog->uiDialog.checkBoxPointerOnOff->hide();
 }
 
-MainWindow::~MainWindow()
+QvkShowClickController::~QvkShowClickController()
 {
 }
 
 // Before vokoShowClick is closed, showclick must be switched off.
-void MainWindow::slot_pointerOnOff()
+void QvkShowClickController::slot_pointerOnOff()
 {
     animateControl->pointerOnOff( false );
 }
