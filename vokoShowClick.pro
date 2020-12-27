@@ -33,3 +33,4 @@ unix:LIBS += -L/usr/X11/lib -lX11
 include(showclick/showclick.pri)
 include(licenses/licenses.pri)
 include(help/help.pri)
+include(spezialSlider/spezialSlider.pri)
