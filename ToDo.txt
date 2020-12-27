@@ -1,7 +1,5 @@
 SpezialSlider einbauen
 
-Quellcode in Unterverzeichnis src verschieben
-
 Windowsport erstellen
 
 Logo entwickeln
