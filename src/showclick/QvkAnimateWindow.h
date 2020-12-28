@@ -25,7 +25,6 @@
 
 #include <QDialog>
 
-
 class QvkAnimateWindow: public QDialog
 
 {

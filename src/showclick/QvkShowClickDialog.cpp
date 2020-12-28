@@ -29,10 +29,19 @@
 #include <QUrl>
 #include <QCursor>
 
-QvkShowClickDialog::QvkShowClickDialog()
+QvkShowClickDialog::QvkShowClickDialog( Ui_Dialog ui_Dialog)
 {
-    uiDialog.setupUi( this );
+    uiDialog = ui_Dialog;
 }
+
+
+void QvkShowClickDialog::setSpezialSliders( QvkSpezialSlider *vk_sliderCircle, QvkSpezialSlider *vk_sliderOpacity, QvkSpezialSlider *vk_sliderShowtime )
+{
+    sliderCircle = vk_sliderCircle;
+    sliderOpacity = vk_sliderOpacity;
+    sliderShowtime = vk_sliderShowtime;
+}
+
 
 void QvkShowClickDialog::vk_init( QColor color, double opacity )
 {
@@ -114,29 +123,22 @@ void QvkShowClickDialog::vk_init( QColor color, double opacity )
     
     circleWidget = new QvkCircleWidget( uiDialog.frame_3   );
     circleWidget->show();
-    slot_valueChangedSliderCircle( uiDialog.horizontalSliderCircle->value() );
+    slot_valueChangedSliderCircle( sliderCircle->value() );
     circleWidget->setColor( color );
     circleWidget->setOpacity( opacity );
     
-    connect( uiDialog.horizontalSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedSliderCircle( int ) ) );
+    connect( sliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedSliderCircle( int ) ) );
     
-    connect( uiDialog.horizontalSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedOpacity( int ) ) );
-    uiDialog.horizontalSliderOpacity->setSliderPosition( opacity*100 );
+    connect( sliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedOpacity( int ) ) );
+    sliderOpacity->setSliderPosition( opacity*100 );
     
-    connect( uiDialog.horizontalSliderShowtime, SIGNAL( valueChanged( int ) ), this, SLOT( ok() ) );
+    connect( sliderShowtime, SIGNAL( valueChanged( int ) ), this, SLOT( ok() ) );
 }
 
 QvkShowClickDialog::~QvkShowClickDialog()
 {
 }
 
-void QvkShowClickDialog::closeEvent( QCloseEvent *event )
-{
-    Q_UNUSED(event);
-    vkhelp->close();
-    vkhelp->temporaryDirLocal.remove();
-    emit signal_close();
-}
 
 void QvkShowClickDialog::setIconForSideBar()
 {
@@ -183,23 +185,23 @@ void QvkShowClickDialog::slot_toolButtonColorDefault()
 
 void QvkShowClickDialog::slot_SliderCircleDefault()
 {
-    uiDialog.horizontalSliderCircle->setValue( 50 );
+    sliderCircle->setValue( 50 );
 }
 
 void QvkShowClickDialog::slot_SliderOpacityDefault()
 {
-    uiDialog.horizontalSliderOpacity->setValue( 50 );
+    sliderOpacity->setValue( 50 );
 }
 
 void QvkShowClickDialog::slot_SlidershowTimeDefault()
 {
-    uiDialog.horizontalSliderShowtime->setValue( 10 );
+    sliderShowtime->setValue( 10 );
 }
 
 void QvkShowClickDialog::ok()
 {
     emit newCircleWidgetValue( circleWidget->getDiameter(), circleWidget->getColor() );
-    emit newShowtime( (double) uiDialog.horizontalSliderShowtime->value()/10 );
+    emit newShowtime( (double) sliderShowtime->value()/10 );
     emit newOpacity( circleWidget->getOpacity() );
 }
 
@@ -326,18 +328,4 @@ void QvkShowClickDialog::slot_darkGray()
     circleWidget->setColor( Qt::darkGray );
     uiDialog.frame_3->setFocus();
     ok();
-}
-
-
-void QvkShowClickDialog::showEvent( QShowEvent *event )
-{
-    Q_UNUSED(event);
-    // Call slot "afterWindowShown" after the window has been shown
-    QMetaObject::invokeMethod( this, "slot_afterWindowShown", Qt::ConnectionType::QueuedConnection );
-}
-
-void QvkShowClickDialog::slot_afterWindowShown()
-{
-    // In the program vokoShowClick, the checkBox is hide and showclick started from the beginning.
-    uiDialog.checkBoxPointerOnOff->click();
 }

@@ -22,8 +22,6 @@
 
 #include "QvkCircleWidget.h"
 
-#include <QRadialGradient>
-
 QvkCircleWidget::QvkCircleWidget( QWidget *parent ) : QWidget( parent )
 {
     parentWidget = parent;

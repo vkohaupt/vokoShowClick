@@ -22,7 +22,6 @@
 
 #include "QvkAnimateWindow.h"
 #include <QPainter>
-#include <QTest>
 #include <QDebug>
 
 QvkAnimateWindow::QvkAnimateWindow()

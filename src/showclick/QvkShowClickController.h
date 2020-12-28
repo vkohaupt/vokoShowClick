@@ -20,19 +20,21 @@
  * --End_License--
  */
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef QvkShowClickController_H
+#define QvkShowClickController_H
 
 #include <QMainWindow>
 
 #include "QvkShowClickDialog.h"
 #include "QvkAnimateControl.h"
 
+#include "ui_showclickDialog.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class QvkShowClickController : public QMainWindow
+class QvkShowClickController : public QDialog
 {
     Q_OBJECT
 
@@ -42,18 +44,20 @@ public:
 
 
 private slots:
-    void slot_pointerOnOff();
+    void slot_afterWindowShown();
 
 
 private:
     Ui::MainWindow *ui;
     QvkAnimateControl *animateControl;
     QvkShowClickDialog *ShowClickDialog;
+    Ui::Dialog uiDialog;
 
 
 protected:
-
+    void showEvent( QShowEvent *event );
+    void closeEvent(QCloseEvent *);
 
 
 };
-#endif // MAINWINDOW_H
+#endif // QvkShowClickController_H

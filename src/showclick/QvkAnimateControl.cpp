@@ -22,7 +22,6 @@
 
 #include "QvkAnimateControl.h"
 
-#include <QTest>
 #include <QTimer>
 #include <QDebug>
 

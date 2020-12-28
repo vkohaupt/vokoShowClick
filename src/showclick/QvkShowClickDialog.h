@@ -26,21 +26,23 @@
 #include "ui_showclickDialog.h"
 #include "QvkCircleWidget.h"
 #include "QvkHelp.h"
+#include "QvkSpezialSlider.h"
 
 //#include "QvkSettings.h"
 
 #include <QDialog>
-#include <QTabWidget>
 
 class QvkShowClickDialog: public QDialog
 
 {
     Q_OBJECT
-public:    
-    QvkShowClickDialog();
+public:
+    QvkShowClickDialog( Ui_Dialog );
     void vk_init( QColor color, double opacity );
     virtual ~QvkShowClickDialog();
     Ui_Dialog uiDialog;
+    void setSpezialSliders(QvkSpezialSlider *vkSpezialSlider , QvkSpezialSlider *vk_sliderOpacity, QvkSpezialSlider *vk_sliderShowtime);
+    QvkHelp *vkhelp;
 
 
 public slots:
@@ -51,8 +53,10 @@ private:
     //    QvkSettings vkSettings;
     void setIconForSideBar();
     QColor getColor();
-    QvkHelp *vkhelp;
-    
+    QvkSpezialSlider *sliderCircle;
+    QvkSpezialSlider *sliderOpacity;
+    QvkSpezialSlider *sliderShowtime;
+
 private slots:
     void ok();
     void slot_valueChangedSliderCircle( int value );
@@ -73,7 +77,6 @@ private slots:
     void slot_darkYellow();
     void slot_gray();
     void slot_darkGray();
-    void slot_afterWindowShown();
 
     void slot_toolButtonAuthor();
     void slot_toolButtonSource();
@@ -93,8 +96,6 @@ signals:
     void signal_close();
     
 protected:
-    void closeEvent( QCloseEvent *event );
-    void showEvent( QShowEvent *event );
 
 };
 

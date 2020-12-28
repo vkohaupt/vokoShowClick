@@ -22,7 +22,8 @@
 
 #include "QvkGlobalMouse.h"
 
-#include <QTest>
+#include <QCoreApplication>
+#include <QThread>
 #include <QDebug>
 
 #ifdef Q_OS_LINUX
@@ -66,7 +67,7 @@ void QvkGlobalMouse::mousePressed()
     {
         QCoreApplication::processEvents( QEventLoop::AllEvents );
         XQueryPointer(display, root, &root_return, &child_return, &x, &y, &win_x, &win_y, &mask);
-        QTest::qSleep( 10 );
+        QThread::msleep( 10 );
 
         if ( ( mask & Button1Mask) | ( mask & Button2Mask ) | ( mask & Button3Mask ) )
         {

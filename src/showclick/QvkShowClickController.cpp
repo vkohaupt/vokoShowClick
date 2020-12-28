@@ -21,8 +21,10 @@
  */
 
 #include "QvkShowClickController.h"
+#include "ui_showclickDialog.h"
+#include "QvkSpezialSlider.h"
 
-QvkShowClickController::QvkShowClickController(QWidget *parent): QMainWindow(parent)
+QvkShowClickController::QvkShowClickController(QWidget *parent): QDialog(parent)
 {
 /*  Standardard Werte
     Circle=70
@@ -33,37 +35,87 @@ QvkShowClickController::QvkShowClickController(QWidget *parent): QMainWindow(par
     Showtime=5
 */
 
+    uiDialog.setupUi( this );
+    show();
+
+    QvkSpezialSlider *sliderCircle = new QvkSpezialSlider( Qt::Horizontal );
+    uiDialog.horizontalLayoutCircle->insertWidget( 0, sliderCircle );
+    sliderCircle->setObjectName( "sliderCircle" );
+    sliderCircle->setTracking( true );
+    sliderCircle->setMinimum( 40 );
+    sliderCircle->setMaximum( 80 );
+    sliderCircle->setValue( 50 );
+    sliderCircle->setShowValue( false );
+    sliderCircle->show();
+
+    QvkSpezialSlider *sliderOpacity = new QvkSpezialSlider( Qt::Horizontal );
+    uiDialog.horizontalLayoutOpacity->insertWidget( 0, sliderOpacity );
+    sliderOpacity->setObjectName( "sliderOpacity" );
+    sliderOpacity->setTracking( true );
+    sliderOpacity->setMinimum( 1 );
+    sliderOpacity->setMaximum( 100 );
+    sliderOpacity->setValue( 50 );
+    sliderOpacity->setShowValue( false );
+    sliderOpacity->show();
+
+    QvkSpezialSlider *sliderShowtime = new QvkSpezialSlider( Qt::Horizontal );
+    uiDialog.horizontalLayoutShowtime->insertWidget( 0, sliderShowtime );
+    sliderShowtime->setObjectName( "sliderShowtime" );
+    sliderShowtime->setTracking( true );
+    sliderShowtime->setMinimum( 1 );
+    sliderShowtime->setMaximum( 20 );
+    sliderShowtime->setValue( 10 );
+    sliderShowtime->setShowValue( false );
+    sliderShowtime->show();
+
     QColor color   = Qt::red; //vkSettings.getShowClickColor();
     double opacity = 0.5; //vkSettings.getShowClickOpacity();
 
-    ShowClickDialog = new QvkShowClickDialog();
+    ShowClickDialog = new QvkShowClickDialog( uiDialog );
+    ShowClickDialog->setSpezialSliders( sliderCircle, sliderOpacity, sliderShowtime );
     ShowClickDialog->vk_init( color, opacity );
-    ShowClickDialog->setVisible( true );
 
-    animateControl = new QvkAnimateControl( (double) ShowClickDialog->uiDialog.horizontalSliderShowtime->value()/10,
-                                            ShowClickDialog->uiDialog.horizontalSliderCircle->value(),
-                                            (double) ShowClickDialog->uiDialog.horizontalSliderOpacity->value()/100,
+    animateControl = new QvkAnimateControl( (double) sliderShowtime->value()/10,
+                                            sliderCircle->value(),
+                                            (double) sliderOpacity->value()/100,
                                             color );
 
     connect( ShowClickDialog, SIGNAL( newCircleWidgetValue( int, QColor ) ), animateControl, SLOT( setDiameterColor( int, QColor ) ) );
     connect( ShowClickDialog, SIGNAL( newShowtime( double ) ), animateControl, SLOT( setShowTime( double ) ) );
     connect( ShowClickDialog, SIGNAL( newOpacity( double ) ), animateControl, SLOT( setOpacity( double ) ) );
 
-    connect( ShowClickDialog->uiDialog.checkBoxPointerOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
-    connect( ShowClickDialog, SIGNAL( signal_close() ), this, SLOT( slot_pointerOnOff() ) );
+    connect( uiDialog.checkBoxPointerOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
 
     // In the programm vokoShowClick we want set the checkBox to hide.
     // And we start showclick from start.
-    // See in class ShowClickDialog::showEvent and QvkShowClickDialog::slot_afterWindowShown()
-    ShowClickDialog->uiDialog.checkBoxPointerOnOff->hide();
+    // See in showEvent and slot_afterWindowShown()
+    uiDialog.checkBoxPointerOnOff->hide();
 }
 
 QvkShowClickController::~QvkShowClickController()
 {
 }
 
-// Before vokoShowClick is closed, showclick must be switched off.
-void QvkShowClickController::slot_pointerOnOff()
+
+void QvkShowClickController::closeEvent(QCloseEvent *)
 {
     animateControl->pointerOnOff( false );
+    ShowClickDialog->vkhelp->close();
+    ShowClickDialog->vkhelp->temporaryDirLocal.remove();
 }
+
+
+void QvkShowClickController::showEvent( QShowEvent *event )
+{
+    Q_UNUSED(event);
+    // Call slot "afterWindowShown" after the window has been shown
+    QMetaObject::invokeMethod( this, "slot_afterWindowShown", Qt::ConnectionType::QueuedConnection );
+}
+
+
+void QvkShowClickController::slot_afterWindowShown()
+{
+    // In the program vokoShowClick, the checkBox is hide and showclick started from the beginning.
+    uiDialog.checkBoxPointerOnOff->click();
+}
+
