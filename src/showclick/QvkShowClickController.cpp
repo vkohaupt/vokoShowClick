@@ -90,6 +90,10 @@ QvkShowClickController::QvkShowClickController(QWidget *parent): QDialog(parent)
     // And we start showclick from start.
     // See in showEvent and slot_afterWindowShown()
     uiDialog.checkBoxPointerOnOff->hide();
+
+    connect( uiDialog.toolButtonON, SIGNAL( clicked() ), this, SLOT( slot_On() ) );
+    connect( uiDialog.toolButtonOFF, SIGNAL( clicked() ), this, SLOT( slot_Off() ) );
+    uiDialog.toolButtonOFF->setVisible( false );
 }
 
 QvkShowClickController::~QvkShowClickController()
@@ -102,6 +106,22 @@ void QvkShowClickController::closeEvent(QCloseEvent *)
     animateControl->pointerOnOff( false );
     ShowClickDialog->vkhelp->close();
     ShowClickDialog->vkhelp->temporaryDirLocal.remove();
+}
+
+
+void QvkShowClickController::slot_On()
+{
+    uiDialog.toolButtonON->setVisible( false );
+    uiDialog.toolButtonOFF->setVisible( true );
+    uiDialog.checkBoxPointerOnOff->click();
+}
+
+
+void QvkShowClickController::slot_Off()
+{
+    uiDialog.toolButtonON->setVisible( true );
+    uiDialog.toolButtonOFF->setVisible( false );
+    uiDialog.checkBoxPointerOnOff->click();
 }
 
 

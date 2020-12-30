@@ -45,6 +45,8 @@ public:
 
 private slots:
     void slot_afterWindowShown();
+    void slot_On();
+    void slot_Off();
 
 
 private:

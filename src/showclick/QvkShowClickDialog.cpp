@@ -64,6 +64,7 @@ void QvkShowClickDialog::vk_init( QColor color, double opacity )
     uiDialog.labelOS->setMinimumSize( 70, 70);
 
     QPixmap pixmap( ":/pictures/showclick/cursorAbout.png" );
+    pixmap = pixmap.scaled( 30, 30 );
     QCursor cursor( pixmap );
     uiDialog.toolButtonDonate->setCursor( cursor );
     uiDialog.toolButtonHomepage->setCursor( cursor );
