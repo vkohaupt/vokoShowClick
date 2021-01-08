@@ -57,7 +57,7 @@ QvkLicenses::QvkLicenses() : ui( new Ui::license )
             label->setPixmap( pixmap );
             ui->gridLayout->addWidget( label, row, 1 );
 
-            QPixmap pixmapSpace( ":/pictures/space.png" );
+            QPixmap pixmapSpace( ":/pictures/showclick/space.png" );
             pixmapSpace = pixmapSpace.scaled( 10, 50, Qt::KeepAspectRatio, Qt::SmoothTransformation);
             QLabel *labelSpace = new QLabel;
             labelSpace->setPixmap( pixmapSpace );
@@ -71,7 +71,7 @@ QvkLicenses::QvkLicenses() : ui( new Ui::license )
                                   "Source : " + settings.value( "url" ).toString() );
             ui->gridLayout->addWidget( labelAuthor, row, 3 );
 
-            QPixmap pixmap1( ":/pictures/space.png" );
+            QPixmap pixmap1( ":/pictures/showclick/space.png" );
             pixmap1 = pixmap1.scaled( 50, 10, Qt::KeepAspectRatio, Qt::SmoothTransformation);
             QLabel *label1 = new QLabel;
             label1->setPixmap( pixmap1 );

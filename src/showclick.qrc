@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
+        <file>pictures/showclick/space.png</file>
         <file>pictures/showclick/applications-graphics.png</file>
         <file>pictures/showclick/help-about.png</file>
         <file>pictures/showclick/windows.png</file>
@@ -19,8 +20,6 @@
         <file>pictures/showclick/information.png</file>
         <file>pictures/showclick/person-green.png</file>
         <file>pictures/showclick/farbeimer-gruen.png</file>
-        <file>pictures/showclick/on.png</file>
-        <file>pictures/showclick/off.png</file>
         
         <file>pictures/showclick/applications-graphics.license</file>
         <file>pictures/showclick/help-about.license</file>
@@ -41,7 +40,6 @@
         <file>pictures/showclick/information.license</file>
         <file>pictures/showclick/person-green.license</file>
         <file>pictures/showclick/farbeimer-gruen.license</file>
-
         
     </qresource>
 </RCC>

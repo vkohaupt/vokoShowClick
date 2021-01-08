@@ -54,7 +54,7 @@ void QvkShowClickDialog::vk_init( QColor color, double opacity )
     vkhelp = new QvkHelp( uiDialog );
 
 #ifdef Q_OS_WIN
-    QPixmap pixmap_1( ":/pictures/showclick/windows.png" );
+    QPixmap pixmapOS( ":/pictures/showclick/windows.png" );
 #endif
 #ifdef Q_OS_LINUX
     QPixmap pixmapOS( ":/pictures/showclick/linux.png" );

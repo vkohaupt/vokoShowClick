@@ -22,7 +22,8 @@ SOURCES += \
 HEADERS += \
     global.h
 
-RESOURCES += showclick.qrc    
+RESOURCES += showclick.qrc \
+             spezialCheckBox/spezialCheckBox.qrc
     
 CONFIG += link_pkgconfig
 
@@ -32,3 +33,5 @@ include(showclick/showclick.pri)
 include(licenses/licenses.pri)
 include(help/help.pri)
 include(spezialSlider/spezialSlider.pri)
+include(spezialCheckBox/spezialCheckBox.pri)
+#include(moveButton/movebutton.pri)

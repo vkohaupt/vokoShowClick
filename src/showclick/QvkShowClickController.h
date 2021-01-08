@@ -44,9 +44,7 @@ public:
 
 
 private slots:
-    void slot_afterWindowShown();
-    void slot_On();
-    void slot_Off();
+    void slot_OnOff( bool value );
 
 
 private:
@@ -57,7 +55,6 @@ private:
 
 
 protected:
-    void showEvent( QShowEvent *event );
     void closeEvent(QCloseEvent *);
 
 
