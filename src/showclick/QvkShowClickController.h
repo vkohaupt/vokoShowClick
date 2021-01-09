@@ -27,6 +27,7 @@
 
 #include "QvkShowClickDialog.h"
 #include "QvkAnimateControl.h"
+#include "QvkSpezialCheckbox.h"
 
 #include "ui_showclickDialog.h"
 
@@ -44,19 +45,18 @@ public:
 
 
 private slots:
-    void slot_OnOff( bool value );
-
+     void slot_afterWindowShown();
 
 private:
     Ui::MainWindow *ui;
     QvkAnimateControl *animateControl;
     QvkShowClickDialog *ShowClickDialog;
     Ui::Dialog uiDialog;
-
+    QvkSpezialCheckbox *vkSpezialCheckbox;
 
 protected:
     void closeEvent(QCloseEvent *);
-
+    void showEvent( QShowEvent *event );
 
 };
 #endif // QvkShowClickController_H

@@ -69,10 +69,9 @@ QvkShowClickController::QvkShowClickController(QWidget *parent): QDialog(parent)
     sliderShowtime->setShowValue( false );
     sliderShowtime->show();
 
-    QvkSpezialCheckbox *vkSpezialCheckbox = new QvkSpezialCheckbox( this );
+    vkSpezialCheckbox = new QvkSpezialCheckbox( this );
     uiDialog.horizontalLayout_2->insertWidget( 0, vkSpezialCheckbox );
-    connect( vkSpezialCheckbox, SIGNAL( clicked( bool ) ), this, SLOT( slot_OnOff( bool ) ) );
-//    vkSpezialCheckbox->click();
+    connect( vkSpezialCheckbox, SIGNAL( clicked( bool ) ), uiDialog.checkBoxPointerOnOff, SLOT( click() ) );
 
     QColor color   = Qt::red; //vkSettings.getShowClickColor();
     double opacity = 0.5; //vkSettings.getShowClickOpacity();
@@ -105,14 +104,25 @@ QvkShowClickController::~QvkShowClickController()
 
 void QvkShowClickController::closeEvent(QCloseEvent *)
 {
-    animateControl->pointerOnOff( false );
+    if ( vkSpezialCheckbox->checkState() == Qt::Checked )
+    {
+         vkSpezialCheckbox->click();
+    }
     ShowClickDialog->vkhelp->close();
     ShowClickDialog->vkhelp->temporaryDirLocal.remove();
 }
 
 
-void QvkShowClickController::slot_OnOff( bool value )
+void QvkShowClickController::showEvent( QShowEvent *event )
 {
-    Q_UNUSED(value);
-    uiDialog.checkBoxPointerOnOff->click();
+    Q_UNUSED(event);
+    // Call slot "slot_afterWindowShown" after the window has been shown
+    QMetaObject::invokeMethod( this, "slot_afterWindowShown", Qt::ConnectionType::QueuedConnection );
+}
+
+
+void QvkShowClickController::slot_afterWindowShown()
+{
+    // In the program vokoShowClick, the checkBox is hide and showclick started from the beginning.
+    vkSpezialCheckbox->click();
 }
