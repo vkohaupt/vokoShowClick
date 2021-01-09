@@ -389,13 +389,6 @@
           </layout>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBoxPointerOnOff">
-           <property name="text">
-            <string>ON/OFF</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <spacer name="verticalSpacer_2">
            <property name="orientation">
             <enum>Qt::Vertical</enum>

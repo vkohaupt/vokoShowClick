@@ -27,15 +27,6 @@
 
 QvkShowClickController::QvkShowClickController(QWidget *parent): QDialog(parent)
 {
-/*  Standardard Werte
-    Circle=70
-    Color=@Variant(\0\0\0\x43\x1\xff\xff\xff\xff\0\0\0\0\0\0)
-    OnOff=0
-    Opacity=0.5
-    Radiant=false
-    Showtime=5
-*/
-
     uiDialog.setupUi( this );
     show();
 
@@ -69,10 +60,6 @@ QvkShowClickController::QvkShowClickController(QWidget *parent): QDialog(parent)
     sliderShowtime->setShowValue( false );
     sliderShowtime->show();
 
-    vkSpezialCheckbox = new QvkSpezialCheckbox( this );
-    uiDialog.horizontalLayout_2->insertWidget( 0, vkSpezialCheckbox );
-    connect( vkSpezialCheckbox, SIGNAL( clicked( bool ) ), uiDialog.checkBoxPointerOnOff, SLOT( click() ) );
-
     QColor color   = Qt::red; //vkSettings.getShowClickColor();
     double opacity = 0.5; //vkSettings.getShowClickOpacity();
 
@@ -85,17 +72,15 @@ QvkShowClickController::QvkShowClickController(QWidget *parent): QDialog(parent)
                                             (double) sliderOpacity->value()/100,
                                             color );
 
+    vkSpezialCheckbox = new QvkSpezialCheckbox( this );
+    uiDialog.horizontalLayout_2->insertWidget( 0, vkSpezialCheckbox );
+    connect( vkSpezialCheckbox, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
+
     connect( ShowClickDialog, SIGNAL( newCircleWidgetValue( int, QColor ) ), animateControl, SLOT( setDiameterColor( int, QColor ) ) );
     connect( ShowClickDialog, SIGNAL( newShowtime( double ) ), animateControl, SLOT( setShowTime( double ) ) );
     connect( ShowClickDialog, SIGNAL( newOpacity( double ) ), animateControl, SLOT( setOpacity( double ) ) );
-
-    connect( uiDialog.checkBoxPointerOnOff, SIGNAL( clicked( bool ) ), animateControl, SLOT( pointerOnOff( bool ) ) );
-
-    // In the programm vokoShowClick we want set the checkBox to hide.
-    // And we start showclick from start.
-    // See in showEvent and slot_afterWindowShown()
-    uiDialog.checkBoxPointerOnOff->hide();
 }
+
 
 QvkShowClickController::~QvkShowClickController()
 {
@@ -113,9 +98,8 @@ void QvkShowClickController::closeEvent(QCloseEvent *)
 }
 
 
-void QvkShowClickController::showEvent( QShowEvent *event )
+void QvkShowClickController::showEvent( QShowEvent * )
 {
-    Q_UNUSED(event);
     // Call slot "slot_afterWindowShown" after the window has been shown
     QMetaObject::invokeMethod( this, "slot_afterWindowShown", Qt::ConnectionType::QueuedConnection );
 }
