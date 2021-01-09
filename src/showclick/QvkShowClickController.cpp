@@ -93,6 +93,8 @@ void QvkShowClickController::closeEvent(QCloseEvent *)
     {
          vkSpezialCheckbox->click();
     }
+
+    ShowClickDialog->vkLicenses->close();
     ShowClickDialog->vkhelp->close();
     ShowClickDialog->vkhelp->temporaryDirLocal.remove();
 }

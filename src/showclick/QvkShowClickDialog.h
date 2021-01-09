@@ -27,6 +27,7 @@
 #include "QvkCircleWidget.h"
 #include "QvkHelp.h"
 #include "QvkSpezialSlider.h"
+#include "QvkLicenses.h"
 
 //#include "QvkSettings.h"
 
@@ -43,7 +44,7 @@ public:
     Ui_Dialog uiDialog;
     void setSpezialSliders(QvkSpezialSlider *vkSpezialSlider , QvkSpezialSlider *vk_sliderOpacity, QvkSpezialSlider *vk_sliderShowtime);
     QvkHelp *vkhelp;
-
+    QvkLicenses *vkLicenses;
 
 public slots:
 
