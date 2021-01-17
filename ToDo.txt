@@ -2,8 +2,6 @@ SpezialSlider einbauen
 
 Windowsport erstellen
 
-Logo entwickeln
-
 Seiten für Onlinehilfe erstellen
 
 Settings

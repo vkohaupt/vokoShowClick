@@ -1,5 +1,5 @@
-# vokoShowClick
-![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/vokoShowClick.png)
+# vokoClick
+![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/vokoClick.png)
 
 ## Linux
 
