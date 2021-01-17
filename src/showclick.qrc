@@ -8,13 +8,11 @@
         <file>pictures/showclick/linux.png</file>
         <file>pictures/showclick/undo.png</file>
         <file>pictures/showclick/cursor.png</file>
-        <file>pictures/showclick/radiant.png</file>
         <file>pictures/showclick/sandglass.png</file>
         <file>pictures/showclick/transparenz.png</file>
         <file>pictures/showclick/author.png</file>
         <file>pictures/showclick/go-home.png</file>
         <file>pictures/showclick/donate.png</file>
-        <file>pictures/showclick/sourcecode.png</file>
         <file>pictures/showclick/github.png</file>
         <file>pictures/showclick/copyright.png</file>
         <file>pictures/showclick/cursorAbout.png</file>
@@ -22,20 +20,18 @@
         <file>pictures/showclick/person-green.png</file>
         <file>pictures/showclick/farbeimer-gruen.png</file>
         
-        <file>pictures/logo/vokoClick.licence</file>
+        <file>pictures/logo/vokoClick.license</file>
         <file>pictures/showclick/applications-graphics.license</file>
         <file>pictures/showclick/help-about.license</file>
         <file>pictures/showclick/windows.license</file>
         <file>pictures/showclick/linux.license</file>
         <file>pictures/showclick/undo.license</file>
         <file>pictures/showclick/cursor.license</file>
-        <file>pictures/showclick/radiant.license</file>
         <file>pictures/showclick/sandglass.license</file>
         <file>pictures/showclick/transparenz.license</file>
         <file>pictures/showclick/author.license</file>
         <file>pictures/showclick/go-home.license</file>
         <file>pictures/showclick/donate.license</file>
-        <file>pictures/showclick/sourcecode.license</file>
         <file>pictures/showclick/github.license</file>
         <file>pictures/showclick/copyright.license</file>
         <file>pictures/showclick/cursorAbout.license</file>
