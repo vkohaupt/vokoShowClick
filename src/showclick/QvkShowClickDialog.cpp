@@ -86,7 +86,7 @@ void QvkShowClickDialog::vk_init( QColor color, double opacity )
     uiDialog.pushButton_black->setStyleSheet( "background-color: black;" );
     uiDialog.pushButton_red->setStyleSheet( "background-color: red;" );
     uiDialog.pushButton_darkRed->setStyleSheet( "background-color: darkRed;" );
-    uiDialog.pushButton_green->setStyleSheet( "background-color: green;" );
+    uiDialog.pushButton_green->setStyleSheet( "background-color: lightGreen;" );
     uiDialog.pushButton_darkGreen->setStyleSheet( "background-color: darkGreen;" );
     uiDialog.pushButton_blue->setStyleSheet( "background-color: blue;" );
     uiDialog.pushButton_darkBlue->setStyleSheet( "background-color: darkBlue;" );
