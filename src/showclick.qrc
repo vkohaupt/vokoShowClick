@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
+        <file>pictures/logo/vokoClick.png</file>
         <file>pictures/showclick/space.png</file>
         <file>pictures/showclick/applications-graphics.png</file>
         <file>pictures/showclick/help-about.png</file>
@@ -21,6 +22,7 @@
         <file>pictures/showclick/person-green.png</file>
         <file>pictures/showclick/farbeimer-gruen.png</file>
         
+        <file>pictures/logo/vokoClick.licence</file>
         <file>pictures/showclick/applications-graphics.license</file>
         <file>pictures/showclick/help-about.license</file>
         <file>pictures/showclick/windows.license</file>

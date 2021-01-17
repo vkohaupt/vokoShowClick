@@ -20,6 +20,7 @@
  * --End_License--
  */
 
+#include "global.h"
 #include "QvkShowClickController.h"
 #include "ui_showclickDialog.h"
 #include "QvkSpezialSlider.h"
@@ -29,6 +30,12 @@ QvkShowClickController::QvkShowClickController(QWidget *parent): QDialog(parent)
 {
     uiDialog.setupUi( this );
     show();
+
+    QIcon icon;
+    icon.addFile( QString::fromUtf8( ":/pictures/logo/vokoClick.png" ), QSize(), QIcon::Normal, QIcon::Off );
+    setWindowIcon( icon );
+
+    setWindowTitle( global::name + " " + global::version );
 
     QvkSpezialSlider *sliderCircle = new QvkSpezialSlider( Qt::Horizontal );
     uiDialog.horizontalLayoutCircle->insertWidget( 0, sliderCircle );

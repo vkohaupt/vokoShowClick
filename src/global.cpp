@@ -25,7 +25,7 @@
 
 namespace global
 {
-    QString name = "vokoShowClick";
+    QString name = "vokoClick";
     QString nameOutput = "[" + name + "]";
 
 #ifdef Q_OS_LINUX
