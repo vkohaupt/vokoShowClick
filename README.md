@@ -1,11 +1,11 @@
 # vokoClick
 ![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/vokoClick.png)
 
+
+## Installer:
+Windows and Linux installation routines are not provided. Each platform has its own special features. That means make-install, metadata, desktop files, icons, logo must be provided by your own installer. All the images and logos provided with the Program are free and can be changed in size itself be used for your own installer.
+
 ## Linux
-
-### Note:
-Since every distribution has its own characteristics, a make install is not supported. The integration into the distribution must be carried out by each distribution itself. The same applies to metadata.
-
 
 ### Build requirements
 * pkgconfig
