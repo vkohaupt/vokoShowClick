@@ -1,8 +1,9 @@
-SpezialSlider einbauen
 
-Windowsport erstellen
+Windows Click-routine erstellen
 
-Seiten für Onlinehilfe erstellen
+Windows Installer erstellen
+
+Seiten für Onlinehilfe vervollständigen
 
 Settings
 
