@@ -71,12 +71,7 @@ void QvkAnimateControl::mousePressed( int x, int y, QString mouseButton )
     animateWindow->move( x - animateWindow->width() / 2, y - animateWindow->height() / 2 );
     animateWindow->show();
     animateWindow->setMouseButton( mouseButton );
-    QTimer::singleShot( showTime, this, SLOT( closeWindow() ) );
-}
-
-void QvkAnimateControl::closeWindow()
-{
-    animateWindow->close();
+    QTimer::singleShot( showTime, animateWindow, SLOT( close() ) );
 }
 
 void QvkAnimateControl::setDiameterColor( int diameter, QColor color)
