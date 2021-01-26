@@ -64,7 +64,8 @@ void MainWindow::setPictureOperatingSystem()
 #ifdef Q_OS_LINUX
     QPixmap pixmapOS( ":/pictures/showclick/linux.png" );
 #endif
-    pixmapOS = pixmapOS.scaled( 70, 70, Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
+    pixmapOS.setDevicePixelRatio( devicePixelRatioF() );
+    pixmapOS = pixmapOS.scaled( 70 * devicePixelRatioF(), 70 * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
     ui->labelOS->setPixmap( pixmapOS );
     ui->labelOS->setMinimumSize( 70, 70);
 }
