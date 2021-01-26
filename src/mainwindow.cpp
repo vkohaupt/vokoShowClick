@@ -262,14 +262,10 @@ void MainWindow::setSpezialCheckBox()
 
 void MainWindow::slot_pointerOnOff( bool value )
 {
-    qDebug() << "1 void MainWindow::slot_pointerOnOff( bool value )" << value << global::zaehler++;
     if ( value == true )
     {
         vkGlobalMouse->setCursorOn();
-        qDebug() << "2 void MainWindow::slot_pointerOnOff( bool value )" << value << global::zaehler++;
-
         vkGlobalMouse->mousePressed();
-        qDebug() << "3 void MainWindow::slot_pointerOnOff( bool value )" << value << global::zaehler++;
     }
 
     if ( value == false )
