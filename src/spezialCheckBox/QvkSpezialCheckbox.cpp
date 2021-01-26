@@ -70,6 +70,7 @@ void QvkSpezialCheckbox::paintChecked( QPainter &painter )
     painter.drawPath( painterPathSlider );
 
     QPixmap pixmap( ":/on.png" );
+    pixmap.setDevicePixelRatio( devicePixelRatioF() );
     pixmap = pixmap.scaled( slider_height / 5 * 3 , slider_height / 5 * 3, Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
     painter.drawPixmap( button_x + margin + ( ( slider_x - button_x - margin ) / 2 ) - ( pixmap.width() / 2 ),
                         button_y + margin + ( slider_height / 5 ),
@@ -106,6 +107,7 @@ void QvkSpezialCheckbox::paintUnChecked( QPainter &painter )
     painter.drawPath( painterPathSlider );
 
     QPixmap pixmap( ":/off.png" );
+    pixmap.setDevicePixelRatio( devicePixelRatioF() );
     pixmap = pixmap.scaled( slider_height / 5 * 3 , slider_height / 5 * 3, Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
     painter.drawPixmap( button_x + button_width - ( ( button_x + button_width - ( slider_x + slider_width ) ) / 2 ) - pixmap.width() / 2,
                         button_y + margin + ( slider_height / 5 ),

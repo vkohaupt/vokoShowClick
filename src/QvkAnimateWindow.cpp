@@ -83,8 +83,9 @@ void QvkAnimateWindow::paintEvent( QPaintEvent *event )
 {
     Q_UNUSED(event);
 
-    QPixmap pixmap( height(), width() );
+    QPixmap pixmap( height() * devicePixelRatioF(), width() * devicePixelRatioF() );
     pixmap.fill( Qt::transparent );
+    pixmap.setDevicePixelRatio( devicePixelRatioF() );
 
     QPainter painterPixmap;
     painterPixmap.begin( &pixmap );
