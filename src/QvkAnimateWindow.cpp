@@ -45,7 +45,7 @@ void QvkAnimateWindow::init( int x,
     setAttribute( Qt::WA_TranslucentBackground, true );
 
     resize( 110, 110 );
-    move( x - ( width() / 2 ), y - ( height() / 2 ) );
+    move( x / devicePixelRatioF() - ( width() / 2 ), y / devicePixelRatio()- ( height() / 2 ) );
 
     QRegion window( 0,
                     0,
