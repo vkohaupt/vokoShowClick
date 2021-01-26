@@ -286,7 +286,7 @@ void MainWindow::setToolButtonDefaultValues()
 
 void MainWindow::slot_toolButtonColorDefault()
 {
-    ui->pushButton_red->click();
+    vkCircleWidget->setColor( Qt::red );
 }
 
 
