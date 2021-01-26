@@ -220,35 +220,35 @@ void MainWindow::slot_vkPushButton_darkGray()
 
 void MainWindow::setSpezialSlider()
 {
-    sliderCircle = new QvkSpezialSlider( Qt::Horizontal );
-    ui->horizontalLayoutCircle->insertWidget( 0, sliderCircle );
-    sliderCircle->setObjectName( "sliderCircle" );
-    sliderCircle->setTracking( true );
-    sliderCircle->setMinimum( 40 );
-    sliderCircle->setMaximum( 80 );
-    sliderCircle->setValue( 50 );
-    sliderCircle->setShowValue( false );
-    sliderCircle->show();
+    vkSpezialSliderCircle = new QvkSpezialSlider( Qt::Horizontal );
+    ui->horizontalLayoutCircle->insertWidget( 0, vkSpezialSliderCircle );
+    vkSpezialSliderCircle->setObjectName( "sliderCircle" );
+    vkSpezialSliderCircle->setTracking( true );
+    vkSpezialSliderCircle->setMinimum( 40 );
+    vkSpezialSliderCircle->setMaximum( 80 );
+    vkSpezialSliderCircle->setValue( 50 );
+    vkSpezialSliderCircle->setShowValue( false );
+    vkSpezialSliderCircle->show();
 
-    sliderOpacity = new QvkSpezialSlider( Qt::Horizontal );
-    ui->horizontalLayoutOpacity->insertWidget( 0, sliderOpacity );
-    sliderOpacity->setObjectName( "sliderOpacity" );
-    sliderOpacity->setTracking( true );
-    sliderOpacity->setMinimum( 1 );
-    sliderOpacity->setMaximum( 100 );
-    sliderOpacity->setValue( 50 );
-    sliderOpacity->setShowValue( false );
-    sliderOpacity->show();
+    vkSpezialSliderOpacity = new QvkSpezialSlider( Qt::Horizontal );
+    ui->horizontalLayoutOpacity->insertWidget( 0, vkSpezialSliderOpacity );
+    vkSpezialSliderOpacity->setObjectName( "sliderOpacity" );
+    vkSpezialSliderOpacity->setTracking( true );
+    vkSpezialSliderOpacity->setMinimum( 1 );
+    vkSpezialSliderOpacity->setMaximum( 100 );
+    vkSpezialSliderOpacity->setValue( 50 );
+    vkSpezialSliderOpacity->setShowValue( false );
+    vkSpezialSliderOpacity->show();
 
-    sliderShowtime = new QvkSpezialSlider( Qt::Horizontal );
-    ui->horizontalLayoutShowtime->insertWidget( 0, sliderShowtime );
-    sliderShowtime->setObjectName( "sliderShowtime" );
-    sliderShowtime->setTracking( true );
-    sliderShowtime->setMinimum( 1 );
-    sliderShowtime->setMaximum( 20 );
-    sliderShowtime->setValue( 10 );
-    sliderShowtime->setShowValue( false );
-    sliderShowtime->show();
+    vkSpezialSliderShowtime = new QvkSpezialSlider( Qt::Horizontal );
+    ui->horizontalLayoutShowtime->insertWidget( 0, vkSpezialSliderShowtime );
+    vkSpezialSliderShowtime->setObjectName( "sliderShowtime" );
+    vkSpezialSliderShowtime->setTracking( true );
+    vkSpezialSliderShowtime->setMinimum( 1 );
+    vkSpezialSliderShowtime->setMaximum( 20 );
+    vkSpezialSliderShowtime->setValue( 10 );
+    vkSpezialSliderShowtime->setShowValue( false );
+    vkSpezialSliderShowtime->show();
 }
 
 
@@ -296,19 +296,19 @@ void MainWindow::slot_toolButtonColorDefault()
 
 void MainWindow::slot_SliderCircleDefault()
 {
-    sliderCircle->setValue( 50 );
+    vkSpezialSliderCircle->setValue( 50 );
 }
 
 
 void MainWindow::slot_SliderOpacityDefault()
 {
-    sliderOpacity->setValue( 50 );
+    vkSpezialSliderOpacity->setValue( 50 );
 }
 
 
 void MainWindow::slot_SlidershowTimeDefault()
 {
-    sliderShowtime->setValue( 10 );
+    vkSpezialSliderShowtime->setValue( 10 );
 }
 
 
@@ -318,11 +318,10 @@ void MainWindow::setMouseClick()
     connect( vkGlobalMouse, SIGNAL( signal_mousePressed( int, int, QString ) ), this, SLOT( slot_mousePressed( int, int, QString ) ) );
 }
 
-#include <QThread>
 void MainWindow::slot_mousePressed( int x, int y, QString mouseButton )
 {
     QvkAnimateWindow *animateWindow = new QvkAnimateWindow( this );
-    animateWindow->init( x, y, sliderShowtime->value() * 100, mouseButton, sliderCircle->value(), sliderOpacity->value(), vkCircleWidget->getColor() );
+    animateWindow->init( x, y, vkSpezialSliderShowtime->value() * 100, mouseButton, vkSpezialSliderCircle->value(), vkSpezialSliderOpacity->value(), vkCircleWidget->getColor() );
     animateWindow->setWindowFlags( Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::ToolTip );
     animateWindow->show();
 }
@@ -377,18 +376,18 @@ void MainWindow::setCircleWidget()
 {
     vkCircleWidget = new QvkCircleWidget( ui->frame_3 );
     vkCircleWidget->show();
-    connect( sliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedSliderCircle( int ) ) );
-    connect( sliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChangedOpacity( int ) ) );
+    connect( vkSpezialSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChanged_SpezialSliderCircle( int ) ) );
+    connect( vkSpezialSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChanged_SpezialSliderOpacity( int ) ) );
 }
 
 
-void MainWindow::slot_valueChangedSliderCircle( int value )
+void MainWindow::slot_valueChanged_SpezialSliderCircle( int value )
 {
     vkCircleWidget->setDiameter( value );
 }
 
 
-void MainWindow::slot_valueChangedOpacity( int value )
+void MainWindow::slot_valueChanged_SpezialSliderOpacity( int value )
 {
     double value_1 = value;
     vkCircleWidget->setOpacity( value_1 / 100 );

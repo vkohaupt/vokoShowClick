@@ -25,9 +25,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QvkSpezialSlider *sliderCircle;
-    QvkSpezialSlider *sliderOpacity;
-    QvkSpezialSlider *sliderShowtime;
+    QvkSpezialSlider *vkSpezialSliderCircle;
+    QvkSpezialSlider *vkSpezialSliderOpacity;
+    QvkSpezialSlider *vkSpezialSliderShowtime;
     QvkLicenses *vkLicenses;
     QvkGlobalMouse *vkGlobalMouse;
     QvkSpezialCheckbox *vkSpezialCheckbox;
@@ -74,8 +74,8 @@ private slots:
     void slot_toolButtonAuthor();
     void slot_mousePressed( int, int, QString );
     void slot_pointerOnOff( bool value );
-    void slot_valueChangedSliderCircle( int value );
-    void slot_valueChangedOpacity( int value );
+    void slot_valueChanged_SpezialSliderCircle( int value );
+    void slot_valueChanged_SpezialSliderOpacity( int value );
 
 
 
