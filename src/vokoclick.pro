@@ -15,20 +15,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += main.cpp \
-           global.cpp
+SOURCES   += main.cpp \
+             mainwindow.cpp \
+             global.cpp \
+             QvkPushButton.cpp \
+             QvkGlobalMouse.cpp \
+             QvkAnimateWindow.cpp \
+             QvkCircleWidget.cpp
 
-HEADERS += global.h
+HEADERS   += mainwindow.h \
+             global.h \
+             QvkPushButton.h \
+             QvkGlobalMouse.h \
+             QvkAnimateWindow.h \
+             QvkCircleWidget.h
+
+FORMS     += mainwindow.ui
 
 RESOURCES += showclick.qrc \
              spezialCheckBox/spezialCheckBox.qrc
-    
-CONFIG += link_pkgconfig
 
 unix:LIBS += -L/usr/X11/lib -lX11
 
-include(showclick/showclick.pri)
-include(licenses/licenses.pri)
-include(help/help.pri)
 include(spezialSlider/spezialSlider.pri)
 include(spezialCheckBox/spezialCheckBox.pri)
+include(licenses/licenses.pri)

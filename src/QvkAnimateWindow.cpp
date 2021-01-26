@@ -23,12 +23,29 @@
 #include "QvkAnimateWindow.h"
 #include <QPainter>
 #include <QDebug>
+#include <QTimer>
+#include <QBitmap>
 
-QvkAnimateWindow::QvkAnimateWindow()
+
+QvkAnimateWindow::QvkAnimateWindow( QWidget *parent )
+{
+  setParent( parent );
+}
+
+
+void QvkAnimateWindow::init( int x,
+                             int y,
+                             int showTime,
+                             QString button,
+                             int valueDiameter,
+                             double valueOpacity,
+                             QColor valueColor )
+
 {
     setAttribute( Qt::WA_TranslucentBackground, true );
 
     resize( 110, 110 );
+    move( x - ( width() / 2 ), y - ( height() / 2 ) );
 
     QRegion window( 0,
                     0,
@@ -45,76 +62,75 @@ QvkAnimateWindow::QvkAnimateWindow()
     QRegion r1 = window.QRegion::subtracted( mouseHole );
 
     this->setMask( r1 );
+
+    mouseButton = button;
+    diameter = valueDiameter;
+    opacity = valueOpacity / 100;
+    color = valueColor;
+
+    QTimer::singleShot( showTime, this, SLOT( close() ) );
+
+    show();
 }
+
 
 QvkAnimateWindow::~QvkAnimateWindow()
 {
 }
 
-void QvkAnimateWindow::paintEvent( QPaintEvent *event ) 
+
+void QvkAnimateWindow::paintEvent( QPaintEvent *event )
 {
     Q_UNUSED(event);
 
-    QPainter painter( this );
-    painter.setRenderHints( QPainter::Antialiasing, true );
+    QPixmap pixmap( height(), width() );
+    pixmap.fill( Qt::transparent );
 
-    qreal penWith = 8.0;
+    QPainter painterPixmap;
+    painterPixmap.begin( &pixmap );
+    painterPixmap.setRenderHints( QPainter::Antialiasing, true );
+
+    qreal penWith = 6.0;
     QPen pen;
     pen.setWidthF( penWith );
     pen.setColor( color );
     pen.setStyle( Qt::SolidLine );
-    painter.setPen( pen );
-    painter.setBrush( Qt::NoBrush );
-    painter.setOpacity( opacity );
-    painter.drawEllipse( width()/2-diameter/2, height()/2-diameter/2, diameter, diameter );
+    painterPixmap.setPen( pen );
+    painterPixmap.setBrush( Qt::NoBrush );
+    painterPixmap.setOpacity( opacity );
+    painterPixmap.drawEllipse( width()/2-diameter/2, height()/2-diameter/2, diameter, diameter );
 
     // Paint Button
     pen.setStyle( Qt::SolidLine );
     pen.setWidthF( 3.0 );
-    painter.setPen( pen );
-    painter.setOpacity( opacity );
-    if ( getMouseButton() == "LeftButton" )
+    painterPixmap.setPen( pen );
+    painterPixmap.setOpacity( opacity );
+    if ( mouseButton == "LeftButton" )
     {
         QRectF rectF( width()/2 - diameter/2 + penWith, height()/2 - diameter/2 + penWith, diameter-2*penWith, diameter-2*penWith );
         int startAngle = 90 * 16;
         int spanAngle = 180 * 16;
-        painter.drawArc( rectF, startAngle, spanAngle );
+        painterPixmap.drawArc( rectF, startAngle, spanAngle );
     }
 
-    if ( getMouseButton() == "RightButton" )
+    if ( mouseButton == "RightButton" )
     {
         QRectF rectF( width()/2 - diameter/2 + penWith, height()/2 - diameter/2 + penWith, diameter-2*penWith, diameter-2*penWith );
         int startAngle = -90 * 16;
         int spanAngle = 180 * 16;
-        painter.drawArc( rectF, startAngle, spanAngle );
+        painterPixmap.drawArc( rectF, startAngle, spanAngle );
     }
 
-    if ( getMouseButton() == "MiddleButton" )
+    if ( mouseButton == "MiddleButton" )
     {
         QLineF line( width()/2, height()/2 - diameter/2 + penWith , width()/2, height()/2 + diameter/2 - penWith );
-        painter.drawLine( line );
+        painterPixmap.drawLine( line );
     }
 
-}
+    painterPixmap.end();
 
-void QvkAnimateWindow::setRadiusColor( int valueDiameter, QColor valueColor )
-{
-    diameter = valueDiameter;
-    color = valueColor;
-    repaint();
-}
-
-void QvkAnimateWindow::setOpacity( double value )
-{
-    opacity = value;
-}
-
-void QvkAnimateWindow::setMouseButton( QString mouseButton )
-{
-    this->mouseButton = mouseButton;
-}
-
-QString QvkAnimateWindow::getMouseButton()
-{
-    return mouseButton;
+    QPainter painter;
+    painter.begin( this );
+    painter.drawPixmap( QPoint( 0, 0 ), pixmap );
+    painter.end();
 }

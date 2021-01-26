@@ -24,8 +24,7 @@
 #define QVKLICENSES_H
 
 #include "ui_licenses.h"
-//#include "ui_formMainWindow.h"
-#include "ui_showclickDialog.h"
+#include "ui_mainwindow.h"
 
 #include <QWidget>
 #include <QDebug>

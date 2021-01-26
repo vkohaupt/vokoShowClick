@@ -1,6 +1,6 @@
 /* vokoShowClick
  * Copyright (C) 2017-2021 Volker Kohaupt
- * 
+ *
  * Author:
  *      Volker Kohaupt <vkohaupt@freenet.de>
  *
@@ -20,50 +20,42 @@
  * --End_License--
  */
 
-#ifndef QVKDOWNLOADER_H
-#define QVKDOWNLOADER_H
+#ifndef QvkAnimateWindow_H
+#define QvkAnimateWindow_H
 
-#include <QObject>
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QNetworkReply>
-#include <QFile>
-#include <QFileInfo>
-#include <QList>
-#include <QStringList>
-#include <QUrl>
-#include <QStandardPaths>
-#include <QVector>
+#include <QDialog>
 
-class QvkDownloader : public QObject
+class QvkAnimateWindow: public QWidget
+
 {
     Q_OBJECT
-    QNetworkAccessManager networkAccessManager;
-    QVector<QNetworkReply *> listDownloads;
-
-
 public:
-    explicit QvkDownloader( QString pathLocal, QObject *parent = nullptr);
-    void doDownload( const QUrl &url );
+    QvkAnimateWindow( QWidget *parent );
+    void init(int x, int y, int showTime, QString button, int valueDiameter , double valueOpacity, QColor valueColor);
 
-
-private:
-    QString tempPath;
-    bool saveLocal(const QString &filename, QIODevice *data );
-    void execute();
-
-
-signals:
-    void signal_fileDownloaded( QString );
+    virtual ~QvkAnimateWindow();
+    
+public:
 
 
 public slots:
-    void slot_downloadFinished( QNetworkReply *reply );
+
+
+private:
+    int diameter;
+    QColor color;
+    double opacity;
+    QString mouseButton;
+
 
 
 private slots:
 
 
+protected:
+    void paintEvent(QPaintEvent *event);
+
+
 };
 
-#endif // QvkDownloader_H
+#endif // QvkAnimateWindow_H

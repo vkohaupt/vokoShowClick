@@ -25,11 +25,17 @@
 QvkCircleWidget::QvkCircleWidget( QWidget *parent ) : QWidget( parent )
 {
     parentWidget = parent;
+
+    pointerColor = Qt::red;
+    diameter = 50;
+    pointerOpacity = 0.5;
 }
+
 
 QvkCircleWidget::~QvkCircleWidget()
 {
 }
+
 
 void QvkCircleWidget::paintEvent( QPaintEvent *event )
 {
@@ -39,7 +45,7 @@ void QvkCircleWidget::paintEvent( QPaintEvent *event )
     painter.begin( this );
     painter.setRenderHints( QPainter::Antialiasing, true );
 
-    qreal penWith = 8;
+    qreal penWith = 6;
     QPen pen;
     pen.setWidthF( penWith );
     pen.setColor( pointerColor );
@@ -53,16 +59,19 @@ void QvkCircleWidget::paintEvent( QPaintEvent *event )
     painter.end();
 }
 
+
 void QvkCircleWidget::setColor( QColor value )
 {
     pointerColor = value;
     repaint();
 }
 
+
 QColor QvkCircleWidget::getColor()
 {
     return pointerColor;
 }
+
 
 void QvkCircleWidget::setDiameter( int value )
 {
@@ -70,16 +79,19 @@ void QvkCircleWidget::setDiameter( int value )
     repaint();
 }
 
+
 int QvkCircleWidget::getDiameter()
 {
     return diameter;
 }
+
 
 void QvkCircleWidget::setOpacity( double value )
 {
     pointerOpacity = value;;
     repaint();
 }
+
 
 double QvkCircleWidget::getOpacity()
 {

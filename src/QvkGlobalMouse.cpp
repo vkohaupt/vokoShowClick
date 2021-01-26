@@ -36,19 +36,23 @@ QvkGlobalMouse::QvkGlobalMouse()
     onOff = false;
 }
 
+
 QvkGlobalMouse::~QvkGlobalMouse()
 {
 }
+
 
 void QvkGlobalMouse::setCursorOn()
 {
     onOff = true;
 }
 
+
 void QvkGlobalMouse::setCursorOff()
 {
     onOff = false;
 }
+
 
 #ifdef Q_OS_LINUX
 void QvkGlobalMouse::mousePressed()
@@ -66,7 +70,7 @@ void QvkGlobalMouse::mousePressed()
     while( onOff )
     {
         QCoreApplication::processEvents( QEventLoop::AllEvents );
-        XQueryPointer(display, root, &root_return, &child_return, &x, &y, &win_x, &win_y, &mask);
+        XQueryPointer( display, root, &root_return, &child_return, &x, &y, &win_x, &win_y, &mask );
         QThread::msleep( 10 );
 
         if ( ( mask & Button1Mask) | ( mask & Button2Mask ) | ( mask & Button3Mask ) )
@@ -90,7 +94,7 @@ void QvkGlobalMouse::mousePressed()
                 }
 
                 pressed = 1;
-                emit mousePressed( win_x, win_y, mouseButton );
+                emit signal_mousePressed( win_x, win_y, mouseButton );
             }
         }
         else

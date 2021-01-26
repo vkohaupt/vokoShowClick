@@ -1,4 +1,4 @@
-/* vokoShowClick
+/* vokoClick
  * Copyright (C) 2017-2021 Volker Kohaupt
  *
  * Author:
@@ -20,45 +20,39 @@
  * --End_License--
  */
 
-#ifndef QVKLOCALE_H
-#define QVKLOCALE_H
+#ifndef QVKPUSHBUTTON_H
+#define QVKPUSHBUTTON_H
 
-#include "QvkDownloader.h"
+#include <QPushButton>
+#include <QEvent>
 
-#include <QObject>
-#include <QTemporaryDir>
-#include <QMainWindow>
+class QvkPushButton: public QPushButton
 
-
-class QvkLocale: public QObject
 {
     Q_OBJECT
-
 public:
-    QvkLocale();
-    virtual ~QvkLocale() override;
+    QvkPushButton( QColor color );
+    virtual ~QvkPushButton();
+    
+public:
 
 
 public slots:
 
 
-private:
-    QTemporaryDir temporaryDirLocal;
-    QvkDownloader *vkDownload;
-    QStringList localeList;
-
-
 private slots:
-    void slot_parse(QString tempPathFileName );
+
+
+private:
+    QColor color;
+    bool mouseHover = false;
 
 
 protected:
-
-
-signals:
-   void signal_locale( QStringList list );
-
+    void paintEvent( QPaintEvent *event ) override;
+    void enterEvent( QEvent *event ) override;
+    void leaveEvent( QEvent *event ) override;
 
 };
 
-#endif
+#endif // QvkAnimateWindow_H
