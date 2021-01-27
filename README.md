@@ -1,9 +1,10 @@
-# vokoClick
-![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/vokoClick.png)
+# vokoShowClick
+![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/vokoShowClick.png)
 
 
 ## Installer:
-Windows and Linux installation routines are not provided, because each platform and installer has its own special features. That means make-install, metadata, desktop files, icons, logo must be provided by your own installer. All the images and logos provided with the Program are free and can be changed in size itself be used for your own installer.
+Windows and Linux installation routines are not provided, because each platform and installer has its own special features. That means make-install, metadata, desktop files, icons, logo must be provided by your own installer. All the images and logos that come with vokoShowClick are free. You can be change in size itself be used for your own installer.
+
 
 ## Linux
 

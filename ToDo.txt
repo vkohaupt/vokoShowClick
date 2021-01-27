@@ -6,5 +6,3 @@ Windows Installer erstellen
 Seiten für Onlinehilfe vervollständigen
 
 Settings
-
-Onlinehilfe "Automatisch" einbauen
