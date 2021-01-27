@@ -33,8 +33,6 @@ private:
     QvkSpezialCheckbox *vkSpezialCheckbox;
     QvkCircleWidget *vkCircleWidget;
 
-//    QvkAnimateWindow *animateWindow = nullptr;
-
     void setIconSideBar();
     void setPictureOperatingSystem();
     void setColorButtons();
@@ -44,6 +42,7 @@ private:
     void setMouseClick();
     void setAbout();
     void setCircleWidget();
+    void setHelp();
 
 
 private slots:
@@ -76,7 +75,6 @@ private slots:
     void slot_pointerOnOff( bool value );
     void slot_valueChanged_SpezialSliderCircle( int value );
     void slot_valueChanged_SpezialSliderOpacity( int value );
-
 
 
 protected:

@@ -40,3 +40,4 @@ unix:LIBS += -L/usr/X11/lib -lX11
 include(spezialSlider/spezialSlider.pri)
 include(spezialCheckBox/spezialCheckBox.pri)
 include(licenses/licenses.pri)
+include(help/help.pri)

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>500</height>
+    <height>489</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
       <widget class="QWidget" name="tabSidebarClick">
        <attribute name="icon">
         <iconset resource="showclick.qrc">
-         <normaloff>:/pictures/logo/vokoClick.png</normaloff>:/pictures/logo/vokoClick.png</iconset>
+         <normaloff>:/pictures/logo/vokoShowClick.png</normaloff>:/pictures/logo/vokoShowClick.png</iconset>
        </attribute>
        <attribute name="title">
         <string notr="true"/>
@@ -446,9 +446,6 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1" colspan="4">
-           <layout class="QHBoxLayout" name="horizontalLayout"/>
-          </item>
           <item row="1" column="3">
            <spacer name="verticalSpacer_5">
             <property name="orientation">
@@ -462,18 +459,8 @@
             </property>
            </spacer>
           </item>
-          <item row="2" column="0">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
+          <item row="4" column="1" colspan="4">
+           <layout class="QHBoxLayout" name="horizontalLayout"/>
           </item>
           <item row="2" column="4">
            <widget class="QToolButton" name="toolButtonLicense">
@@ -497,6 +484,39 @@
              <bool>true</bool>
             </property>
            </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QToolButton" name="toolButtonSource">
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="showclick.qrc">
+              <normaloff>:/pictures/showclick/github.png</normaloff>:/pictures/showclick/github.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item row="2" column="5">
            <spacer name="horizontalSpacer_4">
@@ -551,25 +571,8 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="3">
-           <widget class="QToolButton" name="toolButtonSource">
-            <property name="text">
-             <string>...</string>
-            </property>
-            <property name="icon">
-             <iconset resource="showclick.qrc">
-              <normaloff>:/pictures/showclick/github.png</normaloff>:/pictures/showclick/github.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>64</width>
-              <height>64</height>
-             </size>
-            </property>
-            <property name="autoRaise">
-             <bool>true</bool>
-            </property>
-           </widget>
+          <item row="3" column="1" colspan="3">
+           <widget class="QComboBox" name="comboBoxOnlineHelp"/>
           </item>
          </layout>
         </item>

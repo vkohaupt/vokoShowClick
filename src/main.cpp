@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
 
-    QIcon icon( ":/pictures/logo/vokoClick.png" );
+    QIcon icon( ":/pictures/logo/vokoShowClick.png" );
     a.setWindowIcon( icon );
 
     if( not QDBusConnection::sessionBus().registerService( "org.vokoShowClick.ShowClick" ) )

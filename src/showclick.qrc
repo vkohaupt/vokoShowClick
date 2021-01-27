@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>pictures/logo/vokoClick.png</file>
+        <file>pictures/logo/vokoShowClick.png</file>
         <file>pictures/showclick/space.png</file>
         <file>pictures/showclick/windows.png</file>
         <file>pictures/showclick/linux.png</file>
@@ -17,7 +17,7 @@
         <file>pictures/showclick/information.png</file>
         <file>pictures/showclick/person-green.png</file>
         
-        <file>pictures/logo/vokoClick.license</file>
+        <file>pictures/logo/vokoShowClick.license</file>
         <file>pictures/showclick/windows.license</file>
         <file>pictures/showclick/linux.license</file>
         <file>pictures/showclick/undo.license</file>

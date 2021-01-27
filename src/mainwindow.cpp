@@ -4,6 +4,7 @@
 #include "global.h"
 #include "QvkSpezialCheckbox.h"
 #include "QvkAnimateWindow.h"
+#include "QvkHelp.h"
 
 #include <QDebug>
 #include <QDesktopServices>
@@ -24,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     setMouseClick();
     setAbout();
     setCircleWidget();
+    setHelp();
 }
 
 MainWindow::~MainWindow()
@@ -388,4 +390,11 @@ void MainWindow::slot_valueChanged_SpezialSliderOpacity( int value )
 {
     double value_1 = value;
     vkCircleWidget->setOpacity( value_1 / 100 );
+}
+
+
+void MainWindow::setHelp()
+{
+   QvkHelp *vkHelp = new QvkHelp( this, ui );
+   Q_UNUSED(vkHelp);
 }
