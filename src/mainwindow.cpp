@@ -2,9 +2,6 @@
 #include "ui_mainwindow.h"
 #include "QvkPushButton.h"
 #include "global.h"
-#include "QvkSpezialCheckbox.h"
-#include "QvkAnimateWindow.h"
-#include "QvkHelp.h"
 
 #include <QDebug>
 #include <QDesktopServices>
@@ -38,9 +35,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
     Q_UNUSED(event);
     vkSpezialCheckbox->clicked( false );
-//    vkGlobalMouse->setCursorOff();
     vkLicenses->close();
-
+    vkHelp->close();
 }
 
 
@@ -395,6 +391,6 @@ void MainWindow::slot_valueChanged_SpezialSliderOpacity( int value )
 
 void MainWindow::setHelp()
 {
-   QvkHelp *vkHelp = new QvkHelp( this, ui );
+   vkHelp = new QvkHelp( this, ui );
    Q_UNUSED(vkHelp);
 }

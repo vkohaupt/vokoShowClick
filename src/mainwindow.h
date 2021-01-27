@@ -9,6 +9,7 @@
 #include "QvkSpezialCheckbox.h"
 #include "QvkAnimateWindow.h"
 #include "QvkCircleWidget.h"
+#include "QvkHelp.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,6 +33,7 @@ private:
     QvkGlobalMouse *vkGlobalMouse;
     QvkSpezialCheckbox *vkSpezialCheckbox;
     QvkCircleWidget *vkCircleWidget;
+    QvkHelp *vkHelp;
 
     void setIconSideBar();
     void setPictureOperatingSystem();

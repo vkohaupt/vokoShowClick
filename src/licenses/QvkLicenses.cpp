@@ -32,7 +32,7 @@ QvkLicenses::QvkLicenses() : ui( new Ui::license )
     ui->setupUi( this );
 
     QIcon icon;
-    icon.addFile( QString::fromUtf8( ":/pictures/logo/vokoClick.png" ), QSize(), QIcon::Normal, QIcon::Off );
+    icon.addFile( QString::fromUtf8( ":/pictures/logo/vokoShowClick.png" ), QSize(), QIcon::Normal, QIcon::Off );
     setWindowIcon( icon );
 
     const QFont fixedFont = QFontDatabase::systemFont( QFontDatabase::FixedFont );

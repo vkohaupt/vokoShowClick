@@ -56,7 +56,7 @@ QvkHelp::QvkHelp(QMainWindow *mainWindow, Ui_MainWindow *ui_mainwindow ) : uiHel
                                     SLOT( slot_NetworkAccessibility( QNetworkAccessManager::NetworkAccessibility ) ) );
 
     resize( 800, 600 );
-    setWindowTitle( QString( tr( "Help") ) );
+    setWindowTitle( QString( "Help " + global::name ) );
 
     QIcon icon;
     icon.addFile( QString::fromUtf8( ":/pictures/logo/vokoShowClick.png" ), QSize(), QIcon::Normal, QIcon::Off );
