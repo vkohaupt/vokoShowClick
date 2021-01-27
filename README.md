@@ -1,5 +1,5 @@
 # vokoShowClick
-![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/vokoShowClick.png)
+![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/misc/vokoShowClick.png)
 
 
 ## Installer:
