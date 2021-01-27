@@ -327,7 +327,7 @@ void MainWindow::slot_mousePressed( int x, int y, QString mouseButton )
 void MainWindow::setAbout()
 {
     QPixmap pixmap( ":/pictures/showclick/cursorAbout.png" );
-    pixmap = pixmap.scaled( 30, 30 );
+    pixmap = pixmap.scaled( 30 * devicePixelRatioF(), 30 * devicePixelRatioF() );
     QCursor cursor( pixmap );
     ui->toolButtonDonate->setCursor( cursor );
     ui->toolButtonHomepage->setCursor( cursor );
