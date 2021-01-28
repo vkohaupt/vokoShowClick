@@ -51,6 +51,8 @@ protected:
 
 
 private:
+    int row = 0;
+    void setPictureAndLicense( QString path );
 
 };
 
