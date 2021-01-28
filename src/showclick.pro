@@ -23,14 +23,18 @@ SOURCES   += main.cpp \
              QvkPushButton.cpp \
              QvkGlobalMouse.cpp \
              QvkAnimateWindow.cpp \
-             QvkCircleWidget.cpp
+             QvkCircleWidget.cpp \
+             QvkSpezialSlider.cpp \
+             QvkSettings.cpp
 
 HEADERS   += mainwindow.h \
              global.h \
              QvkPushButton.h \
              QvkGlobalMouse.h \
              QvkAnimateWindow.h \
-             QvkCircleWidget.h
+             QvkCircleWidget.h \
+             QvkSpezialSlider.h \
+             QvkSettings.h
 
 FORMS     += mainwindow.ui
 
@@ -39,8 +43,6 @@ RESOURCES += showclick.qrc \
 
 unix:LIBS += -L/usr/X11/lib -lX11
 
-include(spezialSlider/spezialSlider.pri)
 include(spezialCheckBox/spezialCheckBox.pri)
 include(licenses/licenses.pri)
 include(help/help.pri)
-include(settings/settings.pri)
