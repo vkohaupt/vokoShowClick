@@ -24,9 +24,6 @@ MainWindow::MainWindow(QWidget *parent)
     setCircleWidget();
     setHelp();
     setSettings();
-
-    vkSettings->readAll( ui, this );
-
 }
 
 MainWindow::~MainWindow()
@@ -403,5 +400,6 @@ void MainWindow::setHelp()
 void MainWindow::setSettings()
 {
     vkSettings = new QvkSettings;
+    vkSettings->readAll( ui, this );
 }
 

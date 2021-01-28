@@ -38,10 +38,6 @@ public:
     virtual ~QvkSettings();
     void saveAll(Ui_MainWindow *ui_mainwindow, QMainWindow *parent, bool log);
     void readAll(Ui_MainWindow *ui_mainwindow, QMainWindow *parent);
-    void saveAreaScreencast(qreal x, qreal y, qreal width, qreal height);
-    QString getFileName();
-    QString getVideoPath();
-
 
 
 public slots:

@@ -42,6 +42,7 @@ QvkSettings::~QvkSettings(){}
 
 void QvkSettings::readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent )
 {
+    Q_UNUSED(parent);
     QSettings settings( QSettings::IniFormat, QSettings::UserScope, global::name, global::name, Q_NULLPTR );
 
     QList<QComboBox *> listComboBox = ui_mainwindow->centralwidget->findChildren<QComboBox *>();
@@ -137,11 +138,5 @@ void QvkSettings::saveAll(Ui_MainWindow *ui_mainwindow , QMainWindow *parent, bo
         else
             settings.setValue( listSlider.at(i)->objectName(), listSlider.at(i)->value() );
     }
-
 }
 
-QString QvkSettings::getFileName()
-{
-    QSettings settings( QSettings::IniFormat, QSettings::UserScope, global::name, global::name, Q_NULLPTR );
-    return settings.fileName();
-}
