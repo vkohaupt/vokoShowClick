@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    show();
 
     setWindowTitle( global::name + " " + global::version );
     setIconSideBar();

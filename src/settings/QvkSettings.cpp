@@ -56,16 +56,6 @@ void QvkSettings::readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent )
         }
     }
 
-    QList<QCheckBox *> listCheckBox = ui_mainwindow->centralwidget->findChildren<QCheckBox *>();
-    for ( int i = 0; i < listCheckBox.count(); i++ )
-    {
-        // We found a setting, then we want set or not.
-        if ( settings.value( listCheckBox.at(i)->objectName(), false ).toBool() == true )
-        {
-            listCheckBox.at(i)->click();
-        }
-    }
-
     QList<QSlider *> listSlider = ui_mainwindow->centralwidget->findChildren<QSlider *>();
     for ( int i = 0; i < listSlider.count(); i++ )
     {
@@ -85,6 +75,16 @@ void QvkSettings::readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent )
         {
             int value = settings.value( listSlider.at(i)->objectName(), 10 ).toInt();
             listSlider.at(i)->setValue( value );
+        }
+    }
+
+    QList<QCheckBox *> listCheckBox = ui_mainwindow->centralwidget->findChildren<QCheckBox *>();
+    for ( int i = 0; i < listCheckBox.count(); i++ )
+    {
+        // We found a setting, then we want set or not.
+        if ( settings.value( listCheckBox.at(i)->objectName(), false ).toBool() == true )
+        {
+            listCheckBox.at(i)->click();
         }
     }
 }

@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
     if ( qgetenv( "XDG_SESSION_TYPE" ).toLower() == "x11" )
     {
         MainWindow w;
-        w.show();
         return a.exec();
     }
 
@@ -52,7 +51,6 @@ int main(int argc, char *argv[])
 
 #ifdef Q_OS_WIN
     MainWindow w;
-    w.show();
     return a.exec();
 #endif
 
