@@ -38,8 +38,7 @@ HEADERS   += mainwindow.h \
 
 FORMS     += mainwindow.ui
 
-RESOURCES += showclick.qrc \
-             spezialCheckBox/spezialCheckBox.qrc
+RESOURCES += showclick.qrc
 
 unix:LIBS += -L/usr/X11/lib -lX11
 

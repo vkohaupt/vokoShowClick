@@ -69,7 +69,7 @@ void QvkSpezialCheckbox::paintChecked( QPainter &painter )
     painterPathSlider.addRoundedRect( rectSlider, radius - margin, radius - margin, Qt::AbsoluteSize );
     painter.drawPath( painterPathSlider );
 
-    QPixmap pixmap( ":/on.png" );
+    QPixmap pixmap( ":/spezialCheckBox/on.png" );
     pixmap.setDevicePixelRatio( devicePixelRatioF() );
     pixmap = pixmap.scaled( slider_height / 5 * 3 * devicePixelRatioF(), slider_height / 5 * 3 * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
     painter.drawPixmap( button_x + margin + ( ( slider_x - button_x - margin ) / 2 ) - ( pixmap.width() / 2 / devicePixelRatioF() ),
@@ -106,7 +106,7 @@ void QvkSpezialCheckbox::paintUnChecked( QPainter &painter )
     painterPathSlider.addRoundedRect( rectSlider, radius - margin, radius - margin, Qt::AbsoluteSize );
     painter.drawPath( painterPathSlider );
 
-    QPixmap pixmap( ":/off.png" );
+    QPixmap pixmap( ":/spezialCheckBox/off.png" );
     pixmap.setDevicePixelRatio(  devicePixelRatioF() );
     pixmap = pixmap.scaled( slider_height / 5 * 3 * devicePixelRatioF(),
                             slider_height / 5 * 3 * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation );

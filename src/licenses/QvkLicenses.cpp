@@ -88,6 +88,56 @@ QvkLicenses::QvkLicenses() : ui( new Ui::license )
             settings.endGroup();
         }
     }
+    
+    QDirIterator dirIterator_1( ":/spezialCheckBox/", QDir::Files, QDirIterator::Subdirectories );
+    while ( dirIterator_1.hasNext() )
+    {
+        QString string = dirIterator_1.next();
+        if ( ( string.contains( ".license" ) == true ) and ( string.contains( "template" ) == false ) )
+        {
+            QSettings settings( dirIterator_1.filePath(), QSettings::IniFormat );
+            settings.beginGroup( "license" );
+
+            QPixmap pixmapSpace_0( ":/pictures/showclick/space.png" );
+            pixmapSpace_0 = pixmapSpace_0.scaled( 10, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            QLabel *labelSpace_0 = new QLabel;
+            labelSpace_0->setPixmap( pixmapSpace_0 );
+            ui->gridLayout->addWidget( labelSpace_0, row, 0, Qt::AlignCenter );
+
+            QPixmap pixmap( dirIterator_1.filePath().replace( "license", "png" ) );
+            pixmap = pixmap.scaled( 50, 50, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+            QLabel *label = new QLabel;
+            label->setPixmap( pixmap );
+            ui->gridLayout->addWidget( label, row, 1, Qt::AlignCenter );
+
+            QPixmap pixmapSpace_1( ":/pictures/showclick/space.png" );
+            pixmapSpace_1 = pixmapSpace_1.scaled( 10, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            QLabel *labelSpace_1 = new QLabel;
+            labelSpace_1->setPixmap( pixmapSpace_1 );
+            ui->gridLayout->addWidget( labelSpace_1, row, 2, Qt::AlignCenter );
+
+            QLabel *labelAuthor = new QLabel;
+            labelAuthor->setText( "Author : (C) " + settings.value( "author" ).toString() +
+                                  "\n" +
+                                  "License: " + settings.value( "license" ).toString() +
+                                  "\n" +
+                                  "Source : " + settings.value( "url" ).toString() );
+            ui->gridLayout->addWidget( labelAuthor, row, 3 );
+
+            QPixmap pixmapSpaceRow( ":/pictures/showclick/space.png" );
+            pixmapSpaceRow = pixmapSpaceRow.scaled( 50, 10, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            QLabel *labelSpaceRow = new QLabel;
+            labelSpaceRow->setPixmap( pixmapSpaceRow );
+            row++;
+            ui->gridLayout->addWidget( labelSpaceRow, row, 1 );
+            row++;
+
+            settings.endGroup();
+        }
+    }
+    
+    
+    
 }
 
 

@@ -16,6 +16,8 @@
         <file>pictures/showclick/cursorAbout.png</file>
         <file>pictures/showclick/information.png</file>
         <file>pictures/showclick/person-green.png</file>
+        <file>spezialCheckBox/on.png</file>
+        <file>spezialCheckBox/off.png</file>
         
         <file>pictures/logo/vokoShowClick.license</file>
         <file>pictures/showclick/windows.license</file>
@@ -32,6 +34,8 @@
         <file>pictures/showclick/cursorAbout.license</file>
         <file>pictures/showclick/information.license</file>
         <file>pictures/showclick/person-green.license</file>
+        <file>spezialCheckBox/on.license</file>
+        <file>spezialCheckBox/off.license</file>        
         
     </qresource>
 </RCC>
