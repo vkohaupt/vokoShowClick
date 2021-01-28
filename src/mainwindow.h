@@ -10,6 +10,7 @@
 #include "QvkAnimateWindow.h"
 #include "QvkCircleWidget.h"
 #include "QvkHelp.h"
+#include "QvkSettings.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -34,6 +35,7 @@ private:
     QvkSpezialCheckbox *vkSpezialCheckbox;
     QvkCircleWidget *vkCircleWidget;
     QvkHelp *vkHelp;
+    QvkSettings *vkSettings;
 
     void setIconSideBar();
     void setPictureOperatingSystem();
@@ -45,6 +47,7 @@ private:
     void setAbout();
     void setCircleWidget();
     void setHelp();
+    void setSettings();
 
 
 private slots:

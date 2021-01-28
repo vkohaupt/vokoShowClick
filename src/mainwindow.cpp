@@ -23,6 +23,10 @@ MainWindow::MainWindow(QWidget *parent)
     setAbout();
     setCircleWidget();
     setHelp();
+    setSettings();
+
+    vkSettings->readAll( ui, this );
+
 }
 
 MainWindow::~MainWindow()
@@ -34,6 +38,7 @@ MainWindow::~MainWindow()
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     Q_UNUSED(event);
+    vkSettings->saveAll( ui, this, false );
     vkSpezialCheckbox->clicked( false );
     vkLicenses->close();
     vkHelp->close();
@@ -394,3 +399,9 @@ void MainWindow::setHelp()
    vkHelp = new QvkHelp( this, ui );
    Q_UNUSED(vkHelp);
 }
+
+void MainWindow::setSettings()
+{
+    vkSettings = new QvkSettings;
+}
+
