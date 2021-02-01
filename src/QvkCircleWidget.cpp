@@ -69,7 +69,6 @@ void QvkCircleWidget::setColor( QColor value )
 
 QColor QvkCircleWidget::getColor()
 {
-    qDebug() << "QColor QvkCircleWidget::getColor()";
     return pointerColor;
 }
 
