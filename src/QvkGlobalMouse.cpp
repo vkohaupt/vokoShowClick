@@ -26,6 +26,10 @@
 #include <QThread>
 #include <QDebug>
 
+#ifdef Q_OS_WIN
+#include <QCursor>
+#endif
+
 #ifdef Q_OS_LINUX
 #include<X11/Xlib.h>
 #include<stdio.h>
@@ -107,3 +111,17 @@ void QvkGlobalMouse::mousePressed()
     XCloseDisplay( display );
 }
 #endif
+
+
+#ifdef Q_OS_WIN
+void QvkGlobalMouse::mousePressed()
+{
+    while( onOff )
+    {
+        QCoreApplication::processEvents( QEventLoop::AllEvents );
+        QPoint point = QCursor::pos();
+        qDebug() << point;
+    }
+}
+#endif
+
