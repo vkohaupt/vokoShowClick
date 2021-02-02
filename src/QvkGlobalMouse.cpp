@@ -28,6 +28,7 @@
 
 #ifdef Q_OS_WIN
 #include <QCursor>
+#include <Windows.h>
 #endif
 
 #ifdef Q_OS_LINUX
