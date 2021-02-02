@@ -51,11 +51,11 @@ void QvkPushButton::paintEvent( QPaintEvent *event )
 
         // Area
         painter.fillRect( 0, 0, width(), height(), color );
-/*
+
         // Frame
         QPen penFrame;
-        penFrame.setWidthF( penWidthFrame );
-        penFrame.setColor( Qt::gray );
+        penFrame.setWidthF( 1.0 );
+        penFrame.setColor( Qt::lightGray );
         penFrame.setStyle( Qt::SolidLine );
         penFrame.setCapStyle( Qt::FlatCap );
         penFrame.setJoinStyle( Qt::MiterJoin );
@@ -65,7 +65,7 @@ void QvkPushButton::paintEvent( QPaintEvent *event )
                           penWidthFrame/2,
                           width() - penWidthFrame,
                           height() - penWidthFrame );
-*/
+
         painter.end();
     }
 
