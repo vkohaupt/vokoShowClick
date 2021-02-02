@@ -1,8 +1,8 @@
 
-TARGET = vokoshowclick
+TARGET = vokoShowClick
 
 unix: QT += x11extras
-QT += core gui widgets multimedia network testlib dbus
+QT += core gui widgets network dbus
 
 CONFIG += c++11
 

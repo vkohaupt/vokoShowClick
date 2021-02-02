@@ -114,13 +114,67 @@ void QvkGlobalMouse::mousePressed()
 
 
 #ifdef Q_OS_WIN
+HHOOK hHook = NULL;
+QString Mouse_Button;
+int Mouse_X;
+int Mouse_Y;
+int pressed = 0;
+
+LRESULT CALLBACK MouseProc( int nCode, WPARAM wParam, LPARAM lParam )
+{
+    (void)lParam;
+    (void)nCode;
+
+    QPoint point = QCursor::pos();
+
+    switch( wParam )
+    {
+    case WM_LBUTTONDOWN:
+    {
+        Mouse_Button = "LeftButton";
+        Mouse_X = point.x();
+        Mouse_Y = point.y();
+        pressed = 1;
+        break;
+    }
+    case WM_RBUTTONDOWN:
+    {
+        Mouse_Button = "RightButton";
+        Mouse_X = point.x();
+        Mouse_Y = point.y();
+        pressed = 1;
+        break;
+    }
+    case WM_MBUTTONUP:
+    {
+        Mouse_Button = "MiddleButton";
+        Mouse_X = point.x();
+        Mouse_Y = point.y();
+        pressed = 1;
+        break; }
+    }
+
+    return CallNextHookEx( hHook, nCode, wParam, lParam );
+}
+
 void QvkGlobalMouse::mousePressed()
 {
+    hHook = SetWindowsHookEx( WH_MOUSE_LL, MouseProc, NULL, 0 );
+    if ( hHook == NULL )
+    {
+        qDebug() << "Hook failed";
+    }
     while( onOff )
     {
         QCoreApplication::processEvents( QEventLoop::AllEvents );
-        QPoint point = QCursor::pos();
-        qDebug() << point;
+        if ( pressed == 1 )
+        {
+            QThread::msleep( 10 );
+            //bool bol = UnhookWindowsHookEx( hHook );
+
+            pressed = 0;
+            emit signal_mousePressed( Mouse_X, Mouse_Y, Mouse_Button );
+        }
     }
 }
 #endif
