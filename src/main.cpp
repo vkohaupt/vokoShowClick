@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
     QIcon icon( ":/pictures/logo/vokoShowClick.png" );
     a.setWindowIcon( icon );
 
+#ifdef Q_OS_LINUX
+    // For Windows wie need a other code !!!!!!!!!!!!!!!!!!
     if( not QDBusConnection::sessionBus().registerService( "org.vokoShowClick.ShowClick" ) )
     {
         QString titel = global::name + " " + global::version;
@@ -27,7 +29,6 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-#ifdef Q_OS_LINUX
     if ( qgetenv( "XDG_SESSION_TYPE" ).toLower() == "x11" )
     {
         MainWindow w;

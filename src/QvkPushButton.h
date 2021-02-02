@@ -26,7 +26,7 @@
 #include <QPushButton>
 #include <QEvent>
 
-class QvkPushButton: public QPushButton
+class QvkPushButton: public QWidget //QPushButton
 
 {
     Q_OBJECT
