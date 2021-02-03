@@ -1,4 +1,5 @@
-# vokoShowClick
+# vokoShowClick 
+## For Windows and Linux(X11)
 ![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/misc/vokoShowClick.png)
 
 
