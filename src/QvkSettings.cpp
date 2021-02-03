@@ -26,8 +26,6 @@
 #include "QvkSpezialCheckbox.h"
 #include "QvkCircleWidget.h"
 
-#include <QFileInfo>
-#include <QMouseEvent>
 #include <QCheckBox>
 #include <QRadioButton>
 

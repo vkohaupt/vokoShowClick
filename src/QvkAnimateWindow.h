@@ -23,7 +23,7 @@
 #ifndef QvkAnimateWindow_H
 #define QvkAnimateWindow_H
 
-#include <QDialog>
+#include <QWidget>
 
 class QvkAnimateWindow: public QWidget
 
