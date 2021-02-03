@@ -83,7 +83,7 @@ void QvkSettings::readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent )
     for ( int i = 0; i < listCheckBox.count(); i++ )
     {
         qDebug() << listCheckBox.at(i)->objectName();
-        if ( settings.value( listCheckBox.at(i)->objectName(), false ).toBool() == true )
+        if ( settings.value( listCheckBox.at(i)->objectName(), true ).toBool() == true )
         {
             listCheckBox.at(i)->signal_clicked( true );
         }

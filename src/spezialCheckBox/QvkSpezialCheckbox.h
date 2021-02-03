@@ -26,6 +26,7 @@ protected:
 private:
     int step;
     int fontPixelSize;
+
     qreal button_x;
     qreal button_y;
     qreal button_width;
@@ -35,7 +36,6 @@ private:
     qreal margin;
     
     bool checked = false;
-//    void setChecked( bool );
 
     void paintChecked( QPainter &painter );
     void paintUnChecked( QPainter &painter );
