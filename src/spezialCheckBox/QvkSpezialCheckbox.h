@@ -2,24 +2,26 @@
 #ifndef QVKSPEZIALCHECKBOX_H
 #define QVKSPEZIALCHECKBOX_H
 
-#include <QBasicTimer>
 #include <QWidget>
-#include <QCheckBox>
 #include <QPainter>
 
-class QvkSpezialCheckbox : public QCheckBox
+class QvkSpezialCheckbox : public QWidget
 {
     Q_OBJECT
 
 public:
     QvkSpezialCheckbox(QWidget *parent = 0);
+    bool isChecked();
 
     
 public slots:
+    void slot_setChecked( bool value );
 
 
 protected:
     void paintEvent(QPaintEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+
 
 private:
     int step;
@@ -32,12 +34,15 @@ private:
     qreal radius;
     qreal margin;
     
+    bool checked = false;
+//    void setChecked( bool );
+
     void paintChecked( QPainter &painter );
     void paintUnChecked( QPainter &painter );
 
 
 signals:
-
+    void signal_clicked( bool );
     
 };
 #endif

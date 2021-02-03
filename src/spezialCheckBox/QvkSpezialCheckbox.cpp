@@ -1,19 +1,53 @@
 
-#include <QtWidgets>
-
 #include "QvkSpezialCheckbox.h"
 
-QvkSpezialCheckbox::QvkSpezialCheckbox( QWidget *parent ) : QCheckBox( parent )
+#include <QDebug>
+
+QvkSpezialCheckbox::QvkSpezialCheckbox( QWidget *parent ) : QWidget( parent )
 {
     setBackgroundRole( QPalette::Midlight );
     setAutoFillBackground( true );
 
     setObjectName( "spezialCheckBox" );
-    setText( "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" );
     setMinimumWidth( 100 );
     setMinimumHeight( 35 );
     setMaximumWidth( 100 );
+
+    connect( this, SIGNAL( signal_clicked( bool ) ), this, SLOT( slot_setChecked( bool ) ) );
 }
+
+
+bool QvkSpezialCheckbox::isChecked()
+{
+    return checked;
+}
+
+
+void QvkSpezialCheckbox::slot_setChecked( bool value )
+{
+     checked = value;
+     repaint();
+}
+
+
+void QvkSpezialCheckbox::mouseReleaseEvent(QMouseEvent *event)
+{
+    Q_UNUSED(event);
+
+    if ( checked == true )
+    {
+        checked = false;
+    }
+    else
+    {
+        checked = true;
+    }
+
+    repaint();
+
+    emit signal_clicked( checked );
+}
+
 
 void QvkSpezialCheckbox::paintEvent( QPaintEvent *event )
 {

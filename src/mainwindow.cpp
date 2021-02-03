@@ -37,7 +37,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
     Q_UNUSED(event);
     vkSettings->saveAll( ui, this, false );
-    vkSpezialCheckbox->clicked( false );
+    vkSpezialCheckbox->signal_clicked( false );
     vkLicenses->close();
     vkHelp->close();
 }
@@ -258,12 +258,14 @@ void MainWindow::setSpezialCheckBox()
 {
     vkSpezialCheckbox = new QvkSpezialCheckbox();
     ui->horizontalLayout_2->insertWidget( 0, vkSpezialCheckbox );
-    connect( vkSpezialCheckbox, SIGNAL( clicked( bool ) ), this, SLOT( slot_pointerOnOff( bool ) ) );
+    connect( vkSpezialCheckbox, SIGNAL( signal_clicked( bool ) ), this, SLOT( slot_pointerOnOff( bool ) ) );
 }
 
 
 void MainWindow::slot_pointerOnOff( bool value )
 {
+    qDebug() << "void MainWindow::slot_pointerOnOff( bool value )" << value;
+
     if ( value == true )
     {
         vkGlobalMouse->setCursorOn();

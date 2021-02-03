@@ -23,6 +23,7 @@
 #include "QvkSettings.h"
 #include "global.h"
 #include "ui_mainwindow.h"
+#include "QvkSpezialCheckbox.h"
 
 #include <QFileInfo>
 #include <QMouseEvent>
@@ -78,13 +79,13 @@ void QvkSettings::readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent )
         }
     }
 
-    QList<QCheckBox *> listCheckBox = ui_mainwindow->centralwidget->findChildren<QCheckBox *>();
+    QList<QvkSpezialCheckbox *> listCheckBox = ui_mainwindow->centralwidget->findChildren<QvkSpezialCheckbox *>();
     for ( int i = 0; i < listCheckBox.count(); i++ )
     {
-        // We found a setting, then we want set or not.
+        qDebug() << listCheckBox.at(i)->objectName();
         if ( settings.value( listCheckBox.at(i)->objectName(), false ).toBool() == true )
         {
-            listCheckBox.at(i)->click();
+            listCheckBox.at(i)->signal_clicked( true );
         }
     }
 }
@@ -112,7 +113,7 @@ void QvkSettings::saveAll(Ui_MainWindow *ui_mainwindow , QMainWindow *parent, bo
         settings.setValue( "Version", global::version );
     settings.endGroup();
 
-    QList<QCheckBox *> listCheckBox = ui_mainwindow->centralwidget->findChildren<QCheckBox *>();
+    QList<QvkSpezialCheckbox *> listCheckBox = ui_mainwindow->centralwidget->findChildren<QvkSpezialCheckbox *>();
     for ( int i = 0; i < listCheckBox.count(); i++ )
     {
         if ( log == true )
