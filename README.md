@@ -3,7 +3,7 @@
 
 
 ## Installer:
-Windows and Linux installation routines are not provided, because each platform and installer has its own special features. That means make-install, metadata, desktop files, icons, logo must be provided by your own installer. All the images and logos that come with vokoShowClick are free. You can be change in size itself be used for your own installer.
+Windows and Linux installation routines are not provided, because each platform, installer and package manager has its own special features. That means make-install, metadata, desktop files, icons, manpage, logo must be create and provided itself. All the images and logos that come with vokoShowClick are free. You can be change in size itself be used for your own installer or package manager.
 
 
 ## Linux
