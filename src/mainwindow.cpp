@@ -36,7 +36,7 @@ MainWindow::~MainWindow()
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     Q_UNUSED(event);
-    vkSettings->saveAll( ui, this, false );
+    vkSettings->saveAll( ui, this );
     vkSpezialCheckbox->signal_clicked( false );
     vkLicenses->close();
     vkHelp->close();

@@ -36,8 +36,8 @@ class QvkSettings: public QObject
 public:
     QvkSettings();
     virtual ~QvkSettings();
-    void saveAll(Ui_MainWindow *ui_mainwindow, QMainWindow *parent, bool log);
-    void readAll(Ui_MainWindow *ui_mainwindow, QMainWindow *parent);
+    void saveAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent );
+    void readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent );
 
 
 public slots:
