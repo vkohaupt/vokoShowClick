@@ -238,7 +238,7 @@ void MainWindow::setSpezialSlider()
     vkSpezialSliderOpacity->setTracking( true );
     vkSpezialSliderOpacity->setMinimum( 1 );
     vkSpezialSliderOpacity->setMaximum( 100 );
-    vkSpezialSliderOpacity->setValue( 50 );
+    vkSpezialSliderOpacity->setValue( 70 );
     vkSpezialSliderOpacity->setShowValue( false );
     vkSpezialSliderOpacity->show();
 
@@ -300,7 +300,7 @@ void MainWindow::slot_SliderCircleDefault()
 
 void MainWindow::slot_SliderOpacityDefault()
 {
-    vkSpezialSliderOpacity->setValue( 50 );
+    vkSpezialSliderOpacity->setValue( 70 );
 }
 
 
@@ -373,6 +373,7 @@ void MainWindow::slot_toolButtonAuthor()
 void MainWindow::setCircleWidget()
 {
     vkCircleWidget = new QvkCircleWidget( ui->frame_3 );
+    vkCircleWidget->setObjectName( "widgetCircle" );
     vkCircleWidget->show();
     connect( vkSpezialSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChanged_SpezialSliderCircle( int ) ) );
     connect( vkSpezialSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChanged_SpezialSliderOpacity( int ) ) );

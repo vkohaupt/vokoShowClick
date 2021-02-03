@@ -24,6 +24,7 @@
 #include "global.h"
 #include "ui_mainwindow.h"
 #include "QvkSpezialCheckbox.h"
+#include "QvkCircleWidget.h"
 
 #include <QFileInfo>
 #include <QMouseEvent>
@@ -45,6 +46,13 @@ void QvkSettings::readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent )
 {
     Q_UNUSED(parent);
     QSettings settings( QSettings::IniFormat, QSettings::UserScope, global::name, global::name, Q_NULLPTR );
+
+    QList<QvkCircleWidget *> listvkCircleWidget = ui_mainwindow->centralwidget->findChildren<QvkCircleWidget *>();
+    for ( int i = 0; i < listvkCircleWidget.count(); i++ )
+    {
+        QColor value = settings.value( listvkCircleWidget.at(i)->objectName(), QColor( Qt::blue ) ).value<QColor>();
+        listvkCircleWidget.at(i)->setColor( value );
+    }
 
     QList<QComboBox *> listComboBox = ui_mainwindow->centralwidget->findChildren<QComboBox *>();
     for ( int i = 0; i < listComboBox.count(); i++ )
@@ -68,7 +76,7 @@ void QvkSettings::readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent )
 
         if ( listSlider.at(i)->objectName().contains( "sliderOpacity" ) == true )
         {
-            int value = settings.value( listSlider.at(i)->objectName(), 50 ).toInt();
+            int value = settings.value( listSlider.at(i)->objectName(), 70 ).toInt();
             listSlider.at(i)->setValue( value );
         }
 
@@ -82,12 +90,13 @@ void QvkSettings::readAll( Ui_MainWindow *ui_mainwindow, QMainWindow *parent )
     QList<QvkSpezialCheckbox *> listCheckBox = ui_mainwindow->centralwidget->findChildren<QvkSpezialCheckbox *>();
     for ( int i = 0; i < listCheckBox.count(); i++ )
     {
-        qDebug() << listCheckBox.at(i)->objectName();
         if ( settings.value( listCheckBox.at(i)->objectName(), true ).toBool() == true )
         {
             listCheckBox.at(i)->signal_clicked( true );
         }
     }
+
+
 }
 
 /*
@@ -116,28 +125,25 @@ void QvkSettings::saveAll(Ui_MainWindow *ui_mainwindow , QMainWindow *parent, bo
     QList<QvkSpezialCheckbox *> listCheckBox = ui_mainwindow->centralwidget->findChildren<QvkSpezialCheckbox *>();
     for ( int i = 0; i < listCheckBox.count(); i++ )
     {
-        if ( log == true )
-            qDebug().noquote().nospace() << listCheckBox.at(i)->objectName() << "=" << listCheckBox.at(i)->isChecked();
-        else
             settings.setValue( listCheckBox.at(i)->objectName(), listCheckBox.at(i)->isChecked() );
     }
 
     QList<QComboBox *> listComboBox = ui_mainwindow->centralwidget->findChildren<QComboBox *>();
     for ( int i = 0; i < listComboBox.count(); i++ )
     {
-        if ( log == true )
-            qDebug().noquote().nospace() << listComboBox.at(i)->objectName() << "=" << listComboBox.at(i)->currentText();
-        else
             settings.setValue( listComboBox.at(i)->objectName(), listComboBox.at(i)->currentText() );
     }
 
     QList<QSlider *> listSlider = ui_mainwindow->centralwidget->findChildren<QSlider *>();
     for ( int i = 0; i < listSlider.count(); i++ )
     {
-        if ( log == true )
-            qDebug().noquote().nospace() << listSlider.at(i)->objectName() << "=" << listSlider.at(i)->value();
-        else
             settings.setValue( listSlider.at(i)->objectName(), listSlider.at(i)->value() );
+    }
+
+    QList<QvkCircleWidget *> listvkCircleWidget = ui_mainwindow->centralwidget->findChildren<QvkCircleWidget *>();
+    for ( int i = 0; i < listvkCircleWidget.count(); i++ )
+    {
+            settings.setValue( listvkCircleWidget.at(i)->objectName(), listvkCircleWidget.at(i)->getColor() );
     }
 }
 

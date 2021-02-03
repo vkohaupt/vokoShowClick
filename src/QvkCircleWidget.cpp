@@ -28,7 +28,7 @@ QvkCircleWidget::QvkCircleWidget( QWidget *parent ) : QWidget( parent )
 
     pointerColor = Qt::red;
     diameter = 50;
-    pointerOpacity = 0.5;
+    pointerOpacity = 0.7;
 }
 
 

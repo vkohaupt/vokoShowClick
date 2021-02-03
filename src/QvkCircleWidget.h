@@ -24,7 +24,6 @@
 #define QvkCircleWidget_H
 
 #include <QWidget>
-#include <QLabel>
 #include <QPainter>
 #include <QDebug>
 
@@ -35,24 +34,23 @@ public:
     virtual ~QvkCircleWidget();
     QvkCircleWidget( QWidget *parent );
     QWidget *parentWidget;
-    
-public:
 
-
-public slots:
     void setColor( QColor color );
     void setDiameter( int value );
     void setOpacity( double value );
 
     QColor getColor();
-    int getDiameter();
-    double getOpacity();
+
+public slots:
 
 
 private:
     QColor pointerColor;
     int diameter;
     double pointerOpacity;
+
+    int getDiameter();
+    double getOpacity();
 
 
 private slots:
