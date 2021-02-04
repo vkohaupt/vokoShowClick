@@ -79,6 +79,12 @@
             </item>
             <item row="4" column="5">
              <widget class="QToolButton" name="help_click_preview">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
                <string notr="true">Help</string>
               </property>
@@ -90,6 +96,12 @@
             </item>
             <item row="6" column="4">
              <widget class="QToolButton" name="toolButtonSliderOpacityDefault">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
                <string>...</string>
               </property>
@@ -163,6 +175,12 @@
             </item>
             <item row="5" column="5">
              <widget class="QToolButton" name="help_click_circle">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
                <string notr="true">Help</string>
               </property>
@@ -216,6 +234,12 @@
             </item>
             <item row="7" column="4">
              <widget class="QToolButton" name="toolButtonShowTimeDefault">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
                <string>...</string>
               </property>
@@ -227,6 +251,12 @@
             </item>
             <item row="6" column="5">
              <widget class="QToolButton" name="help_click_opacity">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
                <string notr="true">Help</string>
               </property>
@@ -245,6 +275,12 @@
             </item>
             <item row="3" column="4">
              <widget class="QToolButton" name="toolButtonColorDefault">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
                <string>...</string>
               </property>
@@ -336,6 +372,12 @@
             </item>
             <item row="5" column="4">
              <widget class="QToolButton" name="toolButtonSliderCircleDefault">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
                <string>...</string>
               </property>
@@ -361,6 +403,12 @@
             </item>
             <item row="3" column="5">
              <widget class="QToolButton" name="help_click_color">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
                <string notr="true">Help</string>
               </property>
