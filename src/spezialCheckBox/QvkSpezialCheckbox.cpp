@@ -5,9 +5,6 @@
 
 QvkSpezialCheckbox::QvkSpezialCheckbox( QWidget *parent ) : QWidget( parent )
 {
-    setBackgroundRole( QPalette::Midlight );
-    setAutoFillBackground( true );
-
     setObjectName( "spezialCheckBox" );
     setMinimumWidth( 100 );
     setMinimumHeight( 35 );
