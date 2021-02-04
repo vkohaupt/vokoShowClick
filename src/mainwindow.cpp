@@ -74,67 +74,84 @@ void MainWindow::setPictureOperatingSystem()
 
 void MainWindow::setColorButtons()
 {
+    int minimumHeight = 34;
     QvkPushButton *vkPushButton_white = new QvkPushButton( Qt::white );
+    vkPushButton_white->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_white, 0, 0 );
     connect( vkPushButton_white, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_white() ) );
 
     QvkPushButton *vkPushButton_black = new QvkPushButton( Qt::black );
+    vkPushButton_black->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_black, 0, 1 );
     connect( vkPushButton_black, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_black() ) );
 
     QvkPushButton *vkPushButton_red = new QvkPushButton( Qt::red );
+    vkPushButton_red->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_red, 0, 2 );
     connect( vkPushButton_red, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_red() ) );
 
     QvkPushButton *vkPushButton_darkRed = new QvkPushButton( Qt::darkRed );
+    vkPushButton_darkRed->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_darkRed, 0, 3 );
     connect( vkPushButton_darkRed, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_darkRed() ) );
 
     QvkPushButton *vkPushButton_green = new QvkPushButton( Qt::green );
+    vkPushButton_green->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_green, 1, 0 );
     connect( vkPushButton_green, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_green() ) );
 
     QvkPushButton *vkPushButton_darkGreen = new QvkPushButton( Qt::darkGreen );
+    vkPushButton_darkGreen->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_darkGreen, 1, 1 );
     connect( vkPushButton_darkGreen, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_darkGreen() ) );
 
     QvkPushButton *vkPushButton_blue = new QvkPushButton( Qt::blue );
+    vkPushButton_blue->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_blue, 1, 2 );
     connect( vkPushButton_blue, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_blue() ) );
 
     QvkPushButton *vkPushButton_darkBlue = new QvkPushButton( Qt::darkBlue );
+    vkPushButton_darkBlue->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_darkBlue, 1, 3 );
     connect( vkPushButton_darkBlue, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_darkBlue() ) );
 
     QvkPushButton *vkPushButton_cyan = new QvkPushButton( Qt::cyan );
+    vkPushButton_cyan->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_cyan, 2, 0 );
     connect( vkPushButton_cyan, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_cyan() ) );
 
     QvkPushButton *vkPushButton_darkCyan = new QvkPushButton( Qt::darkCyan );
+    vkPushButton_darkCyan->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_darkCyan, 2, 1 );
     connect( vkPushButton_darkCyan, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_darkCyan() ) );
 
     QvkPushButton *vkPushButton_magenta = new QvkPushButton( Qt::magenta );
+    vkPushButton_magenta->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_magenta, 2, 2 );
     connect( vkPushButton_magenta, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_magenta() ) );
 
     QvkPushButton *vkPushButton_darkMagenta = new QvkPushButton( Qt::darkMagenta );
+    vkPushButton_darkMagenta->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_darkMagenta, 2, 3 );
     connect( vkPushButton_darkMagenta, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_darkMagenta() ) );
 
     QvkPushButton *vkPushButton_yellow = new QvkPushButton( Qt::yellow );
+    vkPushButton_yellow->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_yellow, 3, 0 );
     connect( vkPushButton_yellow, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_yellow() ) );
 
     QvkPushButton *vkPushButton_darkYellow = new QvkPushButton( Qt::darkYellow );
+    vkPushButton_darkYellow->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_darkYellow, 3, 1 );
     connect( vkPushButton_darkYellow, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_darkYellow() ) );
 
     QvkPushButton *vkPushButton_gray = new QvkPushButton( Qt::gray );
+    vkPushButton_gray->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_gray, 3, 2 );
     connect( vkPushButton_gray, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_gray() ) );
 
     QvkPushButton *vkPushButton_darkGray = new QvkPushButton( Qt::darkGray );
+    vkPushButton_darkGray->setMinimumHeight( minimumHeight );
     ui->gridLayout->addWidget( vkPushButton_darkGray, 3, 3 );
     connect( vkPushButton_darkGray, SIGNAL( clicked() ), this, SLOT( slot_vkPushButton_darkGray() ) );
 }
