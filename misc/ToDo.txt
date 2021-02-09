@@ -1,8 +1,4 @@
 
-Windows Click-routine erstellen
-
 Windows Installer erstellen
 
 Seiten für Onlinehilfe vervollständigen
-
-Settings
