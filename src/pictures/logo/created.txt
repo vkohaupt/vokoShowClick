@@ -3,3 +3,6 @@
 2. Export in openoffice to svg
 3. With Gimp export the svg to png
 
+
+Windows:
+convert vokoShowClick.png vokoShowClick.ico

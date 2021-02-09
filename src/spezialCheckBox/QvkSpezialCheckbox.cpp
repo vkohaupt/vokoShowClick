@@ -7,7 +7,7 @@ QvkSpezialCheckbox::QvkSpezialCheckbox( QWidget *parent ) : QWidget( parent )
 {
     setObjectName( "spezialCheckBox" );
     setMinimumWidth( 100 );
-    setMinimumHeight( 35 );
+    setMinimumHeight( 34 );
     setMaximumWidth( 100 );
 
     connect( this, SIGNAL( signal_clicked( bool ) ), this, SLOT( slot_setChecked( bool ) ) );

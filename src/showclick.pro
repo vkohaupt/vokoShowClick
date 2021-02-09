@@ -40,6 +40,8 @@ FORMS     += mainwindow.ui
 
 RESOURCES += showclick.qrc
 
+win32:RC_ICONS = pictures/logo/vokoShowClick.ico
+
 unix:LIBS += -L/usr/X11/lib -lX11
 
 include(spezialCheckBox/spezialCheckBox.pri)
