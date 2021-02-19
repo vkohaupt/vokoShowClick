@@ -469,9 +469,15 @@
              </widget>
             </item>
             <item row="8" column="5">
-             <widget class="QToolButton" name="toolButton">
+             <widget class="QToolButton" name="help_click_OnOff">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
               <property name="text">
-               <string/>
+               <string notr="true">Help</string>
               </property>
               <property name="icon">
                <iconset resource="showclick.qrc">
