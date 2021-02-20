@@ -339,6 +339,7 @@ void MainWindow::slot_mousePressed( int x, int y, QString mouseButton )
     animateWindow->init( x, y, vkSpezialSliderShowtime->value() * 100, mouseButton, vkSpezialSliderCircle->value(), vkSpezialSliderOpacity->value(), vkCircleWidget->getColor() );
     animateWindow->setWindowFlags( Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::ToolTip );
     animateWindow->show();
+    animateWindow->deleteLater();
 }
 
 

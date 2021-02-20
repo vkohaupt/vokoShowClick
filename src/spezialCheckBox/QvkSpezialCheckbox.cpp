@@ -100,6 +100,22 @@ void QvkSpezialCheckbox::paintChecked( QPainter &painter )
     painterPathSlider.addRoundedRect( rectSlider, radius - margin, radius - margin, Qt::AbsoluteSize );
     painter.drawPath( painterPathSlider );
 
+    QPen penLines;
+    penLines.setWidthF( 1 );
+    penLines.setColor( Qt::gray );
+    painter.setPen( penLines );
+    int step = 4;
+    int value = 0;
+    for ( int x = 0; x < 13; x++ )
+    {
+       value = step * x;
+       QLineF line( slider_x + radius/2 + value,
+                    slider_y + 4,
+                    slider_x + radius/2 + value,
+                    slider_y + slider_height - 4 );
+       painter.drawLine( line );
+    }
+
     QPixmap pixmap( ":/spezialCheckBox/on.png" );
     pixmap.setDevicePixelRatio( devicePixelRatioF() );
     pixmap = pixmap.scaled( slider_height / 5 * 3 * devicePixelRatioF(), slider_height / 5 * 3 * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
@@ -136,6 +152,22 @@ void QvkSpezialCheckbox::paintUnChecked( QPainter &painter )
     QPainterPath painterPathSlider;
     painterPathSlider.addRoundedRect( rectSlider, radius - margin, radius - margin, Qt::AbsoluteSize );
     painter.drawPath( painterPathSlider );
+
+    QPen penLines;
+    penLines.setWidthF( 1 );
+    penLines.setColor( Qt::gray );
+    painter.setPen( penLines );
+    int step = 4;
+    int value = 0;
+    for ( int x = 0; x < 13; x++ )
+    {
+       value = step * x;
+       QLineF line( slider_x + radius/2 + value,
+                    slider_y + 4,
+                    slider_x + radius/2 + value,
+                    slider_y + slider_height - 4 );
+       painter.drawLine( line );
+    }
 
     QPixmap pixmap( ":/spezialCheckBox/off.png" );
     pixmap.setDevicePixelRatio(  devicePixelRatioF() );
