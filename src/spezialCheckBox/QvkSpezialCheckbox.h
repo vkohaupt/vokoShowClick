@@ -25,7 +25,6 @@ protected:
 
 private:
     int step;
-    int fontPixelSize;
 
     qreal button_x;
     qreal button_y;

@@ -59,7 +59,6 @@ void QvkSpezialCheckbox::paintEvent( QPaintEvent *event )
     penWidth = 1;
     radius = 11;
     margin = 3;
-    fontPixelSize = 14;
 
     if ( isChecked() == false )
     {
@@ -91,7 +90,7 @@ void QvkSpezialCheckbox::paintChecked( QPainter &painter )
     painter.setPen( penSlider );
     qreal slider_x = ( button_width / 3 ) + margin;
     qreal slider_y = button_y + margin;
-    qreal slider_width = ( button_width / 3 * 2 ) - ( 2 * margin ) + button_x;
+    qreal slider_width = ( button_width / 3 * 2 ) - ( 2 * margin );
     qreal slider_height = button_height - ( 2 * margin );
     QRectF rectSlider( slider_x, slider_y, slider_width, slider_height );
     QBrush brushSlider( Qt::lightGray );
@@ -100,20 +99,18 @@ void QvkSpezialCheckbox::paintChecked( QPainter &painter )
     painterPathSlider.addRoundedRect( rectSlider, radius - margin, radius - margin, Qt::AbsoluteSize );
     painter.drawPath( painterPathSlider );
 
-    QPen penLines;
-    penLines.setWidthF( 1 );
-    penLines.setColor( Qt::gray );
-    painter.setPen( penLines );
-    int step = 4;
-    int value = 0;
-    for ( int x = 0; x < 13; x++ )
+    painter.setPen( Qt::NoPen );
+    QBrush brushRibs( Qt::darkGray );
+    painter.setBrush( brushRibs );
+    int step = 5;
+    for ( int x = 0; x < 10; x++ )
     {
-       value = step * x;
-       QLineF line( slider_x + radius/2 + value,
-                    slider_y + 4,
-                    slider_x + radius/2 + value,
-                    slider_y + slider_height - 4 );
-       painter.drawLine( line );
+       int value = step * x;
+
+       painter.drawRect( slider_x + radius/2 + value,
+                         slider_y + margin,
+                         3,
+                         slider_height - 2 * margin);
     }
 
     QPixmap pixmap( ":/spezialCheckBox/on.png" );
@@ -153,20 +150,18 @@ void QvkSpezialCheckbox::paintUnChecked( QPainter &painter )
     painterPathSlider.addRoundedRect( rectSlider, radius - margin, radius - margin, Qt::AbsoluteSize );
     painter.drawPath( painterPathSlider );
 
-    QPen penLines;
-    penLines.setWidthF( 1 );
-    penLines.setColor( Qt::gray );
-    painter.setPen( penLines );
-    int step = 4;
-    int value = 0;
-    for ( int x = 0; x < 13; x++ )
+    painter.setPen( Qt::NoPen );
+    QBrush brushRibs( Qt::darkGray );
+    painter.setBrush( brushRibs );
+    int step = 5;
+    for ( int x = 0; x < 10; x++ )
     {
-       value = step * x;
-       QLineF line( slider_x + radius/2 + value,
-                    slider_y + 4,
-                    slider_x + radius/2 + value,
-                    slider_y + slider_height - 4 );
-       painter.drawLine( line );
+       int value = step * x;
+
+       painter.drawRect( slider_x + radius/2 + value,
+                         slider_y + margin,
+                         3,
+                         slider_height - 2 * margin);
     }
 
     QPixmap pixmap( ":/spezialCheckBox/off.png" );
