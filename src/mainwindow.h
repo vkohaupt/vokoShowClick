@@ -33,7 +33,9 @@ private:
     QvkLicenses *vkLicenses;
     QvkGlobalMouse *vkGlobalMouse;
     QvkSpezialCheckbox *vkSpezialCheckbox;
-    QvkCircleWidget *vkCircleWidget;
+    QvkCircleWidget *vkCircleWidget_1;
+    QvkCircleWidget *vkCircleWidget_2;
+    QvkCircleWidget *vkCircleWidget_3;
     QvkHelp *vkHelp;
     QvkSettings *vkSettings;
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>587</width>
+    <width>591</width>
     <height>464</height>
    </rect>
   </property>
@@ -352,7 +352,26 @@
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
               </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_9"/>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>2</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="widget_1" native="true"/>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_2" native="true"/>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_3" native="true"/>
+               </item>
+              </layout>
              </widget>
             </item>
             <item row="5" column="0" colspan="4">

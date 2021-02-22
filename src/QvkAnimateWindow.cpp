@@ -100,7 +100,7 @@ void QvkAnimateWindow::paintEvent( QPaintEvent *event )
     painterPixmap.setOpacity( opacity );
     painterPixmap.drawEllipse( width()/2-diameter/2, height()/2-diameter/2, diameter, diameter );
 
-    // Paint Button
+    // Paint pressed Button
     pen.setStyle( Qt::SolidLine );
     pen.setWidthF( 3.0 );
     painterPixmap.setPen( pen );

@@ -159,82 +159,114 @@ void MainWindow::setColorButtons()
 
 void MainWindow::slot_vkPushButton_white()
 {
-    vkCircleWidget->setColor( Qt::white );
+    vkCircleWidget_1->setColor( Qt::white );
+    vkCircleWidget_2->setColor( Qt::white );
+    vkCircleWidget_3->setColor( Qt::white );
 }
 
 void MainWindow::slot_vkPushButton_black()
 {
-    vkCircleWidget->setColor( Qt::black );
+    vkCircleWidget_1->setColor( Qt::black );
+    vkCircleWidget_2->setColor( Qt::black );
+    vkCircleWidget_3->setColor( Qt::black );
 }
 
 void MainWindow::slot_vkPushButton_red()
 {
-    vkCircleWidget->setColor( Qt::red );
+    vkCircleWidget_1->setColor( Qt::red );
+    vkCircleWidget_2->setColor( Qt::red );
+    vkCircleWidget_3->setColor( Qt::red );
 }
 
 void MainWindow::slot_vkPushButton_darkRed()
 {
-    vkCircleWidget->setColor( Qt::darkRed );
+    vkCircleWidget_1->setColor( Qt::darkRed );
+    vkCircleWidget_2->setColor( Qt::darkRed );
+    vkCircleWidget_3->setColor( Qt::darkRed );
 }
 
 void MainWindow::slot_vkPushButton_green()
 {
-    vkCircleWidget->setColor( Qt::green );
+    vkCircleWidget_1->setColor( Qt::green );
+    vkCircleWidget_2->setColor( Qt::green );
+    vkCircleWidget_3->setColor( Qt::green );
 }
 
 void MainWindow::slot_vkPushButton_darkGreen()
 {
-    vkCircleWidget->setColor( Qt::darkGreen );
+    vkCircleWidget_1->setColor( Qt::darkGreen );
+    vkCircleWidget_2->setColor( Qt::darkGreen );
+    vkCircleWidget_3->setColor( Qt::darkGreen );
 }
 
 void MainWindow::slot_vkPushButton_blue()
 {
-    vkCircleWidget->setColor( Qt::blue );
+    vkCircleWidget_1->setColor( Qt::blue );
+    vkCircleWidget_2->setColor( Qt::blue );
+    vkCircleWidget_3->setColor( Qt::blue );
 }
 
 void MainWindow::slot_vkPushButton_darkBlue()
 {
-    vkCircleWidget->setColor( Qt::darkBlue );
+    vkCircleWidget_1->setColor( Qt::darkBlue );
+    vkCircleWidget_2->setColor( Qt::darkBlue );
+    vkCircleWidget_3->setColor( Qt::darkBlue );
 }
 
 void MainWindow::slot_vkPushButton_cyan()
 {
-    vkCircleWidget->setColor( Qt::cyan );
+    vkCircleWidget_1->setColor( Qt::cyan );
+    vkCircleWidget_2->setColor( Qt::cyan );
+    vkCircleWidget_3->setColor( Qt::cyan );
 }
 
 void MainWindow::slot_vkPushButton_darkCyan()
 {
-    vkCircleWidget->setColor( Qt::darkCyan );
+    vkCircleWidget_1->setColor( Qt::darkCyan );
+    vkCircleWidget_2->setColor( Qt::darkCyan );
+    vkCircleWidget_3->setColor( Qt::darkCyan );
 }
 
 void MainWindow::slot_vkPushButton_magenta()
 {
-    vkCircleWidget->setColor( Qt::magenta );
+    vkCircleWidget_1->setColor( Qt::magenta );
+    vkCircleWidget_2->setColor( Qt::magenta );
+    vkCircleWidget_3->setColor( Qt::magenta );
 }
 
 void MainWindow::slot_vkPushButton_darkMagenta()
 {
-    vkCircleWidget->setColor( Qt::darkMagenta );
+    vkCircleWidget_1->setColor( Qt::darkMagenta );
+    vkCircleWidget_2->setColor( Qt::darkMagenta );
+    vkCircleWidget_3->setColor( Qt::darkMagenta );
 }
 
 void MainWindow::slot_vkPushButton_yellow()
 {
-    vkCircleWidget->setColor( Qt::yellow );
+    vkCircleWidget_1->setColor( Qt::yellow );
+    vkCircleWidget_2->setColor( Qt::yellow );
+    vkCircleWidget_3->setColor( Qt::yellow );
 }
 
 void MainWindow::slot_vkPushButton_darkYellow()
 {
-    vkCircleWidget->setColor( Qt::darkYellow );
+    vkCircleWidget_1->setColor( Qt::darkYellow );
+    vkCircleWidget_2->setColor( Qt::darkYellow );
+    vkCircleWidget_3->setColor( Qt::darkYellow );
 }
 
 void MainWindow::slot_vkPushButton_gray()
 {
-    vkCircleWidget->setColor( Qt::gray );
+    vkCircleWidget_1->setColor( Qt::gray );
+    vkCircleWidget_2->setColor( Qt::gray );
+    vkCircleWidget_3->setColor( Qt::gray );
 }
 
 void MainWindow::slot_vkPushButton_darkGray()
 {
-    vkCircleWidget->setColor( Qt::darkGray );
+    vkCircleWidget_1->setColor( Qt::darkGray );
+    vkCircleWidget_2->setColor( Qt::darkGray );
+    vkCircleWidget_3->setColor( Qt::darkGray );
 }
 
 void MainWindow::setSpezialSlider()
@@ -305,7 +337,9 @@ void MainWindow::setToolButtonDefaultValues()
 
 void MainWindow::slot_toolButtonColorDefault()
 {
-    vkCircleWidget->setColor( Qt::red );
+    vkCircleWidget_1->setColor( Qt::red );
+    vkCircleWidget_2->setColor( Qt::red );
+    vkCircleWidget_3->setColor( Qt::red );
 }
 
 
@@ -336,7 +370,7 @@ void MainWindow::setMouseClick()
 void MainWindow::slot_mousePressed( int x, int y, QString mouseButton )
 {
     QvkAnimateWindow *animateWindow = new QvkAnimateWindow( this );
-    animateWindow->init( x, y, vkSpezialSliderShowtime->value() * 100, mouseButton, vkSpezialSliderCircle->value(), vkSpezialSliderOpacity->value(), vkCircleWidget->getColor() );
+    animateWindow->init( x, y, vkSpezialSliderShowtime->value() * 100, mouseButton, vkSpezialSliderCircle->value(), vkSpezialSliderOpacity->value(), vkCircleWidget_1->getColor() );
     animateWindow->setWindowFlags( Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::ToolTip );
     animateWindow->show();
 }
@@ -389,9 +423,18 @@ void MainWindow::slot_toolButtonAuthor()
 
 void MainWindow::setCircleWidget()
 {
-    vkCircleWidget = new QvkCircleWidget( ui->frame_3 );
-    vkCircleWidget->setObjectName( "widgetCircle" );
-    vkCircleWidget->show();
+    vkCircleWidget_1 = new QvkCircleWidget( ui->widget_1 );
+    vkCircleWidget_1->setObjectName( "widgetCircle_1" );
+    vkCircleWidget_1->show();
+
+    vkCircleWidget_2 = new QvkCircleWidget( ui->widget_2 );
+    vkCircleWidget_2->setObjectName( "widgetCircle_2" );
+    vkCircleWidget_2->show();
+
+    vkCircleWidget_3 = new QvkCircleWidget( ui->widget_3 );
+    vkCircleWidget_3->setObjectName( "widgetCircle_3" );
+    vkCircleWidget_3->show();
+
     connect( vkSpezialSliderCircle, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChanged_SpezialSliderCircle( int ) ) );
     connect( vkSpezialSliderOpacity, SIGNAL( valueChanged( int ) ), this, SLOT( slot_valueChanged_SpezialSliderOpacity( int ) ) );
 }
@@ -399,14 +442,19 @@ void MainWindow::setCircleWidget()
 
 void MainWindow::slot_valueChanged_SpezialSliderCircle( int value )
 {
-    vkCircleWidget->setDiameter( value );
+    vkCircleWidget_1->setDiameter( value );
+    vkCircleWidget_2->setDiameter( value );
+    vkCircleWidget_3->setDiameter( value );
+
 }
 
 
 void MainWindow::slot_valueChanged_SpezialSliderOpacity( int value )
 {
     double value_1 = value;
-    vkCircleWidget->setOpacity( value_1 / 100 );
+    vkCircleWidget_1->setOpacity( value_1 / 100 );
+    vkCircleWidget_2->setOpacity( value_1 / 100 );
+    vkCircleWidget_3->setOpacity( value_1 / 100 );
 }
 
 
