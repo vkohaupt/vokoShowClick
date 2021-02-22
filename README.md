@@ -1,5 +1,6 @@
 # vokoShowClick 
 ## For Windows and Linux(X11)
+Show left, middle and right mouse clicks
 ![Picture](https://github.com/vkohaupt/vokoShowClick/blob/main/misc/vokoShowClick.png)
 
 
