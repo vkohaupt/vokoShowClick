@@ -692,7 +692,7 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1" colspan="3">
+          <item row="3" column="2" colspan="2">
            <widget class="QComboBox" name="comboBoxOnlineHelp"/>
           </item>
          </layout>

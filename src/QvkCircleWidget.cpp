@@ -41,7 +41,6 @@ void QvkCircleWidget::paintEvent( QPaintEvent *event )
 {
     Q_UNUSED(event);
 
-
     QList<QWidget *> listWidget = parentWidget->findChildren<QWidget *>();
 
     for( int i = 0; i < listWidget.count(); i++ )
@@ -52,7 +51,14 @@ void QvkCircleWidget::paintEvent( QPaintEvent *event )
             painter.begin( this );
             painter.setRenderHints( QPainter::Antialiasing, true );
 
-            painter.fillRect( 0, 0, width(), height(), Qt::white );
+            if ( pointerColor == Qt::white )
+            {
+                painter.fillRect( 0, 0, width(), height(), QColor( 245, 245, 245, 0 ) );
+            }
+            else
+            {
+                painter.fillRect( 0, 0, width(), height(), Qt::white );
+            }
 
             qreal penWith = 6;
             QPen pen;
@@ -81,7 +87,14 @@ void QvkCircleWidget::paintEvent( QPaintEvent *event )
             painter.begin( this );
             painter.setRenderHints( QPainter::Antialiasing, true );
 
-            painter.fillRect( 0, 0, width(), height(), Qt::white );
+            if ( pointerColor == Qt::white )
+            {
+                painter.fillRect( 0, 0, width(), height(), QColor( 245, 245, 245, 0 ) );
+            }
+            else
+            {
+                painter.fillRect( 0, 0, width(), height(), Qt::white );
+            }
 
             qreal penWith = 6;
             QPen pen;
@@ -100,7 +113,7 @@ void QvkCircleWidget::paintEvent( QPaintEvent *event )
             painter.drawLine( line );
 
             painter.end();
-       }
+        }
 
         if ( listWidget.at( i )->objectName() == "widgetCircle_3" )
         {
@@ -108,7 +121,14 @@ void QvkCircleWidget::paintEvent( QPaintEvent *event )
             painter.begin( this );
             painter.setRenderHints( QPainter::Antialiasing, true );
 
-            painter.fillRect( 0, 0, width(), height(), Qt::white );
+            if ( pointerColor == Qt::white )
+            {
+                painter.fillRect( 0, 0, width(), height(), QColor( 245, 245, 245, 0 ) );
+            }
+            else
+            {
+                painter.fillRect( 0, 0, width(), height(), Qt::white );
+            }
 
             qreal penWith = 6;
             QPen pen;
@@ -129,10 +149,7 @@ void QvkCircleWidget::paintEvent( QPaintEvent *event )
             painter.drawArc( rectF, startAngle, spanAngle );
 
             painter.end();
-       }
-
-
-
+        }
     }
 }
 
